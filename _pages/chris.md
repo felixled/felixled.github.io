@@ -10,7 +10,7 @@ Quantum information theory, entanglement theory, unitary designs
 
 <details>
 <summary>Papers</summary>
-
+<div class="publications">
 {% bibliography --group_by none --query @*[author ~= Vairogs]* %}
-
+</div>
 </details>
