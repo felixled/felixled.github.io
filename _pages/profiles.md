@@ -28,7 +28,7 @@ profiles:
     image: sujeet.png
     content: sujeet.md
   - align: right
-    image: chloe.jog
+    image: chloe.jpg
     content: chloe.md
   - align: left
     image: chris.jpg
