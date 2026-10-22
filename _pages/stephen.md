@@ -6,4 +6,4 @@
 Quantum information theory, representation theory, entanglement theory
 
 **Contact:**
-Email: [email](mailto:juntaiz2@illinois.edu)
+[email](mailto:juntaiz2@illinois.edu)

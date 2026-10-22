@@ -6,4 +6,4 @@
 Quantum information theory, quantum channels, entanglement theory
 
 **Contact:**
-Email: [email](mailto:kim705@illinois.edu)
+[email](mailto:kim705@illinois.edu)
