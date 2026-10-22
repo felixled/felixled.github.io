@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Associate Professor, Department of Mathematics, University of Illinois Urbana-Champaign. Quantum Information Theorist.
 
 profile:
   align: right
