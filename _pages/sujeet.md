@@ -6,4 +6,4 @@
 Quantum information theory, quantum channels, representation theory
 
 **Contact:**
-Email: [email](mailto:sgb4@illinois.edu) | [homepage](https://sujeet-bhalerao.github.io/)
+[email](mailto:sgb4@illinois.edu) | [homepage](https://sujeet-bhalerao.github.io/)

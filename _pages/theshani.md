@@ -6,4 +6,4 @@
 Classical and Quantum Information Theory, Privacy, Statistical Learning
 
 **Contact:**
-Email: [email](mailto:nuradha@illinois.edu) | [homepage](https://sites.google.com/view/theshani-nuradha/)
+[email](mailto:nuradha@illinois.edu) | [homepage](https://sites.google.com/view/theshani-nuradha/)
