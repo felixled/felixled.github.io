@@ -28,12 +28,15 @@ profiles:
     image: sujeet.png
     content: sujeet.md
   - align: right
+    image: mayank.png
+    content: mayank.md
+  - align: left
     image: chloe.jpg
     content: chloe.md
-  - align: left
+  - align: right
     image: chris.jpg
     content: chris.md
-  - align: right
+  - align: left
     image: stephen.jpg
     content: stephen.md
 ---
