@@ -1,9 +1,9 @@
-# Jacob Beckey
+### Jacob Beckey
 
-## NSF Mathematical Sciences Postdoctoral Research Fellow, Department of Mathematics
+**NSF Mathematical Sciences Postdoctoral Research Fellow**, Department of Mathematics
 
-## Research interests
+**Research interests:**
 Quantum information theory, entanglement theory, learning theory
 
-## Contact
-Email: [jbeckey@illinois.edu](mailto:jbeckey@illinois.edu)
+**Contact:**
+Email: [email](mailto:jbeckey@illinois.edu) | [homepage](https://www.jacobbeckey.com/)
