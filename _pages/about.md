@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>204B Harker Hall</p>
+    <p>1305 W Green St</p>
+    <p>Urbana, IL 61801</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,8 +27,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi there! I am an Associate Professor in the [Department of Mathematics](https://math.illinois.edu/) at the University of Illinois Urbana-Champaign.
+I'm also a member of the [Illinois Quantum Information Science and Technology Center (IQUIST)](https://iquist.illinois.edu/).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I am currently supported by an NSF CAREER grant to carry out research on [symmetries in noisy multipartite quantum systems](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+My [research]({{ '/publications/' | relative_url }}) focuses on mathematical and information-theoretic aspects of quantum information theory.
+For more information you can explore this website, look at my [short CV]({{ '/cv/' | relative_url }}) or [full academic CV]({{ '/files/cv.pdf' | relative_url }}), and **visit my [research group website](https://leditzkygroup.web.illinois.edu/)!**
+
+Contact me at **&lt;lastname&gt;@illinois.edu**. My preferred pronouns are he/him. You can send me encrypted email using my public PGP key [D9FC951B]({{ '/files/felixleditzky.gpg' | relative_url }}).
