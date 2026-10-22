@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92804311-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92804311-1');
+</script>
+<meta charset="UTF-8" /><!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92804311-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92804311-1');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300|Roboto:300&display=swap" rel="stylesheet"/>
+<link href="../flv17.css" rel="stylesheet" type="text/css" />
+<link href="teaching.css" rel="stylesheet" type="text/css" />
+<title>MATH 595: Quantum channels I - Representations and properties</title>
+</head>
+
+<body>
+<section id="top">
+<h1>MATH 595: Quantum channels I<br/> <span style="font-size:80%;">Representations and properties</span></h1>
+<p style="font-size: 110%">
+<span style="font-weight:bold;">Spring term 2021 (weeks 1-8):</span> Tue & Thu, 12:30-01:50. All lectures held online.<br/>
+<span style="font-weight:bold;">Instructor:</span> Felix Leditzky (<a href="http://felixleditzky.info" target="_blank">homepage</a>)<br/>
+<span style="font-weight:bold;">Zoom link:</span> <a href="https://illinois.zoom.us/s/88429626110">https://illinois.zoom.us/s/88429626110</a><br/>
+Password will be distributed to registered students by email. If you're interested in attending the course, please send me an email at <span style="font-weight: bold; letter-spacing: 1px;">&lt;mylastname&gt;@illinois.edu</span> to request the password.<br/>
+<span style="font-weight:bold;">Office hours:</span> via Zoom, by appointment only.
+</p>
+</section>
+
+<nav id="navbar">
+	<a href="#summary">Summary</a>
+	<a href="#toc">Table of contents</a>
+	<a href="#lectures">Lectures</a>
+	<a href="#literature">Literature</a>
+	<a href="#contact">Contact</a>
+	<a href="#top">&uarr; Back to top</a>
+</nav>
+
+<div class="content">
+<section id="summary">
+<h2>Summary</h2>
+<p>
+<span style="font-weight:bold;">Course description:</span> This course gives an introduction to the theory of quantum channels in the finite-dimensional setting
+of quantum information theory. We discuss the various mathematically equivalent representations of
+quantum channels, focus on some important subclasses of channels, and make connections to the theory
+of majorization and covariant channels.</p>
+
+<p><span style="font-weight:bold;">Prerequisites:</span> MATH 415 or MATH 416<br/>
+Throughout the course I will draw connections to quantum information theory, in particular the subfield of "quantum Shannon theory" that is concerned with the study of capacities of quantum channels amongst other things. However, no prior knowledge in this area is necessary to follow the course.
+</p>
+
+<p><span style="font-weight:bold;">Grading policy:</span> There will be no homework assignments or written exams for this course. Grading will be based on active class participation. However, I will provide exercise sheets, and it is strongly recommended to attempt to solve them.
+</p>
+
+<p>
+<span style="font-weight:bold;">Remark:</span> This is a <span style="font-style: italic;">half-course</span>, spanning the first 8 weeks of the term. I will teach a follow-up course <a href="MATH595_quantum_channelsII.html" target="_blank">Quantum channels II - data-processing, recovery channels, and quantum Markov chains</a> in weeks 9-16. While attendance of both courses is recommended, the second course will be fairly independent from this course.
+</p>
+</section>
+
+<section id="toc">
+<h2>Table of contents</h2>
+
+<ul>
+<li> Representations of quantum channels:<br/>
+	 Choi isomorphism, Isometric picture, Unitary evolution, Kraus representation, Linear operator representation
+</li>
+	
+<li>Classes of quantum channels:<br/>
+	Qubit channels, entanglement-breaking channels, PPT channels, antidegradable and degradable channels
+</li>
+
+<li>Covariant quantum channels:<br/>
+	Definition, properties, examples, Holevo information and minimum output entropy
+</li>
+
+</ul>
+</section>
+
+<section id="lectures">
+<h2>Lectures</h2>
+<ul>
+<li> <span style="font-weight:bold;">Prerequisites:</span> <a href="ST21/Prerequisites.pdf">[lecture notes]</a></li>
+<li> <span style="font-weight:bold;">Exercises:</span> <a href="ST21/MATH595_QC1_Ex_Sheet1.pdf">[sheet 1]</a> (last update: 07/22/2021) <a href="ST21/MATH595_QC1_Ex_Sheet2.pdf">[sheet 2]</a> (last update: 07/22/2021) <a href="ST21/MATH595_QC1_Ex_Sheet3.pdf">[sheet 3]</a> (last update: 07/22/2021) </li>
+<li>
+<span style="font-weight:bold;">Tue, Jan 26:</span> Evolution of closed and open quantum systems, Choi-Jamio&#0322;kowski isomorphism <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_gbyx2p0t/23152011">[recording]</a> <a href="ST21/MATH595_QC1_01-26.pdf">[lecture notes]</a> 
+</li>
+<li>
+<span style="font-weight:bold;">Thu, Jan 28:</span> Properties of linear maps and their Choi states, CP maps, Kraus representation <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_7p9rtxnw">[recording]</a> <a href="ST21/MATH595_QC1_01-28.pdf">[lecture notes]</a> (last update: 02/02/2021)
+</li>
+<li><span style="font-weight:bold;">Tue, Feb 2:</span> Kraus representation, isometric and unitary representation of quantum channels <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_hmhf3hg8">[recording]</a> <a href="ST21/MATH595_QC1_02-02.pdf">[lecture notes]</a>
+</li>
+<li><span style="font-weight:bold;">Thu, Feb 4:</span> Vectorization mapping, linear representation of quantum channels <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_rswybgwv">[recording]</a> <a href="ST21/MATH595_QC1_02-04.pdf">[lecture notes]</a>
+</li>
+<li><span style="font-weight:bold;">Tue, Feb 9:</span> Isometric representation and complementary channel, examples of qubit channels (bit- and phase flip channels, depolarizing channel, Pauli channels)<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_05e09txu">[recording]</a> <a href="ST21/MATH595_QC1_02-09.pdf">[lecture notes]</a>
+</li>
+<li><span style="font-weight:bold;">Thu, Feb 11:</span> examples of qubit channels (amplitude damping channel, erasure channel), generalized dephasing channels <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_6usbpg85">[recording]</a> <a href="ST21/MATH595_QC1_02-11.pdf">[lecture notes]</a>
+</li>
+<li><span style="font-weight:bold;">Tue, Feb 16:</span> Holevo information, classical capacity, entanglement-breaking channels <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_qexzsly4">[recording]</a> <a href="ST21/MATH595_QC1_02-16.pdf">[lecture notes]</a></li>
+<li><span style="font-weight:bold;">Thu, Feb 18:</span> Characterization of entanglement-breaking channels, separability, PPT criterion, PPT channels <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_6yqmsom1">[recording]</a> <a href="ST21/MATH595_QC1_02-18.pdf">[lecture notes]</a> (last update: 02/22/2021)
+</li>
+<li><span style="font-weight:bold;">Tue, Feb 23:</span> Characterization of PPT channels, distillability of states, antidegradable channels <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_n4c4zgvk">[recording]</a> <a href="ST21/MATH595_QC1_02-23.pdf">[lecture notes]</a></li>
+<li>
+<span style="font-weight:bold;">Thu, Feb 25:</span> Antidegradability of erasure and depolarizing channel<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_0ehxx2l3">[recording]</a> <a href="ST21/MATH595_QC1_02-25.pdf">[lecture notes]</a>
+</li>
+<li>
+<span style="font-weight:bold;">Tue, Mar 02:</span> Degradable channels, no-cloning theorem<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_i7nhmuoh">[recording]</a> <a href="ST21/MATH595_QC1_03-02.pdf">[lecture notes]</a>
+</li>
+<li>
+<span style="font-weight:bold;">Thu, Mar 04:</span> Covariant quantum channels, examples of covariant channels <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_gcque85e">[recording]</a> <a href="ST21/MATH595_QC1_03-04.pdf">[lecture notes]</a> (last update: 03/09/2021)
+</li>
+<li>
+<span style="font-weight:bold;">Tue, Mar 09:</span> Characterization of depolarizing channel via unitary covariance, structure of Werner states <br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_erlhjp9x">[recording]</a> <a href="ST21/MATH595_QC1_03-09.pdf">[lecture notes]</a>
+</li>
+<li>
+<span style="font-weight:bold;">Thu, Mar 11:</span> Channel twirling, Haar measure, entanglement fidelity, irreducibly covariant channels<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_jo1i06gc">[recording]</a> <a href="ST21/MATH595_QC1_03-11.pdf">[lecture notes]</a>
+</li>
+<li>
+<span style="font-weight:bold;">Tue, Mar 16:</span> Irreducibly covariant channels, Holevo information, minimum output entropy<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_1j1428j1">[recording]</a> <a href="ST21/MATH595_QC1_03-16.pdf">[lecture notes]</a> (last update: 03/18/2021)
+</li>
+
+<li>
+<span style="font-weight:bold;">Thu, Mar 18:</span> Minimum output entropy, classical capacity, additivity conjecture<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_wewyqdwu">[recording]</a> <a href="ST21/MATH595_QC1_03-18.pdf">[lecture notes]</a>
+</li>
+</ul>
+<p>Jacob Beckey has generously committed to typing up the lecture notes in LaTeX, which are available on <a href="https://github.com/JacobBeckey/math595-quantumchannels">GitHub</a>.
+</p>
+<p>Throughout the lecture I am trying to give some quantum information-theoretic context while discussing quantum channels and their properties. Unfortunately, it is beyond the scope of this lecture to discuss these information-theoretic aspects in more detail. Along with Mark M. Wilde's book on Quantum Information Theory (see the <a href="#literature">course literature</a> below), the lecture <a href="https://www.math.uwaterloo.ca/~wcleung/co781-f2020.html">Theory of Quantum Communication (Fall 2020)</a> taught by <a href="https://www.math.uwaterloo.ca/~wcleung/">Debbie Leung</a> at the University of Waterloo is an excellent resource to learn more about this topic.
+</p>
+</section>
+
+<section id="literature">
+
+<h2> Literature</h2> 
+<ul>
+<li>Stephane Attal: <a href="http://math.univ-lyon1.fr/~attal/Quantum_Channels.pdf">Quantum channels,</a> Lecture notes.</li> 
+<li>
+John Watrous: <a href="https://cs.uwaterloo.ca/~watrous/TQI">Theory of Quantum Information,</a> Cambridge University Press, 2018.
+</li>
+<li>
+Mark M. Wilde: <a href="https://arxiv.org/abs/1106.1445">Quantum Information Theory,</a> Cambridge University Press, 2017.
+</li>
+<li>Michael M. Wolf: <a href="https://www-m5.ma.tum.de/foswiki/pub/M5/Allgemeines/MichaelWolf/QChannelLecture.pdf">Quantum Channels & Operations: Guided Tour,</a> Lecture notes, 2012. 
+</li>
+</ul>
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+<p>Email: <span style="font-weight: bold; letter-spacing: 1px;">&lt;mylastname&gt;@illinois.edu</span>
+</p>
+<p>Postal address:<br/>
+Illini Hall, Office 341B<br/>
+725 S. Wright Street<br/>
+Champaign, IL 61820<br/>
+USA</p>
+</section>
+</div>
+
+<div id="footer">
+<p>Created by Felix Leditzky. Last update: Jul 22, 2021.</p>
+</div>
+</body>
+
+</html>

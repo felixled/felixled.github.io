@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92804311-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92804311-1');
+</script>
+<meta charset="UTF-8" /><!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92804311-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92804311-1');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300|Roboto:300&display=swap" rel="stylesheet"/>
+<link href="../flv17.css" rel="stylesheet" type="text/css" />
+<link href="teaching.css" rel="stylesheet" type="text/css" />
+<title>MATH 595: Quantum channels II - Data-processing, recovery channels, and quantum Markov chains </title>
+</head>
+
+<body>
+<section id="top">
+<h1>MATH 595: Quantum channels II<br/> <span style="font-size:80%;">Data-processing, recovery channels, and quantum Markov chains</span></h1>
+<p style="font-size: 110%">
+<span style="font-weight:bold;">Spring term 2021 (weeks 9-16):</span> Tue & Thu, 12:30-01:50. All lectures held online.<br/>
+<span style="font-weight:bold;">Instructor:</span> Felix Leditzky (<a href="http://felixleditzky.info" target="_blank">homepage</a>)<br/>
+<span style="font-weight:bold;">Zoom link:</span> <a href="https://illinois.zoom.us/s/88429626110">https://illinois.zoom.us/s/88429626110</a><br/>
+Password will be distributed to registered students by email. If you're interested in attending the course, please send me an email at <span style="font-weight: bold; letter-spacing: 1px;">&lt;mylastname&gt;@illinois.edu</span> to request the password.<br/>
+<span style="font-weight:bold;">Office hours:</span> via Zoom, by appointment only.
+</p>
+</section>
+
+<nav id="navbar">
+	<a href="#summary">Summary</a>
+	<a href="#toc">Table of contents</a>
+	<a href="#lectures">Lectures</a>
+	<a href="#literature">Literature</a>
+	<a href="#contact">Contact</a>
+	<a href="#top">&uarr; Back to top</a>
+</nav>
+
+<div class="content">
+<section id="summary">
+<h2>Summary</h2>
+<p>
+<span style="font-weight:bold;">Course description:</span> This course gives an introduction to the theory of quantum Markov chains in the finite-dimensional setting of quantum information theory. We first discuss the quantum relative entropy and its fundamental property, the data-processing inequality, and give a proof of this inequality that naturally leads to equality conditions and the concept of recovery channels. Specializing this analysis to the partial trace, we obtain the strong subadditivity property of the von Neumann entropy, as well as a natural definition of quantum Markov chains. We then review a structure theorem for quantum Markov chains, the fundamental differences to classical Markov chains, and - time permitting - venture into the active research topic of approximate quantum Markov chains.</p>
+<p><span style="font-weight:bold;">Prerequisites:</span> MATH 415 or MATH 416<br/>
+Throughout the course I will draw connections to quantum information theory, in particular the subfield of "quantum Shannon theory" that is concerned with the study of capacities of quantum channels amongst other things. However, no prior knowledge in this area is necessary to follow the course.
+</p>
+<p><span style="font-weight:bold;">Grading policy:</span> There will be no homework assignments or written exams for this course. Grading will be based on active class participation. However, I will provide exercise sheets, and it is strongly recommended to attempt to solve them.
+</p>
+<p>
+<span style="font-weight:bold;">Remark:</span> This is a <span style="font-style: italic;">half-course</span>, spanning weeks 9-16 of the term. The first part of this course is <a href="MATH595_quantum_channelsI.html" target="_blank">Quantum channels I - Representations and properties</a> in weeks 1-8. While attendance of both courses is recommended, this course will be fairly independent from the first one.
+</p>
+</section>
+
+<section id="toc">
+<h2>Table of contents</h2>
+
+<ul>
+<li>Quantum relative entropy:<br/>
+		Definition and operational interpretation, Joint convexity and data-processing inequality
+</li>
+<li>Equality conditions for data-processing:<br/>
+		Petz's proof of the equality condition, Formulation in terms of recovery channels
+</li>
+<li>Quantum Markov chains:<br/>
+		Strong subadditivity of von Neumann entropy, Quantum conditional mutual information and its operational interpretations, Structure theorem for exact quantum Markov chains
+</li>
+<li>
+Approximate quantum Markov chains:<br/>
+		Classical vs. quantum setting, Approximate recovery channels
+</li>
+</ul>
+</section>
+
+<section id="lectures">
+<h2>Lectures</h2>
+<ul>
+<li> <span style="font-weight:bold;">Exercises:</span> <a href="ST21/MATH595_QC2_Ex_Sheet.pdf">[sheet 1]</a></li>
+
+<li>
+<span style="font-weight:bold;">Tue, Mar 23:</span> Recap (quantum states, quantum channels), quantum state discrimination, trace distance<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_l1zeuwhq">[recording]</a> <a href="ST21/MATH595_QC2_03-23.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Thu, Mar 25:</span> Quantum state discrimination, trace distance, data processing, hypothesis testing, Quantum Stein's Lemma, relative entropy<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_7u4y986z">[recording]</a> <a href="ST21/MATH595_QC2_03-25.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Tue, Mar 30:</span> Properties of relative entropy, functions on operators<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_ze16211r">[recording]</a> <a href="ST21/MATH595_QC2_03-30.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Thu, Apr 1:</span> Relative entropy and joint convexity, functions on operators, relative modular operator<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_oq4w7qgk">[recording]</a> <a href="ST21/MATH595_QC2_04-01.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Tue, Apr 6:</span> Relative modular operator, proof of data-processing inequality<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_skc0apzg">[recording]</a> <a href="ST21/MATH595_QC2_04-06.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Thu, Apr 8:</span> Properties of von Neumann entropy and conditional entropy<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_rfkheb3q">[recording]</a> <a href="ST21/MATH595_QC2_04-08.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Tue, Apr 13:</span> No lecture (non-instructional day at University of Illinois)
+</li>
+
+<li>
+<span style="font-weight:bold;">Thu, Apr 15:</span> Properties of conditional entropy, coherent information, and mutual information<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_3r7v2hsy">[recording]</a> <a href="ST21/MATH595_QC2_04-15.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Tue, Apr 20:</span> Holevo bound, conditional mutual information, classical and quantum Markov chains<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_1mbecudg">[recording]</a> <a href="ST21/MATH595_QC2_04-20.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Thu, Apr 22:</span> Quantum Markov chains, Petz recovery channel, equality in data-processing<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_f7up7vpi">[recording]</a> <a href="ST21/MATH595_QC2_04-22.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Tue, Apr 27:</span> Quantum Markov chains, Petz recovery channel, equality in data-processing<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_oz82emuf">[recording]</a> <a href="ST21/MATH595_QC2_04-27.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Thu, Apr 29:</span> Quantum Markov chains, Petz recovery channel, equality in data-processing<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_bvzh29zo">[recording]</a> <a href="ST21/MATH595_QC2_04-29.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Tue, May 4:</span> Equality in the Holevo bound<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_r66m4ul8">[recording]</a> <a href="ST21/MATH595_QC2_05-04.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Mon, May 10 (part 1):</span> Structure of quantum Markov chains<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_ibylh58b">[recording]</a> <a href="ST21/MATH595_QC2_05-10_part1.pdf">[lecture notes]</a> 
+</li>
+
+<li>
+<span style="font-weight:bold;">Mon, May 10 (part 2):</span> Robustness of Markov chains, approximate recovery<br/>
+<a href="https://mediaspace.illinois.edu/media/t/1_3561znv8">[recording]</a> <a href="ST21/MATH595_QC2_05-10_part2.pdf">[lecture notes]</a> 
+</li>
+
+</ul>
+</section>
+
+<section id="literature">
+
+<h2> Literature</h2> 
+<ul>
+<li> David Sutter: <a href="https://arxiv.org/abs/1802.05477">Approximate quantum Markov chains,</a> Vol. 28. SpringerBriefs in Mathematical Physics,
+2018. </li>
+<li>Denes Petz: Quantum Information Theory and Quantum Statistics. Theoretical and Mathematical
+Physics. Springer, 2008.</li>
+<li>Michael A. Nielsen and Denes Petz: <a href="https://arxiv.org/abs/quant-ph/0408130">A Simple Proof of the Strong Subadditivity Inequality,</a> Quantum Information & Computation 5.6 (2005), pp. 507–513.</li>
+<li>Denes Petz: <a href="https://arxiv.org/abs/quant-ph/0209053">Monotonicity of quantum relative entropy revisited,</a> Reviews in Mathematical Physics 15.01 (2003), pp. 79–91.</li>
+<li>Mary Beth Ruskai: <a href="https://arxiv.org/abs/quant-ph/0205064">Inequalities for quantum entropy: A review with conditions for equality,</a> Journal of Mathematical Physics 43.9 (2002), pp. 4358–4375.</li>
+<li>Ben Ibinson et al.: <a href="https://arxiv.org/abs/quant-ph/0611057">Robustness of quantum Markov chains,</a> Communications in Mathematical Physics 277.2 (2008), pp. 289–304.</li>
+</ul>
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+<p>Email: <span style="font-weight: bold; letter-spacing: 1px;">&lt;mylastname&gt;@illinois.edu</span>
+</p>
+<p>Postal address:<br/>
+Illini Hall, Office 341B<br/>
+725 S. Wright Street<br/>
+Champaign, IL 61820<br/>
+USA</p>
+</section>
+</div>
+
+<div id="footer">
+<p>Created by Felix Leditzky. Last update: May 10, 2021.</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92804311-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92804311-1');
+</script>
+<meta charset="UTF-8" /><!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92804311-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92804311-1');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300|Roboto:300&display=swap" rel="stylesheet"/>
+<link href="../../flv17.css" rel="stylesheet" type="text/css" />
+<link href="teaching.css" rel="stylesheet" type="text/css" />
+<title>Math 595: Representation-theoretic methods in quantum information theory</title>
+</head>
+
+<body>
+<section id="top">
+<h1>Math 595: Representation-theoretic methods in quantum information theory</h1>
+<p style="font-size: 110%">
+<span style="font-weight:bold;">Instructor:</span> Felix Leditzky (&lt;mylastname&gt;@illinois.edu)<br/>
+<span style="font-weight:bold;">Meeting times (Fall 2022):</span> Tue, Thu 2-3.20pm, 147 Altgeld Hall.<br/>
+<span style="font-weight:bold;">Office hours:</span> By appointment.
+</p>
+<p style="font-size: 110%">
+<strong>Announcements:</strong> 
+<ul>
+<li style="font-size: 110%">The recorded lecture for Thursday, November 3 is <a href="https://mediaspace.illinois.edu/media/t/1_5rzmuhh8" target="_blank">available here</a>.</li>
+<li style="font-size: 110%">There is no lecture on Tuesday, November 8 because of Election Day (please go vote if you can!). Lecture will resume on Thursday, November 10 in 147 AH as usual.</li>
+</ul>
+</p>
+</section>
+
+<nav id="navbar">
+	<a href="#summary">Overview</a>
+	<a href="#toc">Table of contents</a>
+	<a href="#lectures">Lectures</a>
+	<a href="#literature">Literature</a>
+	<a href="#contact">Contact</a>
+	<a href="#top">&uarr; Back to top</a>
+</nav>
+
+<div class="content">
+<section id="summary">
+<h2>Overview</h2>
+<p>
+Welcome to my course "Math 595: Representation-theoretic methods in quantum information theory"! 
+In this course we study symmetries in quantum information theory using tools from representation theory. Two fundamental symmetry groups in quantum information are the symmetric group, acting by permuting subsystems in a tensor product of identical Hilbert spaces, and
+the unitary group, acting diagonally on a tensor product space. Schur-Weyl duality establishes
+a close relationship between these two representations, giving rise to a useful decomposition
+of the representation space into irreducible representations. This structure result allows us to
+succinctly describe invariant objects and characterize optimal information-processing protocols
+in the presence of permutation and unitary symmetries.
+</p>
+<p>
+The first half of the course starts with a brief review of the basics of quantum information
+theory and representation theory. We then discuss the representation theory of the symmetric
+and unitary groups and how they relate to each other via Schur-Weyl duality. These findings
+can be applied to characterize symmetric quantum states such as Werner and isotropic states.
+In the second half of the course we use these representation-theoretic methods to characterize quantum information-processing tasks such as data compression, spectrum estimation,
+quantum state tomography, and quantum state merging. Depending on available time and
+interest, we will also discuss useful results such as de Finetti theorems and the decoupling
+theorem.
+</p>
+
+<p>Please see the <a href="#toc">Table of contents</a> below for a detailed list of topics that we will cover.
+</p>
+
+<h3>Lectures</h3>
+<p>Lectures will be given in person at the above time and place.</p>
+
+<h3>Grading policy</h3> 
+<p>There will be no mandatory homework assignments or written exams for this course. Grading will be based on class participation. I will provide exercises that we can discuss in office hours.</p>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>Required:</li>
+<ul>
+<li>Math 416 Abstract Linear Algebra (or equivalent)</li>
+<li>Math 417 Intro to Abstract Algebra (or equivalent)</li>
+</ul>
+<li>Useful, but not required:</li>
+<ul>
+<li>Math 506 Group Representation Theory</li>
+<li>Math 522 Lie Groups and Lie Algebras I</li>
+<li>Intro to Quantum Mechanics/Information <br/>(such as ECE 404, Phys 486/487, Phys 513)</li>
+</ul>
+</ul>
+
+<h3>Code of conduct</h3> 
+<p>
+I am dedicated to providing an inclusive and safe classroom experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion. I will not tolerate harassment and discriminating or disrespectful behavior between any classroom participants (including myself) in any form, whether in person or online. Violations of this code of conduct will be reported appropriately.
+(This code of conduct is based on a template provided by the <a target="_blank" href="https://geekfeminism.wikia.org/wiki/Conference_anti-harassment/Policy">Geek Feminism Wiki</a>.)
+</p>
+</section>
+
+<section id="toc">
+<h2>Table of contents</h2>
+
+<ul>
+<li>Basics of quantum information theory (review)</li>
+<li>Basics of representation theory (review)</li>
+<li>Representation theory of the symmetric and unitary groups (review)</li>
+<li>Schur-Weyl duality</li>
+<li>Werner states, isotropic states, covariant quantum channels</li>
+<li>Permutation invariance and de Finetti theorems</li>
+<li>Data compression and type theory</li>
+<li>Spectrum estimation and quantum state tomography</li>
+<li>Decoupling theorem and quantum state merging</li>
+</ul>
+</section>
+
+<section id="lectures">
+<h2>Lectures</h2>
+<p>Handwritten lecture notes will be made available here as we go along. Chapters roughly correspond to weeks.</p>
+<ul>
+<li>Chapter 1: <a target="_blank" href="Chapter 1 - Basics From Representation Theory 1.pdf">Basics from Representation Theory 1</a></li>
+<ul>
+<li>1.1 Representations</li>
+<li>1.2 Irreducible representations and decompositions</li>
+</ul>
+</li>
+
+<li>Chapter 2: <a target="_blank" href="Chapter 2 - Basics From Representation Theory 2.pdf">Basics from Representation Theory 2</a></li>
+<ul>
+<li>2.1 Tensor and dual representations, hom spaces</li>
+<li>2.2 Group algebra and characters</li>
+<li>2.3 From finite to compact groups</li>
+</ul>
+</li>
+
+<li>Chapter 3: <a target="_blank" href="Chapter 3 - Schur-Weyl Duality.pdf">Schur-Weyl Duality</a></li>
+<ul>
+<li>3.1 Representations of direct product groups</li>
+<li>3.2 Double commutant theorem</li>
+<li>3.3 Schur-Weyl duality</li>
+</ul>
+</li>
+
+<li>Chapter 4: <a target="_blank" href="Chapter 4 - Irreps Of The Symmetric And Unitary Groups.pdf">Irreps of the symmetric and unitary groups</a></li>
+<ul>
+<li>4.1 Minimal projections and irreducible representations</li>
+<li>4.2 Conjugacy classes of the symmetric group</li>
+<li>4.3 Constructing the irreps of S_n and U_d</li>
+</ul>
+
+<li>Chapter 5: <a target="_blank" href="Chapter 5 - Mathematics Of Finite-dimensional Quantum Information Theory.pdf">Mathematics Of Finite-dimensional Quantum Information Theory</a></li>
+<ul>
+<li>5.1 Quantum systems and quantum states</li>
+<li>5.2 Measurements</li>
+<li>5.3 Composite systems and entanglement</li>
+<li>5.4 Distance measures</li>
+</ul>
+
+<li>Chapter 6: <a target="_blank" href="Chapter 6 - Invariant States.pdf">Invariant States And De Finetti Theorems</a></li>
+<ul>
+<li>6.1 Werner states</li>
+<li>6.2 Isotropic states</li>
+</ul>
+
+<li>Chapter 7: <a target="_blank" href="Chapter 7 - The De Finetti Theorem.pdf">The De Finetti Theorem</a></li>
+<ul>
+<li>7.1 Extendibility of quantum states</li>
+<li>7.2 A De Finetti theorem for pure symmetric states</li>
+<li>7.3 Extension to permutation-invariant mixed states</li>
+</ul>
+
+<li>Chapter 8: <a target="_blank" href="Chapter 8 - Approximate Cloning.pdf">Approximate Cloning</a></li>
+<ul>
+<li>8.1 The No-Cloning theorem</li>
+<li>8.2 Approximate cloning machines</li>
+<li>8.3 Further results on approximate cloning</li>
+</ul>
+
+<li>Chapter 9: <a target="_blank" href="Chapter 9 - Spectrum Estimation.pdf">Spectrum estimation</a></li>
+<ul>
+<li>9.1 Problem setup</li>
+<li>9.2 Symmetries of spectrum estimation</li>
+<li>9.3 Weak Schur sampling</li>
+<li>9.4 Asymptotics of spectrum estimation</li>
+</ul>
+
+<li>Chapter 10: <a target="_blank" href="Chapter 10 - Quantum State Tomography.pdf">Quantum State Tomography</a></li>
+<ul>
+<li>10.1 Warm-up: Pure state estimation</li>
+<li>10.2 Symmetries of state tomography</li>
+<li>10.3 Error analysis of the tomography protocol</li>
+</ul>
+
+<li>Chapter 11: <a target="_blank" href="Chapter 11 - Universal Quantum Source Compression.pdf">Universal Quantum Source Compression</a></li>
+<ul>
+<li>11.1 Classical sources and entropy</li>
+<li>11.2 Compressing a classical source</li>
+<li>11.3 Strong typicality and universal compression</li>
+<li>11.4 Quantum source compression</li>
+<li>11.5 Universal compression based on Schur-Weyl duality</li>
+</ul>
+</ul>
+
+<p><strong>Exercises:</strong> <a href="math595_rtmqit_sheet1.pdf" target="_blank">Sheet 1</a> <a href="math595_rtmqit_sheet2.pdf" target="_blank">Sheet 2</a> <a href="math595_rtmqit_sheet3.pdf" target="_blank">Sheet 3</a> <a href="math595_rtmqit_sheet4.pdf" target="_blank">Sheet 4</a> <a href="math595_rtmqit_sheet5.pdf" target="_blank">Sheet 5</a> <a href="math595_rtmqit_sheet6.pdf" target="_blank">Sheet 6</a></p>
+</section>
+
+<section id="literature">
+
+<h2>Literature</h2> 
+<ul>
+<li>Judith M. Alcock-Zeilinger, <a href="https://www.math.uni-tuebingen.de/de/forschung/maphy/lehre/ss-2018/sun/dateien/birdtracks-sun-qcd-lecturenotes.pdf" target="_blank">The Special Unitary Group, Birdtracks, and Applications in QCD,</a> Lecture notes, 2018.</li>
+<li>Matthias Christandl, <a href="https://arxiv.org/abs/quant-ph/0604183" target="_blank">The structure of bipartite quantum states-insights from group theory and cryptography,</a> PhD thesis, University of Cambridge, 2006.</li>
+<li>Matthias Christandl, Graeme Mitchison, <a href="https://arxiv.org/abs/quant-ph/0409016" target="_blank">The Spectra of Density Operators and the Kronecker Coefficients of the Symmetric Group,</a> Communications in Mathematical Physics 261.3, pp.789-797 (2006).</li>
+<li>Imre Csiszár, János Körner, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99955067201505899" target="_blank">Information theory: coding theorems for discrete memoryless systems,</a> New York, New York: Academic Press, 1981.</li>
+<li>Jeongwan Haah et al., <a href="https://arxiv.org/abs/1508.01797" target="_blank">Sample-optimal tomography of quantum states,</a> IEEE Transactions on Information Theory 63.9, pp.5628-5641 (2017).</li>
+<li>Aram W. Harrow, <a href="https://arxiv.org/abs/1308.6595" target="_blank">The church of the symmetric subspace,</a> arXiv preprint, 2013.</li>
+<li>Masahito Hayashi, <a href="https://arxiv.org/abs/quant-ph/0202002" target="_blank">Exponents of quantum fixed-length pure state source coding,</a> Physical Review A 66, 032321 (2002).</li>
+<li>M. Keyl, R. Werner, <a href="https://arxiv.org/abs/quant-ph/0102027" target="_blank">https://arxiv.org/abs/quant-ph/0102027,</a> Physical Review A 64, 052311 (2001).</li>
+<li>Anthony W. Knapp, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99955117534205899" target="_blank">Representation Theory of Semisimple Groups: An Overview Based on Examples,</a> Princeton, NJ: Princeton University Press, 2016.</li>
+<li>Jean-Pierre Serre, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99954909345705899" target="_blank">Linear Representations of Finite Groups,</a> Graduate Texts in Mathematics, New York: Springer, 1977.</li>
+<li>Constantin Teleman, <a href="https://math.berkeley.edu/~teleman/math/RepThry.pdf" target="_blank">Representation Theory,</a> Lecture notes, 2005.</li>
+<li>Michael Walter, <a href="https://qi.ruhr-uni-bochum.de/qit18/qit18.pdf" target="_blank">Symmetry and Quantum Information,</a> Lecture notes, 2018.</li>
+<li>John Watrous, <a href="https://cs.uwaterloo.ca/~watrous/TQI/" target="_blank">The Theory of Quantum Information,</a> Cambridge: Cambridge University Press, 2018.</li>
+<li>Reinhard Werner, <a href="https://arxiv.org/abs/quant-ph/9804001" target="_blank">Optimal Cloning of Pure States,</a> Physical Review A 58, 1827 (1998).</li>
+<li>Mark M. Wilde, <a href="https://arxiv.org/abs/1106.1445" target="_blank">Quantum information theory,</a> 2nd edition, Cambridge: Cambridge University Press, 2016.</li>
+</ul>
+
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+<p>Email: <span style="font-weight: bold; letter-spacing: 1px;">&lt;mylastname&gt;@illinois.edu</span><br/>
+Homepage: <a href="http://felixleditzky.info" target="_blank">felixleditzky.info</a>
+</p>
+<p>Postal address:<br/>
+Office 39, Computing Applications Building<br/>
+605 E Springfield Ave<br/>
+Champaign, IL 61820<br/>
+USA</p>
+</section>
+</div>
+
+<div id="footer">
+<p>Created by Felix Leditzky. Last update: Dec 6, 2022.</p>
+</div>
+</body>
+
+</html>

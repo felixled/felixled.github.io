@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92804311-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92804311-1');
+</script>
+<meta charset="UTF-8" /><!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92804311-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92804311-1');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300|Roboto:300&display=swap" rel="stylesheet"/>
+<link href="../../flv41.css" rel="stylesheet" type="text/css" />
+<link href="teaching.css" rel="stylesheet" type="text/css" />
+<title>Math 595: Representation-theoretic methods in quantum information theory</title>
+</head>
+
+<body>
+<section id="top">
+<h1>Math 595: Representation-theoretic methods in quantum information theory (Fall 2025)</h1>
+<p style="font-size: 110%">
+<span style="font-weight:bold;">Instructor:</span> <a href="https://felixleditzky.info/" target="_blank">Felix Leditzky</a> (&lt;mylastname&gt;@illinois.edu)<br/>
+<span style="font-weight:bold;">Meeting times (Fall 2025):</span> Tue, Thu 12.30-1.50pm, 136 Davenport Hall.<br/>
+<span style="font-weight:bold;">Office hours:</span> By appointment.
+</p>
+<!--<p style="font-size: 110%">
+<strong>Announcements:</strong> 
+<ul>
+<li style="font-size: 110%">The recorded lecture for Thursday, November 3 is <a href="https://mediaspace.illinois.edu/media/t/1_5rzmuhh8" target="_blank">available here</a>.</li>
+<li style="font-size: 110%">There is no lecture on Tuesday, November 8 because of Election Day (please go vote if you can!). Lecture will resume on Thursday, November 10 in 147 AH as usual.</li>
+</ul>
+</p>-->
+</section>
+
+<nav id="navbar">
+	<a href="#summary">Overview</a>
+	<a href="#toc">Table of contents</a>
+	<a href="#lectures">Lectures</a>
+	<a href="#presentations">Presentations</a>
+	<a href="#literature">Literature</a>
+	<a href="#contact">Contact</a>
+	<a href="#top">&uarr; Back to top</a>
+</nav>
+<div id="navbar-small">
+	<a href="javascript:void(0);" onclick="myFunction();">[Menu]</a>
+	<a id="backtotop" href="#top" onclick="myFunctionBackToTop();">&uarr; Back to top</a>
+	<div id="dropdown-content" style="display: none;">
+	<a href="#summary" onclick="myFunction();">Overview</a>
+	<a href="#toc" onclick="myFunction();">Table of contents</a>
+	<a href="#lectures" onclick="myFunction();">Lectures</a>
+	<a href="#presentations" onclick="myFunction();">Presentations</a>
+	<a href="#literature" onclick="myFunction();">Literature</a>
+	<a href="#contact" onclick="myFunction();">Contact</a>
+	</div>
+</div>
+
+<div class="content">
+<section id="summary">
+<h2>Overview</h2>
+<p>
+Welcome to my course "Math 595: Representation-theoretic methods in quantum information theory"! 
+In this course we study symmetries in quantum information theory using tools from representation theory.
+Two fundamental symmetry groups in quantum information are the symmetric group, acting by permuting subsystems in a tensor product of identical Hilbert spaces, and the unitary group, acting diagonally on a tensor product space.
+Schur-Weyl duality establishes a close relationship between these two representations, giving rise to a useful decomposition of the representation space into irreducible representations.
+This structure result allows us to succinctly describe invariant objects and characterize optimal information-processing protocols in the presence of permutation and unitary symmetries.</p>
+<p>
+The first half of the course starts with a brief review of the basics of quantum information theory and representation theory.
+We then discuss the representation theory of the symmetric and unitary groups and how they relate to each other via Schur-Weyl duality.
+These findings can be applied to characterize symmetric quantum states such as Werner and isotropic states.	
+</p>
+<p>	
+In the second half of the course we apply these representation-theoretic methods to various topics and tasks in quantum information theory, including the quantum theory of types, de Finetti theorems, approximate cloning, spectrum estimation, and universal quantum source compression.
+</p>
+<p>
+This course also serves as a preparation for the course "Math 595: Quantum learning theory", to be taught in the 2026 Spring term by Jacob Beckey.
+</p>
+
+<p>Please see the <a href="#toc">Table of contents</a> below for a detailed list of topics that we will cover.
+</p>
+
+<h3>Lectures</h3>
+<p>Lectures will be given in person at the above time and place. We will use Campuswire as an online forum to discuss class content outside the lectures (please <a href="#contact">contact me</a> if you haven't been invited yet).</p>
+
+<h3>Grading policy</h3> 
+<p>There will be no mandatory homework assignments or written exams for this course. Grading will be based on attendance and student presentations at the end of the semester. I will provide exercises that we can discuss in class and in office hours.</p>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>Required:</li>
+<ul>
+<li>Math 416 Abstract Linear Algebra (or equivalent)</li>
+</ul>
+<li>Useful, but not required:</li>
+<ul>
+<li>Math 417 Intro to Abstract Algebra (or equivalent)</li>
+<li>Math 506 Group Representation Theory</li>
+<li>Math 522 Lie Groups and Lie Algebras I</li>
+<li>Intro to Quantum Mechanics/Information <br/>(such as ECE 404, Phys 486/487, Phys 513)</li>
+</ul>
+</ul>
+
+<h3>Code of conduct</h3> 
+<p>
+I am dedicated to providing an inclusive and safe classroom experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion. I will not tolerate harassment and discriminating or disrespectful behavior between any classroom participants (including myself) in any form, whether in person or online. Violations of this code of conduct will be reported appropriately.
+(This code of conduct is based on a template provided by the <a target="_blank" href="https://geekfeminism.wikia.org/wiki/Conference_anti-harassment/Policy">Geek Feminism Wiki</a>.)
+</p>
+</section>
+
+<section id="toc">
+<h2>Table of contents</h2>
+
+<ul>
+<li> Basics of quantum information theory (review) </li>
+<li> Basics of representation theory (review) </li>
+<li> Representation theory of the symmetric and unitary groups (review) </li>
+<li> Schur-Weyl duality </li>
+<li> Werner states, isotropic states, covariant quantum channels </li>
+<li> Permutation invariance and de Finetti theorems </li>
+<li> Quantum theory of types </li>
+<li> Spectrum estimation </li>
+<li> Approximate cloning </li>
+<li> Universal source compression </li>
+</ul>
+</section>
+
+<section id="lectures">
+<h2>Lectures</h2>
+<p>The course is based on <a href="math595-repth-qit.pdf" target="_blank">these lectures notes</a>, which I am updating as the course progresses. During the lectures I will use slides generated from these lecture notes, which can be downloaded below for each chapter of the class.</p>
+<ul>
+<li><a href="math595-repth-qit.pdf" target="_blank">Lecture notes</a> (updated on a running basis).</li>
+<li><strong>Chapter 2:</strong> Mathematical setup of quantum information theory <a href="ch2-mathematical-setup.pdf" target="_blank">[slides]</a></li>
+<ul>
+<li>Tue, Aug 26: Quantum systems, quantum states, measurements <a href="recap Aug 26.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Aug 28: Composite systems and correlations, PPT criterion <a href="recap Aug 28.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Sep 2: Schmidt decomposition, purifications <a href="recap Sep 2.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Sep 4: Distance measures <a href="recap Sep 4.pdf" target="_blank">[recap]</a></li>
+</ul>
+<li><strong>Chapter 3:</strong> Basics from representation theory <a href="ch3-representation-theory.pdf" target="_blank">[slides]</a></li>
+<ul>
+<li>Tue, Sep 9: Motivation: Entanglement in Werner states <a href="recap Sep 9.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Sep 11: Groups and representations: Definitions, examples, simple properties <a href="recap Sep 11.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Sep 16: Invariant subspaces, irreducible representations, decomposing representations <a href="recap Sep 16.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Sep 18: Invariant complements, Maschke's Theorem, Schur's Lemma, isotypical decomposition <a href="recap Sep 18.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Sep 23: Applications of Schur's Lemma</li>
+<li>Thu, Sep 25: Tensor and hom-space representations, group algebra, character theory <a href="recap Sep 25.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Sep 30: Compact groups <a href="recap Sep 30.pdf" target="_blank">[recap]</a></li>
+</ul>
+<li><strong>Chapter 4:</strong> Schur-Weyl duality <a href="ch4-schur-weyl-duality.pdf" target="_blank">[slides]</a></li>
+<ul>
+<li>Tue, Sep 30: Direct products of groups <a href="recap Sep 30.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Oct 2: Commutant of an algebra, duality theorem <a href="recap Oct 2.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Oct 7: Schur-Weyl duality <a href="recap Oct 7.pdf" target="_blank">[recap]</a></li>
+</ul>
+<li><strong>Chapter 5:</strong> Irreps of the symmetric and unitary groups <a href="ch5-irreps-symmetric-unitary-group.pdf" target="_blank">[slides]</a></li>
+<ul>
+<li>Tue, Oct 14: Conjugacy classes of the symmetric group, Young diagrams and Young tableaux <a href="recap Oct 14.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Oct 16: Young symmetrizers, constructing the irreps of the symmetric and unitary groups <a href="recap Oct 16.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Oct 21: Dimension bounds and quantum method of types <a href="recap Oct 21.pdf" target="_blank">[recap]</a></li>
+</ul>
+<li><strong>Chapter 6:</strong> Families of invariant states <a href="ch6-invariant-states.pdf" target="_blank">[slides]</a></li>
+<ul>
+<li>Tue, Oct 21: Bipartite Werner states <a href="recap Oct 21.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Oct 23: Multipartite Werner states, isotropic states <a href="recap Oct 23.pdf" target="_blank">[recap]</a></li>
+</ul>
+<li><strong>Chapter 7:</strong> De Finetti theorem <a href="ch7-de-finetti-theorem.pdf" target="_blank">[slides]</a></li>
+<ul>
+<li>Tue, Oct 28: k-extendibility, symmetric subspace <a href="recap Oct 28.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Oct 30: De Finetti theorem for pure symmetric states <a href="recap Oct 30.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Nov 4: De Finetti theorem for mixed permutation-invariant states <a href="recap Nov 4.pdf" target="_blank">[recap]</a></li>
+</ul>
+<li><strong>Chapter 8:</strong> Approximate cloning <a href="ch8-approximate-cloning.pdf" target="_blank">[slides]</a></li>
+<ul>
+<li>Tue, Nov 4: No-cloning theorem <a href="recap Nov 4.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Nov 6: Worst-case fidelity bound on approximate cloning, optimal cloning map <a href="recap Nov 6.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Nov 11: Average fidelity criterion, variants of approximate cloning <a href="recap Nov 11.pdf" target="_blank">[recap]</a></li>
+</ul>
+<li><strong>Chapter 9:</strong> Spectrum estimation <a href="ch9-spectrum-estimation.pdf" target="_blank">[slides]</a></li>
+<ul>
+<li>Tue, Nov 11: Problem setup, symmetries of spectrum estimation <a href="recap Nov 11.pdf" target="_blank">[recap]</a></li>
+<li>Thu, Nov 13: Majorization and application for spectrum estimation <a href="recap Nov 13.pdf" target="_blank">[recap]</a></li>
+<li>Tue, Nov 18: Weak Schur sampling and spectrum estimation, sample complexity <a href="recap Nov 18.pdf" target="_blank">[recap]</a></li>
+</ul>
+<li><strong>Bonus chapter</strong> (Thu, Nov 20): Sampling from the Haar measure <a href="chX-sampling-from-haar-measure.pdf" target="_blank">[slides]</a></li>
+<li><strong>Student presentations:</strong></li>
+<ul>
+<li>Tue, Dec 2: Weingarten calculus (Jingyuan Chen, Jordan Larson, Gabriel Taylor) <a href="weingarten.pdf" target="_blank">[slides]</a></li>
+<li>Tue, Dec 2: Post-selection technique and applications in QKD and channel coding (Anna Honeycutt, Max Gold, Sharjeel Ahmad) <a href="QKD_postselection.pdf" target="_blank">[slides]</a></li>
+<li>Thu, Dec 4: Sample Complexity of Separability Testing (Jacob Beckey, Qizhao Huang, Nishant Jain) <a href="separability.pdf" target="_blank">[slides]</a></li>
+<li>Thu, Dec 4: NPT bound entanglement and Werner states (Saul Baltasar, Qingyan Hu) <a href="NPT.pdf" target="_blank">[slides]</a></li>
+<li>Tue, Dec 9: Extendibility of Werner states (Jihong Cai, Jia Wang) <a href="#" target="_blank">[slides]</a></li>
+<li>Tue, Dec 9: Commutant of the Clifford group (Nikolay Sheshko, Dheeran Wiggins) <a href="clifford.pdf" target="_blank">[slides]</a></li>
+<li>Thu, Dec 11: Character theory, Schur polynomials and symmetric functions (Abhinav Angirekula, Yuan-Pon Chen, Michael Hu) <a href="characters.pdf" target="_blank">[slides]</a></li>
+<li>Thu, Dec 11: Consensus for quantum networks: symmetry from gossip interactions (Chen-Wei Chou, Sashwat Jaiswal, Xiaojuan Ma) <a href="consensus.pdf" target="_blank">[slides]</a></li>
+<li>Thu, Dec 11: Unitary designs (Mayank Bhatia, Theshani Nuradha, Shuen Wu) <a href="designs.pdf" target="_blank">[slides]</a></li>
+<li>Thu, Dec 11: Pseudorandomness from Subset States: Representation-Theoretic and Spectral Views (Lenny Liu, Tzu-Hsiang Huang, Yueying Wu) <a href="pseudorandom.pdf" target="_blank">[slides]</a></li>
+</ul>
+</ul>
+</section>
+
+<section id="presentations">
+<h2>Presentation topics</h2>
+<p>
+The class will conclude with student presentations, choosing from the following list of topics (with suggested literature below the topic).
+</p>
+<ul>
+<li>Character theory, Schur polynomials, symmetric functions</li>
+<ul>
+<li>Jean-Pierre Serre, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99954909345705899" target="_blank">Linear Representations of Finite Groups,</a> Graduate Texts in Mathematics, New York: Springer, 1977.</li>
+<li>Constantin Teleman, <a href="https://math.berkeley.edu/~teleman/math/RepThry.pdf" target="_blank">Representation Theory,</a> Lecture notes, 2005.</li>
+<li>Richard Stanley, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/q1ojeg/alma99895389712205899" target="_blank">Enumerative Combinatorics. Volume 2,</a>Cambridge: Cambridge University Press, 1999.</li>
+</ul>
+<li>Testing separability</li>
+<ul>
+<li>Gharibian, <a href="https://arxiv.org/abs/0810.4507" target="_blank">Strong NP-Hardness of the Quantum Separability Problem,</a> Quantum Information and Computation, Vol. 10, No. 3&4, pp. 343-360, 2010.</li>
+<li>Gutoski et al., <a href="https://arxiv.org/abs/1308.5788" target="_blank">Quantum interactive proofs and the complexity of separability testing,</a> Theory of Computing vol. 11, article 3, pages 59-103, March 2015.</li>
+</ul>
+<li>NPT bound entanglement and Werner states</li>
+<ul>
+<li>M. Horodecki and P. Horodecki, <a href="https://arxiv.org/abs/quant-ph/9708015" target="_blank">Reduction criterion of separability and limits for a class of protocols of entanglement distillation,</a> Physical Review A 59.6 (1999): 4206.</li>
+<li>P. Horodecki et al., <a href="https://arxiv.org/abs/2002.03233" target="_blank">Five open problems in quantum information,</a> arXiv preprint, 2020.</li>
+</ul>
+<li>Unitary designs</li>
+<ul>
+<li>Dankert et al., <a href="https://arxiv.org/abs/quant-ph/0606161" target="_blank">Exact and Approximate Unitary 2-Designs: Constructions and Applications,</a> Physical Review A 80, 012304 (2009).</li>
+<li>Gross et al., <a href="https://arxiv.org/abs/quant-ph/0611002" target="_blank">Evenly distributed unitaries: on the structure of unitary designs,</a> Journal of Mathematical Physics 48, 052104 (2007).</li>
+<li>Webb, <a href="https://arxiv.org/abs/1510.02769" target="_blank">The Clifford group forms a unitary 3-design,</a> Quantum Information and Computation 16, 1379-1400 (2016).</li>
+<li>Zhu, <a href="https://arxiv.org/abs/1510.02619" target="_blank">Multiqubit Clifford groups are unitary 3-designs,</a> Phys. Rev. A 96, 062336 (2017).</li>
+</ul>
+<li>Pseudorandomness and pseudoentanglement</li>
+<ul>
+<li>Aaronson et al., <a href="https://arxiv.org/abs/2211.00747" target="_blank">Quantum Pseudoentanglement,</a> 15th Innovations in Theoretical Computer Science Conference (ITCS 2024). Leibniz International Proceedings in Informatics (LIPIcs), Volume 287, pp. 2:1-2:21, 2024.</li>
+<li>Giurgica-Tiron and Bouland, <a href="https://arxiv.org/abs/2312.09206" target="_blank">Pseudorandomness from Subset States,</a> arXiv preprint, 2023.</li>
+<li>Jeronimo et al., <a href="https://arxiv.org/abs/2312.15285" target="_blank">Pseudorandom and Pseudoentangled States from Subset States,</a> arXiv preprint, 2023.</li>
+</ul>
+<li>Post-selection technique and applications in QKD and channel coding</li>
+<ul>
+<li>Christandl et al., <a href="https://arxiv.org/abs/0809.3019" target="_blank">Post-selection technique for quantum channels with applications to quantum cryptography,</a> Phys. Rev. Lett. 102, 020504 (2009).</li>
+<li>Berta et al., <a href="https://arxiv.org/abs/0912.3805" target="_blank">The Quantum Reverse Shannon Theorem based on One-Shot Information Theory,</a> Commun. Math. Phys. 306, 579 (2011).</li>
+</ul>
+<li>Weingarten calculus and free probability</li>
+<ul>
+<li>Collins et al., <a href="https://arxiv.org/abs/2109.14890" target="_blank">The Weingarten Calculus,</a> Notices of the American Mathematical Society (2022) 69, no. 5.</li>
+<li>Collins, <a href="https://arxiv.org/abs/math-ph/0205010" target="_blank">Moments and Cumulants of Polynomial random variables on unitary groups, the Itzykson-Zuber integral and free probability,</a> Int. Math. Res. Not., (17):953-982, 2003.</li>
+</ul>
+<li>More De Finetti theorems</li>
+<ul>
+<li>Christandl et al., <a href="https://arxiv.org/abs/quant-ph/0602130" target="_blank">One-and-a-half quantum de Finetti theorems,</a> Comm. Math. Phys., 273 (2), 473-498, (2007).</li>
+<li>Renner, <a href="https://arxiv.org/abs/quant-ph/0512258" target="_blank">Security of Quantum Key Distribution,</a> PhD thesis (ETH Zürich), 2005.</li>
+</ul>
+<li>Commutant of the Clifford group</li>
+<ul>
+<li>Gross et al., <a href="https://arxiv.org/abs/1712.08628" target="_blank">Schur-Weyl Duality for the Clifford Group with Applications: Property Testing, a Robust Hudson Theorem, and de Finetti Representations,</a> Communications in Mathematical Physics 385 (2021), 1325-1393.</li>
+<li>Bittel et al., <a href="https://arxiv.org/abs/2504.12263" target="_blank">A complete theory of the Clifford commutant,</a> arXiv preprint, 2025.</li>
+</ul>
+<li>Studying entanglement in tripartite systems using Schur-Weyl duality</li>
+<ul>
+<li>Denker et al., <a href="https://arxiv.org/abs/2506.15609" target="_blank">Chiral Symmetries and Multiparticle Entanglement,</a> arXiv preprint, 2025.</li>
+</ul>
+<li>Consensus for Quantum Networks: Symmetry From Gossip Interactions</li>
+<ul>
+<li>Mazzarella et al., <a href="https://arxiv.org/abs/1303.4077" target="_blank">Consensus for Quantum Networks: From Symmetry to Gossip Iterations,</a> IEEE Transactions on Automatic Control, 60(1), 158 - 172, 2015.</li>
+</ul>
+</ul>
+</section>
+
+<section id="literature">
+
+<h2>Literature</h2> 
+<ul>
+<li>Judith M. Alcock-Zeilinger, <a href="https://www.math.uni-tuebingen.de/de/forschung/maphy/lehre/ss-2018/sun/dateien/birdtracks-sun-qcd-lecturenotes.pdf" target="_blank">The Special Unitary Group, Birdtracks, and Applications in QCD,</a> Lecture notes, 2018.</li>
+<li>Matthias Christandl, <a href="https://arxiv.org/abs/quant-ph/0604183" target="_blank">The structure of bipartite quantum states-insights from group theory and cryptography,</a> PhD thesis, University of Cambridge, 2006.</li>
+<li>Matthias Christandl, Graeme Mitchison, <a href="https://arxiv.org/abs/quant-ph/0409016" target="_blank">The Spectra of Density Operators and the Kronecker Coefficients of the Symmetric Group,</a> Communications in Mathematical Physics 261.3, pp.789-797 (2006).</li>
+<li>Imre Csiszár, János Körner, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99955067201505899" target="_blank">Information theory: coding theorems for discrete memoryless systems,</a> New York, New York: Academic Press, 1981.</li>
+<li>Jeongwan Haah et al., <a href="https://arxiv.org/abs/1508.01797" target="_blank">Sample-optimal tomography of quantum states,</a> IEEE Transactions on Information Theory 63.9, pp.5628-5641 (2017).</li>
+<li>Aram W. Harrow, <a href="https://arxiv.org/abs/quant-ph/0512255" target="_blank">Applications of coherent classical communication and the Schur transform to quantum information theory,</a> PhD thesis, Massachusetts Institute of Technology, 2005.</li>
+<li>Aram W. Harrow, <a href="https://arxiv.org/abs/1308.6595" target="_blank">The church of the symmetric subspace,</a> arXiv preprint, 2013.</li>
+<li>Masahito Hayashi, <a href="https://arxiv.org/abs/quant-ph/0202002" target="_blank">Exponents of quantum fixed-length pure state source coding,</a> Physical Review A 66, 032321 (2002).</li>
+<li>M. Keyl, R. Werner, <a href="https://arxiv.org/abs/quant-ph/0102027" target="_blank">Estimating the spectrum of a density operator,</a> Physical Review A 64, 052311 (2001).</li>
+<li>Anthony W. Knapp, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99955117534205899" target="_blank">Representation Theory of Semisimple Groups: An Overview Based on Examples,</a> Princeton, NJ: Princeton University Press, 2016.</li>
+<li>Jean-Pierre Serre, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/gpjosq/alma99954909345705899" target="_blank">Linear Representations of Finite Groups,</a> Graduate Texts in Mathematics, New York: Springer, 1977.</li>
+<li>Richard Stanley, <a href="https://i-share-uiu.primo.exlibrisgroup.com/permalink/01CARLI_UIU/q1ojeg/alma99895389712205899" target="_blank">Enumerative Combinatorics. Volume 2,</a>Cambridge: Cambridge University Press, 1999.</li>
+<li>Constantin Teleman, <a href="https://math.berkeley.edu/~teleman/math/RepThry.pdf" target="_blank">Representation Theory,</a> Lecture notes, 2005.</li>
+<li>Michael Walter, <a href="https://qi.ruhr-uni-bochum.de/qit18/qit18.pdf" target="_blank">Symmetry and Quantum Information,</a> Lecture notes, 2018.</li>
+<li>John Watrous, <a href="https://cs.uwaterloo.ca/~watrous/TQI/" target="_blank">The Theory of Quantum Information,</a> Cambridge: Cambridge University Press, 2018.</li>
+<li>Reinhard Werner, <a href="https://arxiv.org/abs/quant-ph/9804001" target="_blank">Optimal Cloning of Pure States,</a> Physical Review A 58, 1827 (1998).</li>
+<li>Mark M. Wilde, <a href="https://arxiv.org/abs/1106.1445" target="_blank">Quantum information theory,</a> 2nd edition, Cambridge: Cambridge University Press, 2016.</li>
+</ul>
+
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+<p>Email: <span style="font-weight: bold; letter-spacing: 1px;">&lt;mylastname&gt;@illinois.edu</span><br/>
+Homepage: <a href="http://felixleditzky.info" target="_blank">felixleditzky.info</a>
+</p>
+<p>Postal address:<br/>
+Office 204B, Harker Hall<br/>
+1305 W Green St<br/>
+Urbana, IL 61801<br/>
+USA</p>
+</section>
+</div>
+
+<div id="footer">
+<p>Created by Felix Leditzky. Last update: Dec 19, 2025.</p>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("dropdown-content");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function myFunctionBackToTop() {
+  var x = document.getElementById("dropdown-content");
+  x.style.display = "none";
+}
+</script>
+</body>
+
+</html>
