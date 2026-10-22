@@ -22,7 +22,7 @@ profiles:
     content: jacob.md
     image_circular: false # crops the image to make it circular
   - align: right
-    image: theshani.md
+    image: theshani.jpg
     content: theshani.md
   - align: left
     image: sujeet.png
