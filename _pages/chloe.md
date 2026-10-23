@@ -7,3 +7,10 @@ Quantum information theory, quantum channels, entanglement theory
 
 **Contact:**
 [email](mailto:kim705@illinois.edu)
+
+<details>
+<summary>Recent papers</summary>
+<div class="publications">
+{% bibliography --file group --max 10 --group_by none --query @*[author ~= Kim]* %}
+</div>
+</details>

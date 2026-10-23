@@ -7,3 +7,10 @@ Quantum information theory, representation theory, entanglement theory
 
 **Contact:**
 [email](mailto:juntaiz2@illinois.edu)
+
+<details>
+<summary>Recent papers</summary>
+<div class="publications">
+{% bibliography --file group --max 10 --group_by none --query @*[author ~= Zhou]* %}
+</div>
+</details>
