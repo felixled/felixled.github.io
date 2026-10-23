@@ -39,4 +39,6 @@ profiles:
   - align: left
     image: stephen.jpg
     content: stephen.md
+  - align: left
+    content: alumni.md
 ---
