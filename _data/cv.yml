@@ -11,7 +11,7 @@ cv:
     - network: LinkedIn
       username: felix-leditzky-7b01a7133
   sections:
-    positions:
+    Positions:
       - company: Department of Mathematics, University of Illinois Urbana-Champaign
         position: Associate Professor
         location: Urbana, IL, USA
@@ -37,7 +37,7 @@ cv:
         start_date: 2016-11
         end_date: 2019-11
 
-    education:
+    Education:
       - institution: University of Cambridge (DPMMS)
         area: Mathematics
         degree: PhD
@@ -63,11 +63,11 @@ cv:
         highlights:
           - "Roughly equivalent to BSc + MSc. [Thesis](http://othes.univie.ac.at/19235/)"
 
-    grants:
+    Grants:
       - name: NSF CAREER Award
         summary: "[Symmetries in noisy multipartite quantum systems](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410)"
 
-    teaching:
+    Teaching:
       - name: Math 257 Linear Algebra with Computational Applications
         date: Spring 2024, 2025, 2026
         location: UIUC
@@ -87,13 +87,13 @@ cv:
         date: Spring 2021
         location: UIUC
 
-    editorial_service:
+    Editorial Service:
       - name: "[Quantum](https://quantum-journal.org/)"
         summary: Member of the editorial board (quantum information theory, quantum Shannon theory, mathematical methods)
       - name: "[Illinois Journal of Mathematics](https://ijm.math.illinois.edu/)"
         summary: Member of the editorial board
 
-    conference_organization:
+    Conference Organization:
       - name: "[Additivity Problems in Quantum and Classical Information Theory (26w5621)](https://www.birs.ca/events/2026/5-day-workshops/26w5621)"
         date: Jul 2026
         location: Banff International Research Station, Canada
