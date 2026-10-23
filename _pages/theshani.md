@@ -11,6 +11,6 @@ Classical and Quantum Information Theory, Privacy, Statistical Learning
 <details>
 <summary>Recent papers</summary>
 <div class="publications">
-{% bibliography --file group --max 10 --group_by none --query @*[author ~= Nuradha]* %}
+{% bibliography --template bib_compact --file group --max 10 --group_by none --query @*[author ~= Nuradha]* %}
 </div>
 </details>

@@ -11,6 +11,6 @@ Variational quantum optimization, teleportation protocols
 <details>
 <summary>Recent papers</summary>
 <div class="publications">
-{% bibliography --file group --max 10 --group_by none --query @*[author ~= Bhatia]* %}
+{% bibliography --template bib_compact --file group --max 10 --group_by none --query @*[author ~= Bhatia]* %}
 </div>
 </details>
