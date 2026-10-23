@@ -4,7 +4,7 @@ title: Quantum channels
 description: This course covers quantum channels and their mathematical and information-theoretic properties, quantum entropies, the data processing inequality, and quantum Markov chains.
 instructor: Felix Leditzky
 year: 2023
-term: Spring
+term: Spring 2023
 course_id: quantum_channels
 ---
 
