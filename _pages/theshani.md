@@ -1,10 +1,9 @@
 ### Theshani Nuradha
 
-**J.L. Doob Research Assistant Professor**, Department of Mathematics
+<span style="font-size: 150%;">**J.L. Doob Research Assistant Professor**, Department of Mathematics</span>
 
 **Research interests:**
 Classical and Quantum Information Theory, Privacy, Statistical Learning
-
 **Contact:**
 [email](mailto:nuradha@illinois.edu) | [homepage](https://sites.google.com/view/theshani-nuradha/)
 
