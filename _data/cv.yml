@@ -1,8 +1,9 @@
 cv:
   name: Felix Leditzky
-  location: Urbana, IL, USA
-  # email: leditzky@illinois.edu   # left out on purpose; uncomment if you want it shown
-  website: https://www.felixleditzky.info
+  label: Associate Professor of Mathematics
+  location: Urbana, IL
+  summary: Associate Professor in the Department of Mathematics at the University of Illinois Urbana-Champaign, working on mathematical and information-theoretic aspects of quantum information theory.
+
   social_networks:
     - network: ORCID
       username: 0000-0002-1073-9795
@@ -10,20 +11,23 @@ cv:
       username: u6hX7V8AAAAJ
     - network: LinkedIn
       username: felix-leditzky-7b01a7133
+
   sections:
-    Positions:
+    Experience:
       - company: Department of Mathematics, University of Illinois Urbana-Champaign
         position: Associate Professor
-        location: Urbana, IL, USA
+        location: Urbana, IL
         start_date: 2026-08
         end_date: present
         highlights:
           - Member of the Illinois Quantum Information Science and Technology Center (IQUIST)
+
       - company: Department of Mathematics, University of Illinois Urbana-Champaign
         position: Assistant Professor
-        location: Urbana, IL, USA
+        location: Urbana, IL
         start_date: 2021-01
         end_date: 2026-08
+
       - company: Institute for Quantum Computing, University of Waterloo
         position: Postdoctoral Fellow
         location: Waterloo, ON, Canada
@@ -31,94 +35,42 @@ cv:
         end_date: 2020-12
         highlights:
           - Joint appointment with Perimeter Institute for Theoretical Physics
+
       - company: JILA, University of Colorado Boulder
         position: Postdoctoral Research Associate
-        location: Boulder, CO, USA
+        location: Boulder, CO
         start_date: 2016-11
         end_date: 2019-11
 
     Education:
       - institution: University of Cambridge (DPMMS)
-        area: Mathematics
-        degree: PhD
         location: Cambridge, UK
+        url: https://arxiv.org/abs/1611.08802
+        area: Mathematics
+        studyType: PhD
         start_date: 2013-10
         end_date: 2016-10
         highlights:
-          - "Thesis: [Relative entropies and their use in quantum information theory](https://arxiv.org/abs/1611.08802)"
+          - "Thesis: Relative entropies and their use in quantum information theory"
+
       - institution: University of Vienna
-        area: Physics
-        degree: Diploma
         location: Vienna, Austria
+        url: http://othes.univie.ac.at/26831/
+        area: Physics
+        studyType: Diploma (roughly equivalent to BSc + MSc)
         start_date: 2006-10
         end_date: 2013-04
-        highlights:
-          - "Roughly equivalent to BSc + MSc. [Thesis](http://othes.univie.ac.at/26831/)"
+
       - institution: University of Vienna
-        area: Mathematics
-        degree: Diploma
         location: Vienna, Austria
+        url: http://othes.univie.ac.at/19235/
+        area: Mathematics
+        studyType: Diploma (roughly equivalent to BSc + MSc)
         start_date: 2006-10
         end_date: 2012-02
-        highlights:
-          - "Roughly equivalent to BSc + MSc. [Thesis](http://othes.univie.ac.at/19235/)"
 
-    Grants:
-      - name: NSF CAREER Award
-        summary: "[Symmetries in noisy multipartite quantum systems](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410)"
-
-    Teaching:
-      - name: Math 257 Linear Algebra with Computational Applications
-        date: Spring 2024, 2025, 2026
-        location: UIUC
-      - name: Math 595 Representation-theoretic methods in quantum information theory
-        date: Fall 2022, Fall 2025
-        location: UIUC
-      - name: Math 595 Quantum channels
-        date: Spring 2023
-        location: UIUC
-      - name: Math 416 Abstract Linear Algebra
-        date: Fall 2021
-        location: UIUC
-      - name: "Math 595 Quantum channels I: Representations and properties"
-        date: Spring 2021
-        location: UIUC
-      - name: "Math 595 Quantum channels II: Data-processing, recovery channels, and quantum Markov chains"
-        date: Spring 2021
-        location: UIUC
-
-    Editorial Service:
-      - name: "[Quantum](https://quantum-journal.org/)"
-        summary: Member of the editorial board (quantum information theory, quantum Shannon theory, mathematical methods)
-      - name: "[Illinois Journal of Mathematics](https://ijm.math.illinois.edu/)"
-        summary: Member of the editorial board
-
-    Conference Organization:
-      - name: "[Additivity Problems in Quantum and Classical Information Theory (26w5621)](https://www.birs.ca/events/2026/5-day-workshops/26w5621)"
-        date: Jul 2026
-        location: Banff International Research Station, Canada
-        summary: With Nilanjana Datta, Debbie Leung, and Graeme Smith
-      - name: "[Bridging Quantum Information and Mathematical Physics](https://www.felixleditzky.info/bqm/)"
-        date: Aug 2024
-        location: University of Cambridge, UK
-        summary: With Angela Capel, Nilanjana Datta, and Mark M. Wilde
-      - name: "[Beyond IID in Information Theory 12](https://beyondiid2024.iquist.illinois.edu/)"
-        date: Jul–Aug 2024
-        location: University of Illinois Urbana-Champaign
-        summary: With Roy Araiza, Eric Chitambar, Marius Junge, and Amanda Young
-      - name: "[QLA Meets QIT II](https://sites.google.com/view/qlameetsqitii/)"
-        date: Nov 2022
-        location: Illini Center, Chicago, IL
-        summary: With Roy Araiza, Marius Junge, and Thomas Sinclair
-      - name: "[TQC 2022](https://tqc2022-conference.iquist.illinois.edu/)"
-        date: Jul 2022
-        location: University of Illinois Urbana-Champaign
-        summary: With Eric Chitambar, Emily Edwards, Kelly C. Foster, and Kim Gudeman
-      - name: "[QIP 2019](http://jila.colorado.edu/qip2019/)"
-        date: Jan 2019
-        location: University of Colorado Boulder
-        summary: With Graeme Smith
-      - name: "[Rocky Mountain Summit on Quantum Information](http://jila.colorado.edu/rmsqi/)"
-        date: Jun 2018
-        location: JILA, University of Colorado Boulder
-        summary: With Mark M. Wilde and Graeme Smith
+    Awards:
+      - title: NSF CAREER Award
+        awarder: National Science Foundation
+        url: https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410
+        summary: "Symmetries in noisy multipartite quantum systems"
