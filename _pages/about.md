@@ -17,7 +17,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
+  enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -33,6 +33,6 @@ I'm also a member of the [Illinois Quantum Information Science and Technology Ce
 I am currently supported by an NSF CAREER grant to carry out research on [symmetries in noisy multipartite quantum systems](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410).
 
 My [research]({{ '/publications/' | relative_url }}) focuses on mathematical and information-theoretic aspects of quantum information theory.
-For more information you can explore this website, look at my [short CV]({{ '/cv/' | relative_url }}) or [full academic CV]({{ '/files/cv.pdf' | relative_url }}), and **visit my [research group website](https://leditzkygroup.web.illinois.edu/)!**
+For more information you can explore this website, look at my [short CV]({{ '/cv/' | relative_url }}) or [full academic CV]({{ '/files/cv.pdf' | relative_url }}), and browse my [research group]({{ '/people/' | relative_url }})!
 
 Contact me at **&lt;lastname&gt;@illinois.edu**. My preferred pronouns are he/him. You can send me encrypted email using my public PGP key [D9FC951B]({{ '/files/felixleditzky.gpg' | relative_url }}).

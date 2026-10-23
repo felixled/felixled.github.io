@@ -9,8 +9,8 @@ Quantum information theory, entanglement theory, unitary designs
 [email](mailto:vairogs2@illinois.edu)
 
 <details>
-<summary>Papers</summary>
+<summary>Recent papers</summary>
 <div class="publications">
-{% bibliography --group_by none --query @*[author ~= Vairogs]* %}
+{% bibliography --file group --max 10 --group_by none --query @*[author ~= Vairogs]* %}
 </div>
 </details>

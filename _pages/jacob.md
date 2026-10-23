@@ -7,3 +7,10 @@ Quantum information theory, entanglement theory, learning theory
 
 **Contact:**
 [email](mailto:jbeckey@illinois.edu) | [homepage](https://www.jacobbeckey.com/)
+
+<details>
+<summary>Recent papers</summary>
+<div class="publications">
+{% bibliography --file group --max 10 --group_by none --query @*[author ~= Beckey]* %}
+</div>
+</details>
