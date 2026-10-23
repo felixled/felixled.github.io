@@ -74,3 +74,45 @@ cv:
         awarder: National Science Foundation
         url: https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410
         summary: "Symmetries in noisy multipartite quantum systems"
+
+    Teaching:
+      - label: Spring 2026
+        details: Math 257 Linear Algebra with Computational Applications
+      - label: Fall 2025
+        details: "Math 595 Representation-theoretic methods in quantum information theory ([course website](https://www.felixleditzky.info/teaching/FT25/math595_reptheory.html))"
+      - label: Spring 2025
+        details: Math 257 Linear Algebra with Computational Applications
+      - label: Spring 2024
+        details: Math 257 Linear Algebra with Computational Applications
+      - label: Spring 2023
+        details: "Math 595 Quantum channels ([course website](https://www.felixleditzky.info/teaching/ST23/math595qc.html))"
+      - label: Fall 2022
+        details: "Math 595 Representation-theoretic methods in quantum information theory ([course website](https://www.felixleditzky.info/teaching/FT22/math595_reptheory.html))"
+      - label: Fall 2021
+        details: "Math 416 Abstract Linear Algebra ([course website](https://www.felixleditzky.info/teaching/FT21/MATH416_linear_algebra.html))"
+      - label: Spring 2021
+        details: "Math 595 Quantum channels I: Representations and properties ([course website](https://www.felixleditzky.info/teaching/MATH595_quantum_channelsI.html))"
+      - label: Spring 2021
+        details: "Math 595 Quantum channels II: Data-processing, recovery channels, and quantum Markov chains ([course website](https://www.felixleditzky.info/teaching/MATH595_quantum_channelsII.html))"
+ 
+    Service:
+      - label: Editorial board
+        details: "[Quantum](https://quantum-journal.org/), the open journal for quantum science: quantum information theory, quantum Shannon theory, and mathematical methods"
+      - label: Editorial board
+        details: "[Illinois Journal of Mathematics](https://ijm.math.illinois.edu/)"
+ 
+    Conference Organization:
+      - label: Jul 2026
+        details: "[Additivity Problems in Quantum and Classical Information Theory (26w5621)](https://www.birs.ca/events/2026/5-day-workshops/26w5621), Banff International Research Station, Canada. With Nilanjana Datta, Debbie Leung, and Graeme Smith."
+      - label: Aug 2024
+        details: "[Bridging Quantum Information and Mathematical Physics](https://www.felixleditzky.info/bqm/), University of Cambridge, UK. With Angela Capel, Nilanjana Datta, and Mark M. Wilde."
+      - label: Jul–Aug 2024
+        details: "[Beyond IID in Information Theory 12](https://beyondiid2024.iquist.illinois.edu/), University of Illinois Urbana-Champaign. With Roy Araiza, Eric Chitambar, Marius Junge, and Amanda Young."
+      - label: Nov 2022
+        details: "[QLA Meets QIT II](https://sites.google.com/view/qlameetsqitii/), Illini Center, Chicago, IL. With Roy Araiza, Marius Junge, and Thomas Sinclair."
+      - label: Jul 2022
+        details: "[TQC 2022](https://tqc2022-conference.iquist.illinois.edu/), University of Illinois Urbana-Champaign. With Eric Chitambar, Emily Edwards, Kelly C. Foster, and Kim Gudeman."
+      - label: Jan 2019
+        details: "[QIP 2019](http://jila.colorado.edu/qip2019/), University of Colorado Boulder. With Graeme Smith."
+      - label: Jun 2018
+        details: "[Rocky Mountain Summit on Quantum Information](http://jila.colorado.edu/rmsqi/), JILA, University of Colorado Boulder. With Mark M. Wilde and Graeme Smith."
