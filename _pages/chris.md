@@ -11,6 +11,6 @@ Quantum information theory, entanglement theory, unitary designs
 <details>
 <summary>Recent papers</summary>
 <div class="publications">
-{% bibliography --file group --max 10 --group_by none --query @*[author ~= Vairogs]* %}
+{% bibliography --template bib_compact --file group --max 10 --group_by none --query @*[author ~= Vairogs]* %}
 </div>
 </details>

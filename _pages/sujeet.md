@@ -11,6 +11,6 @@ Quantum information theory, quantum channels, representation theory
 <details>
 <summary>Recent papers</summary>
 <div class="publications">
-{% bibliography --file group --max 10 --group_by none --query @*[author ~= Bhalerao]* %}
+{% bibliography --template bib_compact --file group --max 10 --group_by none --query @*[author ~= Bhalerao]* %}
 </div>
 </details>

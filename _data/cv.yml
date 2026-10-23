@@ -1,189 +1,124 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
-
+  name: Felix Leditzky
+  location: Urbana, IL, USA
+  # email: leditzky@illinois.edu   # left out on purpose; uncomment if you want it shown
+  website: https://www.felixleditzky.info
   social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
+    - network: ORCID
+      username: 0000-0002-1073-9795
+    - network: Google Scholar
+      username: u6hX7V8AAAAJ
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
-
+      username: felix-leditzky-7b01a7133
   sections:
-    Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
+    positions:
+      - company: Department of Mathematics, University of Illinois Urbana-Champaign
+        position: Associate Professor
+        location: Urbana, IL, USA
+        start_date: 2026-08
+        end_date: present
+        highlights:
+          - Member of the Illinois Quantum Information Science and Technology Center (IQUIST)
+      - company: Department of Mathematics, University of Illinois Urbana-Champaign
+        position: Assistant Professor
+        location: Urbana, IL, USA
+        start_date: 2021-01
+        end_date: 2026-08
+      - company: Institute for Quantum Computing, University of Waterloo
+        position: Postdoctoral Fellow
+        location: Waterloo, ON, Canada
+        start_date: 2019-12
+        end_date: 2020-12
+        highlights:
+          - Joint appointment with Perimeter Institute for Theoretical Physics
+      - company: JILA, University of Colorado Boulder
+        position: Postdoctoral Research Associate
+        location: Boulder, CO, USA
+        start_date: 2016-11
+        end_date: 2019-11
+
+    education:
+      - institution: University of Cambridge (DPMMS)
+        area: Mathematics
+        degree: PhD
+        location: Cambridge, UK
+        start_date: 2013-10
+        end_date: 2016-10
+        highlights:
+          - "Thesis: [Relative entropies and their use in quantum information theory](https://arxiv.org/abs/1611.08802)"
+      - institution: University of Vienna
         area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+        degree: Diploma
+        location: Vienna, Austria
+        start_date: 2006-10
+        end_date: 2013-04
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+          - "Roughly equivalent to BSc + MSc. [Thesis](http://othes.univie.ac.at/26831/)"
+      - institution: University of Vienna
+        area: Mathematics
+        degree: Diploma
+        location: Vienna, Austria
+        start_date: 2006-10
+        end_date: 2012-02
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Roughly equivalent to BSc + MSc. [Thesis](http://othes.univie.ac.at/19235/)"
 
-    Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
-        highlights:
-          - Relativity
-          - Description 2.
+    grants:
+      - name: NSF CAREER Award
+        summary: "[Symmetries in noisy multipartite quantum systems](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410)"
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
-        highlights:
-          - Description 1.
-          - Description 2.
+    teaching:
+      - name: Math 257 Linear Algebra with Computational Applications
+        date: Spring 2024, 2025, 2026
+        location: UIUC
+      - name: Math 595 Representation-theoretic methods in quantum information theory
+        date: Fall 2022, Fall 2025
+        location: UIUC
+      - name: Math 595 Quantum channels
+        date: Spring 2023
+        location: UIUC
+      - name: Math 416 Abstract Linear Algebra
+        date: Fall 2021
+        location: UIUC
+      - name: "Math 595 Quantum channels I: Representations and properties"
+        date: Spring 2021
+        location: UIUC
+      - name: "Math 595 Quantum channels II: Data-processing, recovery channels, and quantum Markov chains"
+        date: Spring 2021
+        location: UIUC
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
+    editorial_service:
+      - name: "[Quantum](https://quantum-journal.org/)"
+        summary: Member of the editorial board (quantum information theory, quantum Shannon theory, mathematical methods)
+      - name: "[Illinois Journal of Mathematics](https://ijm.math.illinois.edu/)"
+        summary: Member of the editorial board
 
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
-
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+    conference_organization:
+      - name: "[Additivity Problems in Quantum and Classical Information Theory (26w5621)](https://www.birs.ca/events/2026/5-day-workshops/26w5621)"
+        date: Jul 2026
+        location: Banff International Research Station, Canada
+        summary: With Nilanjana Datta, Debbie Leung, and Graeme Smith
+      - name: "[Bridging Quantum Information and Mathematical Physics](https://www.felixleditzky.info/bqm/)"
+        date: Aug 2024
+        location: University of Cambridge, UK
+        summary: With Angela Capel, Nilanjana Datta, and Mark M. Wilde
+      - name: "[Beyond IID in Information Theory 12](https://beyondiid2024.iquist.illinois.edu/)"
+        date: Jul–Aug 2024
+        location: University of Illinois Urbana-Champaign
+        summary: With Roy Araiza, Eric Chitambar, Marius Junge, and Amanda Young
+      - name: "[QLA Meets QIT II](https://sites.google.com/view/qlameetsqitii/)"
+        date: Nov 2022
+        location: Illini Center, Chicago, IL
+        summary: With Roy Araiza, Marius Junge, and Thomas Sinclair
+      - name: "[TQC 2022](https://tqc2022-conference.iquist.illinois.edu/)"
+        date: Jul 2022
+        location: University of Illinois Urbana-Champaign
+        summary: With Eric Chitambar, Emily Edwards, Kelly C. Foster, and Kim Gudeman
+      - name: "[QIP 2019](http://jila.colorado.edu/qip2019/)"
+        date: Jan 2019
+        location: University of Colorado Boulder
+        summary: With Graeme Smith
+      - name: "[Rocky Mountain Summit on Quantum Information](http://jila.colorado.edu/rmsqi/)"
+        date: Jun 2018
+        location: JILA, University of Colorado Boulder
+        summary: With Mark M. Wilde and Graeme Smith
