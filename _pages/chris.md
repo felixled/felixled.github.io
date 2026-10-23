@@ -1,12 +1,9 @@
 ### Christopher Vairogs
 
-**Graduate student**, Department of Physics
+**Graduate student** (Department of Physics)
 
-**Research interests:**
-Quantum information theory, entanglement theory, unitary designs
-
-**Contact:**
-[email](mailto:vairogs2@illinois.edu)
+**Research interests:** Quantum information theory, entanglement theory, unitary designs\
+**Contact:** [email](mailto:vairogs2@illinois.edu)
 
 <details>
 <summary>Recent papers</summary>
