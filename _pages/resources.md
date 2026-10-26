@@ -20,3 +20,10 @@ nav_order: 5
 ### Literature review
 - [Lists of references to topics in mathematics and quantum information science]({{ '/selected_references/' | relative_url }}) close to my own research. These lists are mainly intended for students who are either interested in working with me, or just want to learn more about these topics for their own research.
 - [List of some essential papers in quantum information theory]({{ '/essential_papers/' | relative_url }}), compiled from a survey among colleagues on social media in circa 2023.
+
+<script>
+  document.querySelectorAll('a[href$=".pdf" i]').forEach(function (a) {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+</script>
