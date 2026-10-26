@@ -3,8 +3,8 @@ layout: course
 title: "Representation-theoretic methods in quantum information theory"
 description: In this course we study symmetries in quantum information theory using tools from representation theory.
 instructor: Felix Leditzky
-year: 2025
-term: Fall 2025
+year: 2022
+term: Fall 2022
 course_id: rep_th_qit
 ---
 
