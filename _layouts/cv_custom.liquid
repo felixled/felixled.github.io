@@ -41,9 +41,9 @@ layout: default
   <article>
     <div class="cv">
     <style>
-	.listing-stations ul,
-	.listing-stations li {list-style: none;}
-	.listing-stations ul ul {padding-left: 0;}
+	.listing-stations > ul,
+	.listing-stations > ul > li {list-style: none;}
+	.listing-stations > ul {padding-left: 0;}
     </style>
       {% comment %} Determine which CV format to render {% endcomment %}
       {% assign render_rendercv = false %}
