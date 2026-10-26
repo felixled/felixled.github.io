@@ -8,4 +8,4 @@ term: Spring 2021
 course_id: quantum_channels_II_ST_2021
 ---
 
-Please see the most recent offering of this course in the [2023 Spring term]({{ '/teachings/quantum_channels' | relative_url }}).
+Please see the most recent offering of this course in the [2023 Spring term]({{ '/teachings/quantum-channels-ST-2023' | relative_url }}).
