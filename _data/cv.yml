@@ -26,12 +26,10 @@ cv:
         start_date: 2021-01
         end_date: 2026-08
 
-      - company: Institute for Quantum Computing, University of Waterloo
+      - company: "Institute for Quantum Computing, University of Waterloo & Perimeter Institute for Theoretical Physics"
         position: Postdoctoral Fellow
         start_date: 2019-12
         end_date: 2020-12
-        highlights:
-          - Joint appointment with Perimeter Institute for Theoretical Physics
 
       - company: JILA, University of Colorado Boulder
         position: Postdoctoral Research Associate
