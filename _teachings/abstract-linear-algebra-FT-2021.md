@@ -6,5 +6,7 @@ instructor: Felix Leditzky
 year: 2023
 term: Spring 2023
 course_id: abstract_linear_algebra
-redirect_to: https://felixleditzky.info/teaching/FT21/MATH416_linear_algebra.html
+# redirect_to: https://felixleditzky.info/teaching/FT21/MATH416_linear_algebra.html
 ---
+
+Please see the [course website](https://felixleditzky.info/teaching/FT21/MATH416_linear_algebra.html).
