@@ -44,7 +44,7 @@ cv:
         start_date: 2013-10
         end_date: 2016-10
         highlights:
-          - "Thesis: Relative entropies and their use in quantum information theory"
+          - "Thesis: [Relative entropies and their use in quantum information theory](https://arxiv.org/abs/1611.08802)"
 
       - institution: University of Vienna
         url: http://othes.univie.ac.at/26831/
@@ -69,19 +69,19 @@ cv:
       - title: NSF CAREER Award
         awarder: National Science Foundation
         url: https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410
-        summary: "Symmetries in noisy multipartite quantum systems"
+        summary: "Project title: Symmetries in noisy multipartite quantum systems"
 
     Teaching:
       - label: Spring 2026
         details: Math 257 Linear Algebra with Computational Applications
       - label: Fall 2025
-        details: "Math 595 Representation-theoretic methods in quantum information theory ([course website](https://www.felixleditzky.info/teaching/FT25/math595_reptheory.html))"
+        details: "[Math 595 Representation-theoretic methods in quantum information theory](/teachings/rep-th-in-qit-FT-2025)"
       - label: Spring 2025
         details: Math 257 Linear Algebra with Computational Applications
       - label: Spring 2024
         details: Math 257 Linear Algebra with Computational Applications
       - label: Spring 2023
-        details: "Math 595 Quantum channels ([course website](https://www.felixleditzky.info/teaching/ST23/math595qc.html))"
+        details: "[Math 595 Quantum channels](/teachings/quantum-channels-ST-2023)"
       - label: Fall 2022
         details: "Math 595 Representation-theoretic methods in quantum information theory ([course website](https://www.felixleditzky.info/teaching/FT22/math595_reptheory.html))"
       - label: Fall 2021
