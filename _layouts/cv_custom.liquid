@@ -160,8 +160,10 @@ layout: default
             <h3 class="card-title font-weight-medium">{{ section_title }}</h3>
             <div>
               {% if section_title == 'Education' %}
-                {% assign entries = section_entries | al_cv_sort_by_date %}
+              <div class="listing-stations">  
+	        {% assign entries = section_entries | al_cv_sort_by_date %}
                 {% include cv/education.liquid %}
+	      </div>
               {% elsif section_title == 'Awards' or section_title == 'Honors and Awards' %}
                 {% assign entries = section_entries %}
                 {% include cv/awards.liquid %}
