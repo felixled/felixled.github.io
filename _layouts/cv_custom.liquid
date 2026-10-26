@@ -40,6 +40,11 @@ layout: default
 
   <article>
     <div class="cv">
+    <style>
+	.listing-stations ul,
+	.listing-stations li {list-style: none;}
+	.listing-stations ul ul {padding-left: 0;}
+    </style>
       {% comment %} Determine which CV format to render {% endcomment %}
       {% assign render_rendercv = false %}
       {% assign render_jsonresume = false %}
@@ -133,7 +138,7 @@ layout: default
           <a class="anchor" id="experience"></a>
           <div class="card mt-3 p-3">
             <h3 class="card-title font-weight-medium">Experience</h3>
-            <div>
+            <div class="listing-stations">
               {% assign entries = combined_experience %}
               {% include cv/experience.liquid %}
             </div>
