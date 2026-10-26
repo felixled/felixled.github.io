@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Associate Professor, Department of Mathematics, University of Illinois Urbana-Champaign. Quantum Information Theorist.
+subtitle: Associate Professor in the Department of Mathematics at University of Illinois Urbana-Champaign. Quantum Information Theorist.
 
 profile:
   align: right
