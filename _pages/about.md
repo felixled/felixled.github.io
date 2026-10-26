@@ -35,4 +35,8 @@ I am currently supported by an NSF CAREER grant to carry out research on [symmet
 My [research]({{ '/publications/' | relative_url }}) focuses on mathematical and information-theoretic aspects of quantum information theory.
 For more information you can explore this website, look at my [short CV]({{ '/cv/' | relative_url }}) or [full academic CV]({{ '/files/cv.pdf' | relative_url }}), and browse my [research group]({{ '/people/' | relative_url }})!
 
+### About myself
+
+I was born in [Vienna](https://www.youtube.com/watch?v=JfKKjD0GSZo), [Austria](https://www.youtube.com/watch?v=P9Pi2-7llFk). In my spare time I like to play the [guitar](https://www.youtube.com/watch?v=_PVjcIO4MT4), [read](https://www.goodreads.com/review/list/63545225-felix-leditzky), [music](https://www.youtube.com/watch?v=bAWEG0AhA_M), play and watch (European)[football](https://www.youtube.com/watch?v=fD61Nilh7LE) and also [most other sports](https://www.youtube.com/watch?v=B9NO24hbe8Q), get better at [cooking](https://www.youtube.com/watch?v=P4AbBzMapdk), and travel. Actually, I'm interested in pretty much [everything](https://en.wikipedia.org/wiki/Special:Random).
+
 Contact me at **&lt;lastname&gt;@illinois.edu**. My preferred pronouns are he/him. You can send me encrypted email using my public PGP key [D9FC951B]({{ '/files/felixleditzky.gpg' | relative_url }}).
