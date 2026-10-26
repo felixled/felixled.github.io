@@ -47,7 +47,7 @@ Quantum systems and quantum states, Measurements, Composite systems and entangle
 
 ## Course material
 
-[Lecture notes](files/Felix Leditzky - Math 595 Quantum channels.pdf)
+[Lecture notes](/files/Felix Leditzky - Math 595 Quantum channels.pdf)
 
 #### Literature
 
@@ -63,3 +63,10 @@ Quantum systems and quantum states, Measurements, Composite systems and entangle
 <li>Mark M. Wilde: <a href="https://arxiv.org/abs/1106.1445" target="_blank">Quantum Information Theory,</a> Cambridge University Press, 2017.</li>
 <li>Michael M. Wolf: <a href="https://www-m5.ma.tum.de/foswiki/pub/M5/Allgemeines/MichaelWolf/QChannelLecture.pdf" target="_blank">Quantum Channels & Operations: Guided Tour,</a> Lecture notes, 2012.</li>
 </ul>
+
+<script>
+  document.querySelectorAll('a[href$=".pdf" i]').forEach(function (a) {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+</script>

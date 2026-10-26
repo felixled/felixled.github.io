@@ -36,7 +36,7 @@ In the second half of the course we apply these representation-theoretic methods
 
 ## Course material
 
-[Lecture notes](files/Felix Leditzky - Math 595 Representation-theoretic methods in quantum information theory.pdf)
+[Lecture notes](/files/Felix Leditzky - Math 595 Representation-theoretic methods in quantum information theory.pdf)
 
 #### Literature
 
@@ -57,3 +57,10 @@ In the second half of the course we apply these representation-theoretic methods
 - John Watrous, [The Theory of Quantum Information](https://cs.uwaterloo.ca/~watrous/TQI/), Cambridge: Cambridge University Press, 2018.
 - Reinhard Werner, [Optimal Cloning of Pure States](https://arxiv.org/abs/quant-ph/9804001), Physical Review A 58, 1827 (1998).
 - Mark M. Wilde, [Quantum information theory](https://arxiv.org/abs/1106.1445), 2nd edition, Cambridge: Cambridge University Press, 2016.
+
+<script>
+  document.querySelectorAll('a[href$=".pdf" i]').forEach(function (a) {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+</script>
