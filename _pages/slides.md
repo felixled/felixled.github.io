@@ -11,7 +11,7 @@ profiles:
   - align: left
     image: assets/img/slides/perminv.png
     image_circular: false
-    content: perminv-qip26.md
+    content: perminv-qip2026.md
     more_info: >
        <p>Jan 2026</p>
        <p>QIP 2026, Riga, Latvia</p>
