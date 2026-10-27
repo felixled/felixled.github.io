@@ -11,4 +11,8 @@ profiles:
     image: slides/perminv.png
     image_circular: false
     content: perminv-qip2026.md
+  - align: right
+    image:
+    image_circular: false
+    content: networks-kcik2024.md
 ---
