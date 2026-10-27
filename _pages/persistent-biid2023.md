@@ -2,7 +2,7 @@
 
 Contributed talk at [BIID 2023](https://sites.google.com/view/beyondiid11/beyond-iid-11), Tübingen, Germany, July 2023.
 
-[Slides (PDF)](/files/persistent_biid2023)
+[Slides (PDF)](/files/persistent_biid2023.pdf)
 
 <details>
 <summary>Based on:</summary>
