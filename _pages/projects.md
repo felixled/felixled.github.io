@@ -1,11 +1,10 @@
 ---
 layout: page
-title: projects
+title: slides
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: false
+description: A collection of slides for selected talks I have given.
+nav: true
 nav_order: 3
-display_categories: [work, fun]
 horizontal: false
 ---
 
