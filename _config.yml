@@ -208,8 +208,6 @@ collections:
     output: true
   teachings:
     output: true
-  slides:
-    output: false
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
