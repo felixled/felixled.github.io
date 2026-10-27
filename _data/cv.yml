@@ -73,23 +73,23 @@ cv:
 
     Teaching:
       - label: Spring 2026
-        details: Math 257 Linear Algebra with Computational Applications
+        details: "[Math 257 Linear Algebra with Computational Applications](https://netmath.illinois.edu/summer/math-257)"
       - label: Fall 2025
         details: "[Math 595 Representation-theoretic methods in quantum information theory](/teachings/rep-th-in-qit-FT-2025)"
       - label: Spring 2025
-        details: Math 257 Linear Algebra with Computational Applications
+        details: "[Math 257 Linear Algebra with Computational Applications](https://netmath.illinois.edu/summer/math-257)"
       - label: Spring 2024
-        details: Math 257 Linear Algebra with Computational Applications
+        details: "[Math 257 Linear Algebra with Computational Applications](https://netmath.illinois.edu/summer/math-257)"
       - label: Spring 2023
         details: "[Math 595 Quantum channels](/teachings/quantum-channels-ST-2023)"
       - label: Fall 2022
-        details: "Math 595 Representation-theoretic methods in quantum information theory ([course website](https://www.felixleditzky.info/teaching/FT22/math595_reptheory.html))"
+        details: "[Math 595 Representation-theoretic methods in quantum information theory](/teachings/rep-th-in-qit-FT-2022)"
       - label: Fall 2021
-        details: "Math 416 Abstract Linear Algebra ([course website](https://www.felixleditzky.info/teaching/FT21/MATH416_linear_algebra.html))"
+        details: "[Math 416 Abstract Linear Algebra](/teachings/abstract-linear-algebra-FT-2021)"
       - label: Spring 2021
-        details: "Math 595 Quantum channels I: Representations and properties ([course website](https://www.felixleditzky.info/teaching/MATH595_quantum_channelsI.html))"
+        details: "[Math 595 Quantum channels I: Representations and properties](/teachings/quantum-channels-I-ST-2021)"
       - label: Spring 2021
-        details: "Math 595 Quantum channels II: Data-processing, recovery channels, and quantum Markov chains ([course website](https://www.felixleditzky.info/teaching/MATH595_quantum_channelsII.html))"
+        details: "[Math 595 Quantum channels II: Data-processing, recovery channels, and quantum Markov chains](/teachings/quantum-channels-II-ST-2021)"
  
     Service:
       - label: Editorial board
