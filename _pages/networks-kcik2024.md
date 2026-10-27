@@ -4,11 +4,12 @@ Invited talk at the [15th KCIK Symposium on Quantum Information](https://kcik.ug
 
 [Slides (PDF)](/files/networks_kcik2024.pdf)
 
-**Based on:** 
-
+<details>
+<summary>Based on:</summary>
 <div class="publications">
-{% bibliography -f papers --group_by none -q @*[key=leditzky2020playing || key=doolittle2026nonclassical]* %}
+{% bibliography -f papers --template bib_compact --group_by none -q @*[key=leditzky2020playing || key=doolittle2026nonclassical]* %}
 </div>
+</details>
 
 <script>
   document.querySelectorAll('a[href$=".pdf" i]').forEach(function (a) {

@@ -12,7 +12,15 @@ profiles:
     image_circular: false
     content: perminv-qip2026.md
   - align: right
-    image:
+    image: slides/magic.png
     image_circular: false
     content: networks-kcik2024.md
+  - align: left
+    image: slides/persistent.png
+    image_circular: false
+    content: persistent-biid2023.md
+  - align: right
+    image: slides/platypus.jpg
+    image_circular: false
+    content: platypus-weizmann2023.md
 ---
