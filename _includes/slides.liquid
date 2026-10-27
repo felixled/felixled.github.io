@@ -1,0 +1,39 @@
+{% assign slides_by_year = site.slides | group_by: 'year' | sort: 'name' | reverse %}
+
+{% for year_group in slides_by_year %}
+  <h2 class="year">{{ year_group.name }}</h2>
+  <div class="row row-cols-1 row-cols-md-3 mb-4">
+    {% assign decks = year_group.items | sort: 'date' | reverse %}
+    {% for deck in decks %}
+      <div class="col mb-4">
+        {% if deck.pdf %}
+  {% assign deck_link = deck.pdf | relative_url %}
+{% else %}
+  {% assign deck_link = deck.external_url %}
+{% endif %}
+<a href="{{ deck_link }}" target="_blank" rel="noopener noreferrer">
+          <div class="card h-100 hoverable">
+            {% if deck.img %}
+              {% include figure.liquid
+                loading="lazy"
+                path=deck.img
+                sizes="250px"
+                alt=deck.title
+                class="card-img-top"
+              %}
+            {% endif %}
+            <div class="card-body">
+              <h3 class="card-title">{{ deck.title }}</h3>
+              {% if deck.venue %}
+                <p class="card-text"><small class="text-muted">{{ deck.venue }}</small></p>
+              {% endif %}
+              {% if deck.description %}
+                <p class="card-text">{{ deck.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
