@@ -29,12 +29,12 @@ latest_posts:
 
 ##### Hi there! 
 
-I am an Associate Professor in the [Department of Mathematics](https://math.illinois.edu/) at the University of Illinois Urbana-Champaign.
-I'm also a member of the [Illinois Quantum Information Science and Technology Center (IQUIST)](https://iquist.illinois.edu/).
+I am an Associate Professor in the [Department of Mathematics](https://math.illinois.edu/) at the University of Illinois Urbana-Champaign, and a member of the [Illinois Quantum Information Science and Technology Center (IQUIST)](https://iquist.illinois.edu/), serving on its Science Advisory Board.
+I am also a founding member of the [International Association for Quantum Information (IAQI)](https://iaqi.org/), currently serving on its Executive Board, and an editor for the community journal [Quantum](quantum-journal.org/).
 
-I am currently supported by an NSF CAREER grant to carry out research on [symmetries in noisy multipartite quantum systems](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410).
 
-My [research]({{ '/publications/' | relative_url }}) focuses on mathematical and information-theoretic aspects of quantum information theory.
+My [research]({{ '/publications/' | relative_url }}) focuses on mathematical and information-theoretic aspects of quantum information theory, and is currently supported by an NSF CAREER grant [_Symmetries in noisy multipartite quantum systems_](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410) and the NSF grant [_FET: Small: NSF-NSERC: Fundamental limits on quantum communications_](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2426103).
+
 For more information you can explore this website, look at my [short CV]({{ '/cv/' | relative_url }}) or [full academic CV]({{ '/files/cv.pdf' | relative_url }}), and browse my [research group]({{ '/people/' | relative_url }})!
 
 ##### About myself
