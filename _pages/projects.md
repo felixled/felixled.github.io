@@ -3,7 +3,7 @@ layout: page
 title: slides
 permalink: /projects/
 description: A collection of slides for selected talks I have given.
-nav: true
+nav: false
 nav_order: 3
 horizontal: false
 ---
