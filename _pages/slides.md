@@ -23,4 +23,8 @@ profiles:
     image: slides/platypus.jpg
     image_circular: false
     content: platypus-weizmann2023.md
+  - align: left
+    image: slides/thresholds.png
+    image_circular: false
+    content: thresholds-biid2020.md
 ---
