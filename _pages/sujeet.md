@@ -1,4 +1,4 @@
-### Sujeet Bhalerao
+### Sujeet Bhalerao {#sujeet}
 
 **Graduate student** (Department of Mathematics)
 

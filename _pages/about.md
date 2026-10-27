@@ -27,7 +27,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi there! I am an Associate Professor in the [Department of Mathematics](https://math.illinois.edu/) at the University of Illinois Urbana-Champaign.
+##### Hi there! 
+
+I am an Associate Professor in the [Department of Mathematics](https://math.illinois.edu/) at the University of Illinois Urbana-Champaign.
 I'm also a member of the [Illinois Quantum Information Science and Technology Center (IQUIST)](https://iquist.illinois.edu/).
 
 I am currently supported by an NSF CAREER grant to carry out research on [symmetries in noisy multipartite quantum systems](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410).
