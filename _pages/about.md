@@ -35,7 +35,7 @@ Since 2022 I have served as an editor for the community journal [Quantum](https:
 
 My [research]({{ '/publications/' | relative_url }}) focuses on mathematical and information-theoretic aspects of quantum information theory. I am currently supported by an NSF CAREER grant _[Symmetries in noisy multipartite quantum systems](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2442410)_ and the NSF grant _[FET: Small: NSF-NSERC: Fundamental limits on quantum communications](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2426103)_.
 
-For more information you can explore this website, look at my [short CV]({{ '/cv/' | relative_url }}) or [full academic CV]({{ '/files/cv.pdf' | relative_url }}), and browse my [research group]({{ '/people/' | relative_url }})!
+For more information you can explore this website, look at my [short CV]({{ '/cv/' | relative_url }}) or [full academic CV]({{ '/files/cv.pdf' | relative_url }}), and browse my [research group]({{ '/group/' | relative_url }})!
 
 ##### About myself
 

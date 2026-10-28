@@ -1,6 +1,7 @@
 ---
 layout: profiles
-permalink: /people/
+permalink: /group/
+redirect_from: /people/
 title: my group
 description: Members of the Leditzky Research Group
 nav: true
