@@ -1,0 +1,80 @@
+==================================================================
+https://keybase.io/felixled
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://felixleditzky.info
+  * I am felixled (https://keybase.io/felixled) on keybase.
+  * I have a public key with fingerprint AEB7 C4C6 7760 33C1 1A1D  DE0F 8861 84A9 D9FC 951B
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01017e761d34f4374ce35b95f905abb7d8e9ef32758eac92015de50e4eaaf1b8a1e20a",
+      "fingerprint": "aeb7c4c6776033c11a1dde0f886184a9d9fc951b",
+      "host": "keybase.io",
+      "key_id": "886184a9d9fc951b",
+      "kid": "01017e761d34f4374ce35b95f905abb7d8e9ef32758eac92015de50e4eaaf1b8a1e20a",
+      "uid": "69a1f18e6d2ed92f391e4063b2ec9d19",
+      "username": "felixled"
+    },
+    "merkle_root": {
+      "ctime": 1793188336,
+      "hash_meta": "03ef9956a14c0fbf00863023de6856b61d9fa0b43a4cfafdb695e6c5eb48718e",
+      "seqno": 27844029
+    },
+    "revoke": {
+      "sig_ids": [
+        "9925389797f8618d708d2541ff5a034cdaa667fdca12e7b98f1039795bc1bd430f"
+      ]
+    },
+    "service": {
+      "hostname": "felixleditzky.info",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1793188476,
+  "expire_in": 157680000,
+  "prev": "844cfbb40fe94d6a6eafdb0dfef28f00f151a4c8d97aff2cd15da093db52c0e4",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtk11sFUUYhk8FIpyo4E9aqDSG9Q+SgjM7szs7h4jEYmPA2ANyQTR4nNn5pl17
+eva4u5z+0FajhtrEi4ZIKt5JYkkhMaVGicZY8BC1cmFpNNZIUYnEeKGJiSKYUpxt
+JEbjpXuz2dn3e793nvlm6MZFmWzNS+LF0a/mDtxec/pHmXn6u/ODey0Zqm4rt9dq
+h4UXFBXESaE9UFbOQhhhBszFilBNCaM+EEdyR3PkCCmZ8oCDJjZzPBA+txF2FDgI
+KAihsfQEBhsJq9HSQakVonIUlBJjK0Ayn/ouYy4ixMdYYKUAac9zsUcFV1z73MHS
+FLaFcVphwkkRw4YgNGvmo7AQ7z/0/3PuPQt2LhdYYw9cZYPitiYcA0UukTb4XGGe
+CmOISqIDjFpDMegqgrL6Gq0OiNqLUIjCMEnh+kmQSjDjBHseIa7ZoIjbCh2QiDQ2
+Ac254wpMfaSlRshzCbKJAtdzXGm2w7VAkhJBfS20ki53wPUdkNRjJp/JEcMzpdDK
+2cyjFNncRIigErZD2j0OWg232Mo9YXFun+h3iMcZZzqlqBjylO1QrLUjEKG+EsJ1
+mVa+wDYwyT2NETFyR/pYKkqQtnb3pf2iSuAv2KdH9S8EQdLT3r0hKOn02MpRmIR+
+WDT/25KkHOdSQEl3OS3oBFn4y6ogg5Iy42IqKhDFQVgywIzyn+woM+ygqxxEUAhS
+hcNcD5kn7QOVdDiogSQlRRo4Va5wISWGlAZtewatxg42HD3FmdDa9pWZAYE4UdKx
+fTMKf8PEzOQUrcbTECyJZE8EVl92sIYsztRkMw21axa/efzUR51PkZP1DeeWX7ti
+S65L71cmu2zFtZVH/rh+/p5VY0P5nvzMxeM31x0bee5SS5TPVj49+Gv311dvO/LY
+xHR5aqr65JKeB3bsaDkxPTJbvGH/qZ93tswk06uGH/3t3h/ePrwyuvza/OZ1vbsm
+m/Nn3hvo337/to8/3HVh96WlN93501sH9q3d+e3swMvvZOuODh7cn1/fWbnw+7vV
++1448sqXtzYtg/LJ5x9EnzS/+sWiro2Fs89OyDtWtE6NffD+6Znc61c+H96yde3Z
+jRPrq4en/KHRX8jqh1u2ji8f2/T9lUObj43P9RwtNzZN3lLdHmU+O9S87/yacyOb
+Hp92m5IzvdYbd9cHtbWX5+/acnWuUj9b1x8EFydXV2sHRtY1DIyuHH5o2/jSbzpY
+758=
+=S9Gi
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/felixled
+
+==================================================================
