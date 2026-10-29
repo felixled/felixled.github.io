@@ -4,7 +4,7 @@ permalink: /slides/
 title: slides
 description: A collection of slides for selected talks I have given.
 nav: true
-nav_order: 2
+nav_order: 20
 
 profiles:
   - align: left

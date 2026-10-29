@@ -3,7 +3,7 @@ layout: book-shelf
 title: resources
 permalink: /resources/
 nav: true
-nav_order: 5
+nav_order: 50
 ---
 
 ### Lecture notes
