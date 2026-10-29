@@ -5,7 +5,7 @@ redirect_from: /people/
 title: my group
 description: Members of the Leditzky Research Group
 nav: true
-nav_order: 3
+nav_order: 30
 
 profiles:
   # if you want to include more than one profile, just replicate the following block
