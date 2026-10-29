@@ -1,9 +1,10 @@
 ---
-layout: page
+layout: post
 title: Lists of references to topics in mathematics and quantum information science
 permalink: /selected_references/
+date: 2026-10-29
 description: These lists are on topics close to my own research, and mainly intended for students who are either interested in working with me, or just want to learn more about these topics for their own research.
-nav: false
+tags: references
 ---
 
 On this page I am collecting selected references to topics in mathematics and quantum information theory that intersect with my own research interests. I compiled these lists having graduate students in mind who want to start working on questions related to these topics. Hopefully, they are also useful for more experienced researchers.

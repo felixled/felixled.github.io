@@ -1,4 +1,4 @@
-### Haneul (Chloe) Kim
+### Haneul (Chloe) Kim {#chloe}
 
 **Graduate student** (Department of Electrical and Computer Engineering)\
 jointly advised with [Eric Chitambar](https://ece.illinois.edu/about/directory/faculty/echitamb)
