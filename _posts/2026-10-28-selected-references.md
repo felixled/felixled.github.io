@@ -2,7 +2,7 @@
 layout: post
 title: Lists of references to topics in mathematics and quantum information science
 permalink: /selected_references/
-date: 2026-10-29
+date: 2026-10-28
 description: These lists are on topics close to my own research, and mainly intended for students who are either interested in working with me, or just want to learn more about these topics for their own research.
 tags: references
 ---
