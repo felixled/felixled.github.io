@@ -10,4 +10,8 @@ profiles:
     image: reu/performanceprofile.png
     image_circular: false
     content: benchmarking.md
+  - align: right
+    image: reu/optimizing_teleportation.png
+    image_circular: false
+    content: optimizing-teleportation-protocols.md
 ---
