@@ -2,8 +2,7 @@
 
 Undergraduate research project conducted in the 2025 Fall term as part of UIUC's [Illinois Mathematics Lab](https://iml.math.illinois.edu/).
 
-**Undergraduate researchers:** David Huerta, Zhiyuan Ma, Tingyu Wu
-
+**Undergraduate researchers:** David Huerta, Zhiyuan Ma, Tingyu Wu\
 **Graduate student mentor:** Sujeet Bhalerao
 
 [Poster (PDF)](/files/iml2025_benchmarking_poster.pdf)
