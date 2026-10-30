@@ -7,7 +7,7 @@ nav: false
 
 profiles:
   - align: left
-    image: 
+    image: reu/performanceprofile.png
     image_circular: false
     content: benchmarking.md
 ---
