@@ -1,0 +1,141 @@
+:root {
+	--cdark: #1c71d8;
+	--cdark-text: white;
+	--clight: #bbd6f6;
+	--clight-text: black;
+	--clink: #1c71d8;
+	/* grey theme: dark: #595959; light: #d9d9d9 */
+}
+
+* {box-sizing: border-box;}
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 110%;
+	margin: 0 auto;
+	line-height: 1.5;
+	max-width: 800px;
+}
+
+ul {list-style-type: square;}
+ul>li {margin-top: 0.2rem;}
+
+h1, h2, h3 {font-family: 'IBM Plex Sans', sans-serif;}
+
+h1 {font-size: 200%;}
+
+h2 {
+	font-size: 110%;
+	background-color: var(--clight);
+	color: var(--clight-text);	
+	padding: 0.5rem 1rem;
+}
+
+h3 {padding: 0 1rem; font-size: 100%; color: black;}
+
+section {scroll-margin-top: 4rem;}
+
+#top {padding: 0 1rem;}
+
+.content p {padding: 0 1rem;}
+
+
+.cv {padding: 0 1rem;}
+.cv dt {font-weight: bold; margin-top: 0.5rem;}
+
+a {
+	text-decoration: none; 
+	border-bottom: 1px dotted; 
+	color: var(--clink);
+}
+
+.logo {height: 25px; margin-left: 5px;}
+.logolink {border-bottom: none;}
+
+#navbar {
+	clear: both;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: var(--cdark);
+	width: 100%;
+}
+
+#navbar a {
+	display: inline-block;
+	color: var(--cdark-text);
+	text-align: center;
+	padding: 14px;
+	border: none;
+	font-weight: bold;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#navbar a:hover {
+	background-color: var(--clight);
+	color: var(--clight-text);
+}
+
+#navbar-small, #dropdown-content {display: none;}
+
+#me {
+	float: right;
+	width: 33%;
+	max-width: 250px;
+	margin-bottom: 2em;
+	margin-left: 2em;
+	margin-right: 1rem;
+}
+
+#footer {padding: 0 1rem; font-size: 80%; color: grey;}
+
+.refs {margin-left: 1.5em; width: auto; display: grid; grid-template-columns: 80px 1em 1fr;}
+.refs dt {font-weight: bold; grid-column-start: 1;}
+.refs dd {margin: 0; grid-column-start: 3;}
+
+@media screen and (max-width: 800px) {
+.refs {grid-template-columns: auto;}
+.refs dt {margin-top: 0.5em;}
+.refs dd {grid-column-start: 1;}
+#navbar {display: none;}
+
+#navbar-small {
+	display: block; 
+	clear: both; 
+	position: sticky; 
+	top: 0; left: 0; 
+	background-color: var(--cdark); 
+	width: 100%;
+}
+
+#dropdown-content {
+	display: none; 
+	background-color: var(--cdark); 
+	width: 400px;
+}
+
+#dropdown-content a {
+	color: black; 
+}
+
+#navbar-small a {
+	display: inline-block;
+	color: var(--cdark-text);
+	text-align: center;
+	padding: 14px;
+	border: none;
+	font-weight: bold;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#navbar-small a:hover {
+	background-color: var(--clight);
+	color: var(--clight-text);
+}
+
+#backtotop {float: right;}
+h1 {padding: 0 1rem;}
+.content ul {padding-right: 1rem;}
+.content dl {padding-right: 1rem;}
+}
