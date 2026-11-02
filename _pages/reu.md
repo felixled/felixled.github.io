@@ -14,4 +14,8 @@ profiles:
     image: reu/optimizing_teleportation.png
     image_circular: false
     content: optimizing-teleportation-protocols.md
+  - align: left
+    image: reu/platypus.jpg
+    image_circular: false
+    content: quantum-channel-zoo.md
 ---
