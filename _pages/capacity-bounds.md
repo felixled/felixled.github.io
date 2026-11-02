@@ -2,7 +2,7 @@
 
 **Undergraduate researchers:** Mayank Bhatia, Mason Camp, Yuxuan Chen, Paul Ge, Evan Papoutsis, John Solak, Jonathan Wang, Tianfan Xu, Boqin Yuan\
 **Graduate student mentor:** Yidong Chen, Joe Groszkiewicz, Peixue Wu\
-**Poster:** [PDF](/files/igl2022_teleportation_poster.pdf)
+**Poster:** [PDF](/files/igl2022_capacity_poster.pdf)
 
 Undergraduate research project conducted in the 2025 Fall term as part of UIUC's [Illinois Mathematics Lab](https://iml.math.illinois.edu/).
 
