@@ -29,7 +29,7 @@ profiles:
   - align: left
     image: reu/teleportation-discrimination.png
     image_circular: false
-    content: teleportation-discrimination.png
+    content: teleportation-discrimination.md
     url: /files/igl2022_teleportation_poster.pdf
   - align: right
     image: reu/capacity.png
