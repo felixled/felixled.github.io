@@ -18,4 +18,5 @@ profiles:
     image: reu/platypus.jpg
     image_circular: false
     content: quantum-channel-zoo.md
+    url: /files/igl2023_quantum_channel_zoo_poster.pdf
 ---
