@@ -8,7 +8,7 @@ nav_order: 30
 ---
 
 ### Current postdocs
-- [Jacob Beckey](jacob.md)
+- [Jacob Beckey]({% link _pages/jacob.md %})
 - [Theshani Nuradha](theshani.md)
 
 ### Current PhD students
