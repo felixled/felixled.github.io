@@ -2,7 +2,7 @@
 layout: page
 title: Jacob Beckey
 permalink: /jacob/
-description: NSF Mathematical Sciences Postdoctoral Research Fellow in Felix Leditzky's research group.
+description: "NSF Mathematical Sciences Postdoctoral Research Fellow in Felix Leditzky's research group."
 nav: false
 nav_order: 30
 ---
@@ -11,6 +11,7 @@ nav_order: 30
   <img src="{{ '/assets/img/jacob.jpg' | relative_url }}" alt="Jacob Beckey" class="profile-pic" />
   <div markdown="1">
 
+**Home department:** Mathematics<br/>
 **Research interests:** Quantum information theory, entanglement theory, learning theory<br/>
 **Contact:** [email](mailto:jbeckey@illinois.edu) | [homepage](https://www.jacobbeckey.com/)
 

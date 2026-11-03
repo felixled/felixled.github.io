@@ -2,7 +2,7 @@
 layout: page
 title: Sujeet Bhalerao
 permalink: /sujeet/
-description: PhD student in Felix Leditzky's research group.
+description: "PhD student in Felix Leditzky's research group."
 nav: false
 nav_order: 30
 ---

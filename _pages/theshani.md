@@ -2,7 +2,7 @@
 layout: page
 title: Theshani Nuradha
 permalink: /theshani/
-description: J.L. Doob Research Assistant Professor in Felix Leditzky's research group.
+description: "J.L. Doob Research Assistant Professor in Felix Leditzky's research group."
 nav: false
 nav_order: 30
 ---

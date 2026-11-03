@@ -2,7 +2,7 @@
 layout: page
 title: "Haneul (Chloe) Kim"
 permalink: /chloe/
-description: PhD student in Felix Leditzky's research group.
+description: "PhD student in Felix Leditzky's research group."
 nav: false
 nav_order: 30
 ---
