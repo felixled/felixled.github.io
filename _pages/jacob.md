@@ -4,7 +4,6 @@ title: Jacob Beckey
 permalink: /jacob/
 description: "NSF Mathematical Sciences Postdoctoral Research Fellow in Felix Leditzky's research group."
 nav: false
-nav_order: 30
 ---
 
 <div class="profile-layout">
