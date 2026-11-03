@@ -12,3 +12,4 @@ I firmly believe that human thought and guidance is essential to conducting and 
 - I choose to formulate and develop my research program myself. 
 - I only incorporate LLM-aided or -generated arguments in my work once I have fully digested them and can reproduce them using my own words and thoughts.
 - I refrain from using any LLM output verbatim in my writing, whether in research, teaching or personal writing.
+- I conduct peer review myself, using LLMs only to check technical arguments provided the paper is already available publicly.
