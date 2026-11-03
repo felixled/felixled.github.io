@@ -11,13 +11,13 @@ nav_order: 30
   <img src="{{ '/assets/img/jacob.jpg' | relative_url }}" alt="Jacob Beckey" class="profile-pic" />
   <div markdown="1">
 
-**Research interests:** Quantum information theory, entanglement theory, learning theory\
+**Research interests:** Quantum information theory, entanglement theory, learning theory\ 
 **Contact:** [email](mailto:jbeckey@illinois.edu) | [homepage](https://www.jacobbeckey.com/)
-
-  </div>
-</div>
 
 ### Recent papers
 <div class="publications">
 {% bibliography --template bib_compact --file group --max 10 --group_by none --query @*[author ~= Beckey]* %}
+</div>
+
+  </div>
 </div>
