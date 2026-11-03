@@ -1,45 +1,26 @@
 ---
-layout: profiles
+layout: page
+title: my group
 permalink: /group/
 redirect_from: /people/
-title: my group
 description: Members of the Leditzky Research Group
 nav: true
 nav_order: 30
-
-profiles:
-  # if you want to include more than one profile, just replicate the following block
-  # and create one content file for each profile inside _pages/
-  - align: right
-    image: prof_pic.jpg
-    content: felix.md
-    image_circular: false # crops the image to make it circular
-  # more_info: >
-  #    <p>555 your office number</p>
-  #    <p>123 your address street</p>
-  #    <p>Your City, State 12345</p>
-  - align: left
-    image: jacob.jpg
-    content: jacob.md
-    image_circular: false # crops the image to make it circular
-  - align: right
-    image: theshani.jpg
-    content: theshani.md
-  - align: left
-    image: sujeet.png
-    content: sujeet.md
-  - align: right
-    image: mayank.png
-    content: mayank.md
-  - align: left
-    image: chloe.jpg
-    content: chloe.md
-  - align: right
-    image: chris.jpg
-    content: chris.md
-  - align: left
-    image: stephen.jpg
-    content: stephen.md
-  - align: left
-    content: alumni.md
 ---
+
+### Current postdocs
+- [Jacob Beckey]({{ '/jacob/' | relative_url }})
+- [Theshani Nuradha]({{ '/theshani/' | relative_url }})
+
+### Current PhD students
+- [Sujeet Bhalerao]({{ '/sujeet/' | relative_url }})
+- [Mayank Bhatia]({{ '/mayank/' | relative_url }})
+- [Haneul (Chloe) Kim]({{ '/chloe/' | relative_url }})
+- [Christopher Vairogs]({{ '/chris/' | relative_url }})
+- [Juntai (Stephen) Zhou]({{ '/stephen/' | relative_url }})
+
+### Alumni
+- Yulie Arad, undergraduate and Master's student 2023-2025, now taking a gap year
+- Sungjai Lee, undergraduate student 2024-25, now a Master’s student at University of Waterloo
+- Stefano Chessa, postdoc 2022-24, now a scientist at the NATO STO Centre for Maritime Research and Experimentation
+- Mason Camp, undergraduate student 2022, now a PhD student at University of Maryland

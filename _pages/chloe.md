@@ -1,14 +1,28 @@
-### Haneul (Chloe) Kim {#chloe}
+---
+layout: page
+title: "Haneul (Chloe) Kim"
+permalink: /chloe/
+description: PhD student in Felix Leditzky's research group.
+nav: false
+nav_order: 30
+---
 
-**Graduate student** (Department of Electrical and Computer Engineering)\
-jointly advised with [Eric Chitambar](https://ece.illinois.edu/about/directory/faculty/echitamb)
+<div class="profile-layout">
+  <img src="{{ '/assets/img/chloe.jpg' | relative_url }}" alt="Haneul (Chloe) Kim" class="profile-pic" />
+  <div markdown="1">
 
-**Research interests:** Quantum information theory, quantum channels, entanglement theory\
+**Home department:** Electrical and Computer Engineering<br/>
+**Research interests:** Quantum information theory, quantum channels, entanglement theory<br/>
 **Contact:** [email](mailto:kim705@illinois.edu)
 
-<details>
-<summary>Recent papers</summary>
+Chloe recently passed her [PhD defense]({{ '/news/chloes defense/' | relative_url }})!
+
+##### Recent papers
 <div class="publications">
 {% bibliography --template bib_compact --file group --max 10 --group_by none --query @*[group ~= kimc]* %}
 </div>
-</details>
+
+[Back to research group page]({{ '/group/' | relative_url }})
+
+  </div>
+</div>
