@@ -1,6 +1,7 @@
 ---
 layout: page
 title: my group
+permalink: /group_alt/
 description: Members of the Leditzky Research Group
 nav: false
 nav_order: 30
