@@ -2,6 +2,7 @@
 layout: post
 title: My policy on using LLMs in academic work
 permalink: /llm_policy/
+redirect_from: /ai/
 date: 2026-11-03
 description: 
 tags: research teaching ai LLMs
