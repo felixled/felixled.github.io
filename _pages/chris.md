@@ -11,7 +11,7 @@ nav_order: 30
   <img src="{{ '/assets/img/chris.jpg' | relative_url }}" alt="Christopher Vairogs" class="profile-pic" />
   <div markdown="1">
 
-**Home department:** Physics<br/>
+**Home department:** Physics<br/> 
 **Research interests:** Quantum information theory, entanglement theory, unitary designs<br/>
 **Contact:** [email](mailto:vairogs2@illinois.edu)
 
