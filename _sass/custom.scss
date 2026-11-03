@@ -3,15 +3,22 @@
 // Profile picture: full width on small screens, capped at 300px from 768px up.
 // 768px is Tailwind's `md` breakpoint and the same tablet cutoff al-folio's own
 // stylesheet uses. This setup has no Bootstrap mixins, so use a plain media query.
+
 .profile-pic {
   display: block;
   width: 100%;
   height: auto;
 }
- 
+
 @media (min-width: 768px) {
+  .profile-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
   .profile-pic {
-    max-width: 300px;
+    flex: 0 0 300px;
+    width: 300px;
   }
 }
- 
