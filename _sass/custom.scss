@@ -4,21 +4,23 @@
 // 768px is Tailwind's `md` breakpoint and the same tablet cutoff al-folio's own
 // stylesheet uses. This setup has no Bootstrap mixins, so use a plain media query.
 
+
+.profile-layout {
+  // Contains the floated image so it doesn't affect content after this section.
+  display: flow-root;
+}
+
 .profile-pic {
   display: block;
   width: 100%;
   height: auto;
+  margin: 0 0 1rem 0;
 }
 
 @media (min-width: 768px) {
-  .profile-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-
   .profile-pic {
-    flex: 0 0 300px;
+    float: left;
     width: 300px;
+    margin: 0 1.5rem 1rem 0;
   }
 }
