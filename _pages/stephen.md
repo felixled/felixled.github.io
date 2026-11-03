@@ -3,7 +3,7 @@
 **Graduate student** (Department of Mathematics)
 
 **Research interests:** Quantum information theory, representation theory, entanglement theory\
-**Contact:** [email](mailto:juntaiz2@illinois.edu)
+**Contact:** [email](mailto:juntaiz2@illinois.edu) | [homepage](https://juntai-zhou-academic-page.zhoujuntai0.chatgpt.site/)
 
 <details>
 <summary>Recent papers</summary>
