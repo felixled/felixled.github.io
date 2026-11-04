@@ -12,7 +12,7 @@ nav_order: 30
   <div markdown="1">
 
 **Home department:** Mathematics<br/>
-**Research interests:** Variational quantum optimization, teleportation protocols<br/>
+**Research interests:** quantum information theory and quantum calibration<br/>
 **Contact:** [email](mailto:mayankb3@illinois.edu) | [homepage](https://mayankbhatia.com/)
 
 ##### Recent papers
