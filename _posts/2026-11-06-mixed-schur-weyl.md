@@ -20,4 +20,6 @@ And a citation to {% cite akresh2026tight %}!
 
 ### References
 
-{% bibliography --file pbt --cited %}
+<div class="publications">
+{% bibliography --file pbt --group_by none %}
+</div>
