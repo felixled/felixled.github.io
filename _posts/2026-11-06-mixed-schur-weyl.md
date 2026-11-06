@@ -20,5 +20,5 @@ And a citation to {% cite akresh2026tight %}!
 ### References
 
 <div class="publications">
-{% bibliography --file pbt --group_by none %}
+{% bibliography --file pbt --group_by none --template bib_post %}
 </div>
