@@ -8,7 +8,15 @@ tags: research
 ---
 
 In this post I will give an introduction to $$(p,q)$$-mixed Schur-Weyl duality in the simple case of $$(p,q)=(n-1,1)$$, which is the relevant one for port-based teleportation {% cite ishizaka2008asymptotic ishizaka2009quantum %}, and has also been used recently to discuss data hiding schemes {% cite akresh2026tight %}. 
-The discussion is mainly based on the exposition in {% cite christandl2021asymptotic fei2023efficientquantumalgorithmportbased %}.
+The discussion is mainly based on the exposition in {% cite christandl2021asymptotic fei2023efficientquantumalgorithmportbased %}. Another way: {% cite christandl2021asymptotic %} {% cite fei2023efficientquantumalgorithmportbased %}
+
+Our starting point is to consider a quantum state on $n$ quantum systems of local dimension $d$ of the form
+
+$$
+\rho = \sum_{i=1}^{n-1} \Phi^+_{in} \otimes \mathbb{I}_{(in)^c},
+$$
+
+where $$|\Phi^+\rangle_{(ij)} = \sum_{\alpha=1}^d |\alpha\rangle_i \otimes |\alpha\rangle_j$$ denotes an unnormalized state on systems $$i$$ and $$j$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,j$$.
 
 ### References
 
