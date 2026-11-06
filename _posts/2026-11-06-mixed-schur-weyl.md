@@ -17,9 +17,19 @@ $$
 $$
 
 where $$|\Phi^+\rangle_{(ij)} = \sum_{\alpha=1}^d |\alpha\rangle_i \otimes |\alpha\rangle_j$$ denotes an unnormalized state on systems $$i$$ and $$j$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,j$$.
+Here we are using the common shorthand notation $$\psi\equiv |\psi\rangle\langle\psi|$$ for the rank-1 density matrix associated with a pure state.
+I will be working with unnormalized states for cleaner exposition throughout, but of course all results hold by including normalization factors to obtain quantum states with unit trace.
+
+The maximally entangled state $$|\Psi^+\rangle$$ has the unitary symmetry
+
+$$
+(U\otimes \overline{U})|\Psi^+\rangle = |\Psi^+\rangle \quad \text{for all unitaries $U$,}
+$$
+
+where the bar over an operator denotes entry-wise complex conjugation (defined with respect to the same basis used in the definition of $$|\Psi^+\rangle$$.
 
 ### References
 
 <div class="publications">
-{% bibliography --file pbt --group_by none --template bib_post %}
+{% bibliography --file pbt --style ieee --group_by none --template bib_post %}
 </div>
