@@ -5,7 +5,6 @@ permalink: /mixed_sw/
 date: 2026-11-06
 description: Post describing the simple setting of mixed Schur-Weyl duality that is relevant in port-based teleportation and a recent paper on data hiding schemes.
 tags: research
-citation: true
 ---
 
 Test math: $$(\mathbb{C}^d)^{\otimes n}$$
