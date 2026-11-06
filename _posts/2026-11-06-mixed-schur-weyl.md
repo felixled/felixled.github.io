@@ -7,8 +7,8 @@ description: Post describing the simple setting of mixed Schur-Weyl duality that
 tags: research
 ---
 
-In this post I will give an introduction to $$(p,q)$$-mixed Schur-Weyl duality in the simple case of $$(p,q)=(n-1,1)$$, which is the relevant one for port-based teleportation {% cite ishizaka2008asymptotic ishizaka2009quantum %}, and has also been used recently to discuss data hiding schemes {% cite akresh2026tight %}. 
-The discussion is mainly based on the exposition in {% cite christandl2021asymptotic fei2023efficientquantumalgorithmportbased %}. Another way: {% cite christandl2021asymptotic %} {% cite fei2023efficientquantumalgorithmportbased %}
+In this post I will give an introduction to $$(p,q)$$-mixed Schur-Weyl duality in the simple case of $$(p,q)=(n-1,1)$$, which is the relevant one for port-based teleportation {% cite ishizaka2008asymptotic ishizaka2009quantum --file pbt --style ieee %}, and has also been used recently to discuss data hiding schemes {% cite akresh2026tight --file pbt --style ieee %}. 
+The discussion is mainly based on the exposition in {% cite christandl2021asymptotic fei2023efficientquantumalgorithmportbased --file pbt --style ieee %}. 
 
 Our starting point is to consider a quantum state on $n$ quantum systems of local dimension $d$ of the form
 
@@ -31,5 +31,5 @@ where the bar over an operator denotes entry-wise complex conjugation (defined w
 ### References
 
 <div class="publications">
-{% bibliography --file pbt --style ieee --group_by none --template bib_post %}
+{% bibliography --file pbt --style ieee --group_by none --cited_in_order --template bib_post %}
 </div>
