@@ -12,9 +12,10 @@ The discussion is mainly based on the exposition in {% cite christandl2021asympt
 
 Our starting point is to consider a quantum state on $$n$$ quantum systems of local dimension $$d$$ of the form
 
-$$
+\begin{align}
 \rho = \sum_{i=1}^{n-1} \Phi^+_{in} \otimes \mathbb{I}_{(in)^c},
-$$
+\label{eq:pbt-operator}
+\end{align}
 
 where $$\ket{\Phi^+}_{(ij)} = \sum_{\alpha=1}^d \ket{\alpha}_i \otimes \ket{\alpha}_j$$ denotes an unnormalized state on systems $$i$$ and $$j$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,j$$.
 Here we are using the common shorthand notation $$\psi\equiv \ket{\psi}\bra{\psi}$$ for the rank-1 density matrix associated with a pure state.
@@ -28,7 +29,7 @@ $$
 
 where the bar over an operator denotes entry-wise complex conjugation (defined with respect to the same basis used in the definition of $$\ket{\Phi^+}$$) 
 <a href="javascript:void(0)" onclick="var e=document.getElementById('step1'); e.hidden=!e.hidden;">(why $$(*)$$ holds)</a><span id="step1" style="font-style: italic;" hidden> The maximally entangled state satisfies the *transpose trick identity* $$(X\otimes \mathbb{I})\ket{\Psi^+} = (\mathbb{I}\otimes X^T)\ket{\Phi^+}$$, valid for all operators $$X$$. This identity can be easily checked by expanding $$X$$ in the basis $$\lbrace\ket{\alpha}\rbrace$$. Applying this to the action of $$U\otimes \overline{U}$$, we get $$(U\otimes \overline{U})\ket{\Phi^+} = (U \overline{U}^T\otimes \mathbb{I})\ket{\Phi^+} = (U U^\dagger\otimes \mathbb{I})\ket{\Phi^+} = \ket{\Phi^+},$$ which proves the claim</span>.
-Continue the argument... 
+This gives the operator in \eqref{eq:pbt-operator} a $$U^{\otimes n-1}\otimes\overline{U}$$-symmetry.
 
 ### References
 
