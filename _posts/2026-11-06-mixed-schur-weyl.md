@@ -27,7 +27,7 @@ $$
 $$
 
 where the bar over an operator denotes entry-wise complex conjugation (defined with respect to the same basis used in the definition of $$\ket{\Phi^+}$$) 
-<a href="javascript:void(0)" onclick="var e=document.getElementById('step1'); e.hidden=!e.hidden;">(why $$(*)$$ holds)</a><span id="step1" hidden> The maximally entangled state satisfies the *transpose trick identity* $$(X\otimes \mathbb{I})\ket{\Psi^+} = (\mathbb{I}\otimes X^T)\ket{\Phi^+}$$, valid for all operators $$X$$. This identity can be easily checked by expanding $$X$$ in the basis $$\lbrace\ket{\alpha}\rbrace$$. Applying this to the action of $$U\otimes \overline{U}$$, we get $$(U\otimes \overline{U})\ket{\Phi^+} = (U \overline{U}^T\otimes \mathbb{I})\ket{\Phi^+} = (U U^\dagger\otimes \mathbb{I})\ket{\Phi^+} = \ket{\Phi^+},$$ which proves the claim</span>.
+<a href="javascript:void(0)" onclick="var e=document.getElementById('step1'); e.hidden=!e.hidden;">(why $$(*)$$ holds)</a><span id="step1" style="font-style: italic;" hidden> The maximally entangled state satisfies the *transpose trick identity* $$(X\otimes \mathbb{I})\ket{\Psi^+} = (\mathbb{I}\otimes X^T)\ket{\Phi^+}$$, valid for all operators $$X$$. This identity can be easily checked by expanding $$X$$ in the basis $$\lbrace\ket{\alpha}\rbrace$$. Applying this to the action of $$U\otimes \overline{U}$$, we get $$(U\otimes \overline{U})\ket{\Phi^+} = (U \overline{U}^T\otimes \mathbb{I})\ket{\Phi^+} = (U U^\dagger\otimes \mathbb{I})\ket{\Phi^+} = \ket{\Phi^+},$$ which proves the claim</span>.
 Continue the argument... 
 
 ### References
