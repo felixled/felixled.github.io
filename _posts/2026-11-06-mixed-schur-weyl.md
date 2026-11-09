@@ -23,7 +23,7 @@ I will be working with unnormalized states for cleaner exposition throughout, bu
 The maximally entangled state $$\ket{\Phi^+}$$ has the unitary symmetry
 
 $$
-(U\otimes \overline{U})\ket{\Phi^+} = \ket{\Phi^+} \quad \text{for all unitaries $$U$$,}
+(U\otimes \overline{U})\ket{\Phi^+} = \ket{\Phi^+} \quad \text{for all unitaries $U$,}
 $$
 
 where the bar over an operator denotes entry-wise complex conjugation (defined with respect to the same basis used in the definition of $$\ket{\Phi^+}$$).
