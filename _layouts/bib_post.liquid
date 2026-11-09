@@ -1,10 +1,10 @@
 <div id="{{ entry.key }}" class="math-ref">
   {% if entry.doi %}
   {% assign doi_url = "https://doi.org/" | append: entry.doi %}
-  {{ reference | remove: doi_url | replace_first: ']', '] ' }}
+  {{ reference | remove: doi_url | replace_first: ']', ']&nbsp;' }}
   <a href="{{ doi_url }}">[doi]</a>
 {% else %}
-  {{ reference | replace_first: ']', '] ' }}
+  {{ reference | replace_first: ']', ']&nbsp;' }}
   {% if entry.html %}<a href="{{ entry.html }}">[link]</a>{% endif %}
 {% endif %}
 {% if entry.arxiv %}
