@@ -12,10 +12,12 @@ The discussion is mainly based on the exposition in {% cite christandl2021asympt
 
 Our starting point is to consider a quantum state on $$n$$ quantum systems of local dimension $$d$$ of the form
 
+<div markdown="0">
 \begin{align}
 \rho = \sum_{i=1}^{n-1} \Phi^+_{in} \otimes \mathbb{I}_{(in)^c},
 \label{eq:pbt-operator}
 \end{align}
+</div>
 
 where $$\ket{\Phi^+}_{(ij)} = \sum_{\alpha=1}^d \ket{\alpha}_i \otimes \ket{\alpha}_j$$ denotes an unnormalized state on systems $$i$$ and $$j$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,j$$.
 Here we are using the common shorthand notation $$\psi\equiv \ket{\psi}\bra{\psi}$$ for the rank-1 density matrix associated with a pure state.
