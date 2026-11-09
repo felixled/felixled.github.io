@@ -26,7 +26,14 @@ $$
 (U\otimes \overline{U})\ket{\Phi^+} = \ket{\Phi^+} \quad \text{for all unitaries $U$,}
 $$
 
-where the bar over an operator denotes entry-wise complex conjugation (defined with respect to the same basis used in the definition of $$\ket{\Phi^+}$$).
+where the bar over an operator denotes entry-wise complex conjugation (defined with respect to the same basis used in the definition of $$\ket{\Phi^+}$$). 
+<details markdown="1"><summary>Here's the argument</summary> The maximally entangled state satisfies the following *transpose trick identity*: $$(X\otimes \mathbb{I})\ket{\Psi^+} = (\mathbb{I}\otimes X^T)\ket{\Phi^+}$$ for all operators $$X$$. This identity can be easily checked by expanding $$X$$ in the basis $$\lbrace\ket{\alpha}\rbrace$$. Now, 
+
+$$
+(U\otimes \overline{U})\ket{\Phi^+} = (U \overline{U}^T\otimes \mathbb{I})\ket{\Phi^+} = (U U^\dagger\otimes \mathbb{I})\ket{\Phi^+} = \ket{\Phi^+}.
+$$
+
+</details>
 
 ### References
 
