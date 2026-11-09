@@ -24,7 +24,7 @@ Here we are using the common shorthand notation $$\psi\equiv \ket{\psi}\bra{\psi
 I will be working with unnormalized states for cleaner exposition throughout, but of course all results hold by including normalization factors to obtain quantum states with unit trace.
 
 <div id="fig:pbt" markdown="0">
-{% include figure.liquid path="assets/img/posts/pbt_state.png" class="img-fluid rounded z-depth-1" caption="Graphical representation of the states appearing in $$\rho$$ in \eqref{eq:pbt-operator}." zoomable=true %}
+{% include figure.liquid path="assets/img/posts/pbt_state.png" class="img-fluid rounded z-depth-1" caption="Graphical representation of the states appearing in $\rho$ in \eqref{eq:pbt-operator}." zoomable=true %}
 </div>
 
 The maximally entangled state $$\ket{\Phi^+}$$ has the unitary symmetry
