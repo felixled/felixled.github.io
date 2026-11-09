@@ -16,17 +16,17 @@ $$
 \rho = \sum_{i=1}^{n-1} \Phi^+_{in} \otimes \mathbb{I}_{(in)^c},
 $$
 
-where $$|\Phi^+\rangle_{(ij)} = \sum_{\alpha=1}^d |\alpha\rangle_i \otimes |\alpha\rangle_j$$ denotes an unnormalized state on systems $$i$$ and $$j$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,j$$.
-Here we are using the common shorthand notation $$\psi\equiv |\psi\rangle\langle\psi|$$ for the rank-1 density matrix associated with a pure state.
+where $$\ket{\Phi^+}_{(ij)} = \sum_{\alpha=1}^d \ket{\alpha}_i \otimes \ket{\alpha}_j$$ denotes an unnormalized state on systems $$i$$ and $$j$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,j$$.
+Here we are using the common shorthand notation $$\psi\equiv \ket{\psi}\bra{\psi}$$ for the rank-1 density matrix associated with a pure state.
 I will be working with unnormalized states for cleaner exposition throughout, but of course all results hold by including normalization factors to obtain quantum states with unit trace.
 
-The maximally entangled state $$ |\Phi^+\rangle$$ has the unitary symmetry
+The maximally entangled state $$\ket{\Phi^+}$$ has the unitary symmetry
 
 $$
-(U\otimes \overline{U})|\Phi^+\rangle = |\Phi^+\rangle \quad \text{for all unitaries $U$,}
+(U\otimes \overline{U})\ket{\Phi^+} = \ket{\Phi^+} \quad \text{for all unitaries $U$,}
 $$
 
-where the bar over an operator denotes entry-wise complex conjugation (defined with respect to the same basis used in the definition of $$ |\Phi^+\rangle$$.
+where the bar over an operator denotes entry-wise complex conjugation (defined with respect to the same basis used in the definition of $$\ket{\Phi^+}$$).
 
 ### References
 
