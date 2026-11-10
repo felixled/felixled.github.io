@@ -19,7 +19,7 @@ Let $$\lbrace \ket{0},\ket{1},\ket{2}\rbrace$$ be the computational basis of a q
 </div>
 
 <details markdown="1">
-<summary>Matrix form of ρ</summary>
+<summary>(Click for a matrix form of ρ)</summary>
 
 <div markdown="0">
 \begin{align*}
@@ -50,7 +50,7 @@ To construct a (symmetric) 2-extension of $$\rho$$, consider the following vecto
 \end{align*}
 </div>
 
-The following state $$\Omega$$ satisfies $$\operatorname{tr}_2 \Omega = \operatorname{tr}_3 \Omega = \rho$$, and is hence a symmetric 2-extension of $$\rho$$:
+The following state $$\Omega$$ is symmetric in the second and third system and satisfies $$\operatorname{tr}_2 \Omega = \operatorname{tr}_3 \Omega = \rho$$, thus giving a symmetric 2-extension of $$\rho$$:
 
 <div markdown="0">
 \begin{align*}
