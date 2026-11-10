@@ -11,11 +11,28 @@ Let $$\lbrace \ket{0},\ket{1},\ket{2}\rbrace$$ be the computational basis of a q
 
 <div markdown="0">
 \begin{align}
-\rho &= \frac{2}{7} \ket{\psi}\bra{\psi} + \frac{1}{2} (\sigma_+) + \frac{3}{14}(\sigma_-)\\
+\rho &= \frac{2}{7} \ket{\psi}\bra{\psi} + \frac{1}{2} \sigma_+ + \frac{3}{14}\sigma_-,\\
 \text{where}\quad \ket{\psi} &= \frac{1}{\sqrt{3}} (\ket{00}+\ket{11}+\ket{22})\\
 \sigma_+ &= \frac{1}{3} (\ket{01}\bra{01}+\ket{12}\bra{12}+\ket{20}\bra{20})\\
-\sigma_- &= \frac{1}{3} (\ket{10}\bra{10}+\ket{21}\bra{21}+\ket{02}\bra{02}).
+\sigma_- &= \frac{1}{3} (\ket{10}\bra{10}+\ket{21}\bra{21}+\ket{02}\bra{02}),
 \label{eq:state}
+\end{align}
+</div>
+
+or in matrix form (with $$0$$s replaced by $$.$$s for readability):
+
+<div markdown="0">
+\begin{align}
+\rho = \begin{pmatrix} 2/21 &   . &    . &    . & 2/21 &   . &   . &    . & 2/21\\ 
+			  . & 1/6 &    . &    . &    . &   . &   . &    . & .   \\
+			  . &   . & 1/14 &    . &    . &   . &   . &    . & .   \\
+		  	  . &   . &    . & 1/14 &    . &   . &   . &    . & .   \\
+		       2/21 &   . &    . &    . & 2/21 &   . &   . &    . & 2/21\\ 
+		          . &   . &    . &    . &    . & 1/6 &   . &    . & .   \\
+		          . &   . &    . &    . &    . &   . & 1/6 &    . & .   \\
+		          . &   . &    . &    . &    . &   . &   . & 1/14 & .   \\
+		       2/21 &   . &    . &    . & 2/21 &   . &   . &    . & 2/21
+\end{pmatrix}. 
 \end{align}
 </div>
 
@@ -24,11 +41,11 @@ This state is PPT and entangled by the results of {% cite horodecki1999bound --f
 To construct a (symmetric) 2-extension of $$\rho$$, we first consider the following vectors that are symmetric in the 2nd and 3rd system:
 
 <div markdown="0">
-\begin{align}
+\begin{aligned}
 \ket{\chi_0} &= \ket{0}\otimes\ket{00} + \ket{1}\otimes(\ket{01}+\ket{10})+\ket{2}\otimes(\ket{02}+\ket{20})\\
 \ket{\chi_1} &= \ket{0}\otimes(\ket{01}+\ket{10}) + \ket{1}\otimes\ket{11} + \ket{2}\otimes(\ket{12}+\ket{21})\\
-\ket{chi_2} &= \ket{0}\otimes(\ket{02}+\ket{20})+\ket{1}\otimes(\ket{12}+\ket{21})+\ket{2}\otimes\ket{22}.
-\end{align}
+\ket{\chi_2} &= \ket{0}\otimes(\ket{02}+\ket{20})+\ket{1}\otimes(\ket{12}+\ket{21})+\ket{2}\otimes\ket{22}.
+\end{aligned}
 </div>
 
 The following state $$\Omega$$ satisfies $$\operatorname{tr}_2 \Omega = \operatorname{tr}_3 \Omega = \rho$$, and is hence a symmetric 2-extension of $$\rho$$:
