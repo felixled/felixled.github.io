@@ -19,7 +19,8 @@ Let $$\lbrace \ket{0},\ket{1},\ket{2}\rbrace$$ be the computational basis of a q
 \end{align}
 </div>
 
-or in matrix form (with $$0$$s replaced by $$.$$s for readability):
+<details markdown="1">
+<summary>Matrix form of $$\rho$$</summary>
 
 <div markdown="0">
 \begin{align}
@@ -36,9 +37,11 @@ or in matrix form (with $$0$$s replaced by $$.$$s for readability):
 \end{align}
 </div>
 
+</details>
+
 This state is PPT and entangled by the results of {% cite horodecki1999bound --file ppt --style ieee %}.
 
-To construct a (symmetric) 2-extension of $$\rho$$, we first consider the following vectors that are symmetric in the 2nd and 3rd system:
+To construct a (symmetric) 2-extension of $$\rho$$, consider the following vectors that are symmetric in the 2nd and 3rd system:
 
 <div markdown="0">
 \begin{aligned}
