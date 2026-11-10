@@ -43,7 +43,7 @@ where the bar over an operator denotes entry-wise complex conjugation (defined w
 The operator in \eqref{eq:pbt-operator} is a linear combination of states that maximally entangle one of the first $$n-1$$ systems with the last $$n$$-th one, as depicted in [Figure 1](#fig:pbt). 
 Thus, the relation \eqref{eq:Phi-U-invariance} equips the operator $$\rho$$ in \eqref{eq:pbt-operator} with a $$(U^{\otimes n-1}\otimes\overline{U})$$-symmetry.
 It is also evident from the definition \eqref{eq:pbt-operator} of $$\rho$$ that it is invariant under permuting the first $$n-1$$ systems, since it is a uniform superposition over all maximally entangled states between one of those systems and the marked $$n$$-th one.
-Thus, $$\rho$$ in \eqref{eq:pbt-operator} also has an $$\mathcal{S}_{n-1}$$-symmetry, where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ factors of $$(\mathbb{C}^d)^{\otimes n-1}$$.
+Thus, $$\rho$$ in \eqref{eq:pbt-operator} also has an $$\mathcal{S}_{n-1}$$-symmetry, where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ factors of $$(\mathbb{C}^d)^{\otimes n}$$.
 
 ### References
 
