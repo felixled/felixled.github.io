@@ -3,7 +3,7 @@ layout: post
 title: "A PPT-entangled and 2-extendible 2-qutrit state"
 permalink: /ppt_entangled_two_extendible/
 date: 2026-11-10
-description: "Post describing a PPT-entangled, 2-extendible 2-qutrit state, showing that the intersection of PPT and 2-extendible (or equivalently, antidegradable) states strictly contains the set of separable states.
+description: "Post describing a PPT-entangled, 2-extendible 2-qutrit state, showing that the intersection of PPT and 2-extendible (or equivalently, antidegradable) states strictly contains the set of separable states."
 tags: research
 ---
 
