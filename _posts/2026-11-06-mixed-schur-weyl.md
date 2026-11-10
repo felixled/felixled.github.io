@@ -21,8 +21,8 @@ Our starting point is to consider a quantum state on $$n$$ quantum systems of lo
 \end{align}
 </div>
 
-where $$\ket{\Phi^+}_{(in)} = \sum_{\alpha=1}^d \ket{\alpha}_i \otimes \ket{\alpha}_n$$ denotes an unnormalized state on systems $$i$$ and $$n$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,n$$.
-<a href="javascript:void(0)" onclick="var e=document.getElementById('step0'); e.hidden=!e.hidden;">(a note on notation)</a><span id="step0" style="font-style: italic;" hidden> [Here we are using the common shorthand notation $$\psi\equiv \ket{\psi}\bra{\psi}$$ for the rank-1 density matrix associated with a pure state. We will be working with unnormalized states for cleaner exposition throughout, but of course all results hold by including normalization factors to obtain quantum states with unit trace.]</span>.
+where $$\ket{\Phi^+}_{(in)} = \sum_{\alpha=1}^d \ket{\alpha}_i \otimes \ket{\alpha}_n$$ denotes an unnormalized state on systems $$i$$ and $$n$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,n$$ 
+<a href="javascript:void(0)" onclick="var e=document.getElementById('step0'); e.hidden=!e.hidden;">(a note on notation)</a><span id="step0" style="font-style: italic;" hidden> [Here we are using the common shorthand notation $$\psi\equiv \ket{\psi}\bra{\psi}$$ for the rank-1 density matrix associated with a pure state $$\ket{\psi}$$. We will be working with unnormalized states for cleaner exposition throughout, but of course all results hold by including normalization factors to obtain quantum states with unit trace.]</span>.
 
 <div id="fig:pbt" class="post-figure-left" markdown="0">
 {% include figure.liquid path="assets/img/posts/pbt_state.png" class="img-fluid rounded z-depth-1" caption="Figure 1: Graphical representation of the states appearing in $\rho$ in \eqref{eq:pbt-operator}." zoomable=true %}
