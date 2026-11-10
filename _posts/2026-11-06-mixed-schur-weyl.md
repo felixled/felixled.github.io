@@ -43,6 +43,8 @@ where the bar over an operator denotes entry-wise complex conjugation (defined w
 <span id="step1" style="font-style: italic;" hidden> [The maximally entangled state satisfies the *transpose trick identity* $$(X\otimes \mathbb{I})\ket{\Phi^+} = (\mathbb{I}\otimes X^T)\ket{\Phi^+}$$, valid for all operators $$X$$. This identity can be easily checked by expanding $$X$$ in the basis $$\lbrace\ket{\alpha}\rbrace$$. Applying this to the action of $$U\otimes \overline{U}$$ on the maximally entangled state, we get $$(U\otimes \overline{U})\ket{\Phi^+} = (U \overline{U}^T\otimes \mathbb{I})\ket{\Phi^+} = (U U^\dagger\otimes \mathbb{I})\ket{\Phi^+} = \ket{\Phi^+},$$ which proves the claim.]</span>.
 The operator in \eqref{eq:pbt-operator} is a linear combination of states that maximally entangle one of the first $$n-1$$ systems with the last $$n$$-th one, as depicted in [Figure 1](#fig:pbt). 
 Thus, the relation \eqref{eq:Phi-U-invariance} equips the operator $$\rho$$ in \eqref{eq:pbt-operator} with a $$(U^{\otimes n-1}\otimes\overline{U})$$-symmetry.
+It is also evident from [Figure 1](#fig:pbt) that $$\rho$$ is invariant under permuting the first $$n-1$$ systems, since it is a uniform superposition over all maximally entangled states between one of those systems and the marked $$n$$-th one.
+Thus, $$\rho$$ in \eqref{eq:pbt-operator} also has a $$\mathcal{S}_{n-1}$$-symmetry, where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ factors of $$(\mathbb{C}^d)^{\otimes n-1}$$.
 
 ### References
 

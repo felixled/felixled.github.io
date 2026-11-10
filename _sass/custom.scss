@@ -40,6 +40,18 @@ article h2, article h3 { clear: both; }
     width: 300px;
     margin: 0 1.5rem 1rem 0;
   }
+}
+
+@media (max-width: 768px) {
+  .figure-right,
+  .figure-left {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
   .post-figure-right,
   .post-figure-left {
     float: none;
