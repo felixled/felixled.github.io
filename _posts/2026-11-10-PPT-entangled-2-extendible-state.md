@@ -7,7 +7,8 @@ description: "Post describing a PPT-entangled, 2-extendible 2-qutrit state, show
 tags: research
 ---
 
-Let $$\lbrace \ket{0},\ket{1},\ket{2}\rbrace$$ be the computational basis of a qutrit system, and consider the following quantum state on two qutrits defined in {% cite horodecki1999bound --file ppt --style ieee %}:
+Let $$\lbrace \ket{0},\ket{1},\ket{2}\rbrace$$ be the computational basis of a qutrit system.
+We consider the following quantum state on two qutrits defined in {% cite horodecki1999bound --file ppt --style ieee %}:
 
 <div markdown="0">
 \begin{align*}
@@ -32,7 +33,7 @@ Let $$\lbrace \ket{0},\ket{1},\ket{2}\rbrace$$ be the computational basis of a q
 		          . &   . &    . &    . &    . &   . & 1/6 &    . & .   \\
 		          . &   . &    . &    . &    . &   . &   . & 1/14 & .   \\
 		       2/21 &   . &    . &    . & 2/21 &   . &   . &    . & 2/21
-\end{pmatrix}. 
+\end{pmatrix}
 \end{align*}
 </div>
 
@@ -40,7 +41,7 @@ Let $$\lbrace \ket{0},\ket{1},\ket{2}\rbrace$$ be the computational basis of a q
 
 The state $$\rho$$ is PPT and entangled by the results of {% cite horodecki1999bound --file ppt --style ieee %}.
 
-To construct a (symmetric) 2-extension of $$\rho$$, consider the following vectors that are symmetric in the 2nd and 3rd system:
+To construct a (symmetric) 2-extension of $$\rho$$, consider the following vectors that are symmetric under exchange of the 2nd and 3rd systems:
 
 <div markdown="0">
 \begin{align*}
@@ -50,7 +51,7 @@ To construct a (symmetric) 2-extension of $$\rho$$, consider the following vecto
 \end{align*}
 </div>
 
-The following state $$\Omega$$ is symmetric in the second and third system and satisfies $$\operatorname{tr}_2 \Omega = \operatorname{tr}_3 \Omega = \rho$$, thus giving a symmetric 2-extension of $$\rho$$:
+The following state $$\Omega$$ is symmetric in the second and third systems and satisfies $$\operatorname{tr}_2 \Omega = \operatorname{tr}_3 \Omega = \rho$$, thus giving a symmetric 2-extension of $$\rho$$:
 
 <div markdown="0">
 \begin{align*}
