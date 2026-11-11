@@ -56,13 +56,13 @@ Furthermore, $$\rho$$ is invariant under permuting the first $$n-1$$ systems, si
 To summarize, $$\rho$$ has the symmetries
 
 <div markdown="0">
-\begin{align}
+\begin{equation}
 \begin{aligned}
 [\rho,U^{\otimes n-1}\otimes\overline{U}] &= 0 \:\forall U\in\mathcal{U}_d,\\
 [\rho,P_d(\pi)] &= 0 \: \forall \pi\in\mathcal{S}_{n-1},
 \end{aligned}
 \label{eq:pbt-symmetries}
-\end{align}
+\end{equation}
 </div>
 
 where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ systems of $$(\mathbb{C}^d)^{\otimes n}$$, which we denote by $$\pi\mapsto P_d(\pi)$$ (with $$P_d(\pi)$$ defined as an operator acting on the full space $$(\mathbb{C}^d)^{\otimes n}$$).
@@ -71,9 +71,11 @@ The goal of this post is to derive an efficient representation-theoretic descrip
 We will first focus on the special case of qubits ($$d=2$$) in which we can make things explicit in a fairly straightforward way.
 We will then describe the general case for arbitrary $$d$$.
 
-## Qubits ($$d=2$$)
+## Qubits
 
-### Warm-up: $$n=1$$
+### Warm-up: $$n=2$$
+
+In this simple case, we consider a single maximally entangled state, or Bell pair, on two qubits: $$\ket{\Phi^+} = \ket{00}+\ket{11}$$.
 
 ## References
 
