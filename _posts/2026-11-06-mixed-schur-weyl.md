@@ -5,6 +5,8 @@ permalink: /mixed_sw/
 date: 2026-11-06
 description: Post describing the simple setting of mixed Schur-Weyl duality that is relevant in port-based teleportation and a recent paper on data hiding schemes.
 tags: research
+hidden: true
+sitemap: false
 ---
 
 In this post I will give an introduction to $$(p,q)$$-mixed Schur-Weyl duality in the simple case of $$(p,q)=(n-1,1)$$, which is the relevant one for port-based teleportation (PBT) {% cite ishizaka2008asymptotic ishizaka2009quantum --file pbt --style ieee %}, and has also been used recently to discuss data hiding schemes {% cite akresh2026tight --file pbt --style ieee %}. 
@@ -46,9 +48,9 @@ To summarize, $$\rho$$ has the symmetries
 
 <div markdown="0">
 \begin{align}
-[\rho,U^{\otimes n-1}\otimes\overline{U}] &= 0 \,\forall U,\\
-[\rho,\pi] &= 0 \, \forall \pi\in\mathcal{S}_{n-1},
-\end{align},
+[\rho,U^{\otimes n-1}\otimes\overline{U}] &= 0 \:\forall U\in\mathcal{U}_d,\\
+[\rho,\pi] &= 0 \: \forall \pi\in\mathcal{S}_{n-1},
+\end{align}
 </div>
 
 where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ systems of $$(\mathbb{C}^d)^{\otimes n}$$.
