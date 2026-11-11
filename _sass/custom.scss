@@ -17,17 +17,24 @@
   margin: 0 0 1rem 0;
 }
 
-.post-figure-left,
-.post-figure-right {
+.post-figure-float-left,
+.post-figure-float-right {
   width: 40%;
   max-width: 400px;
   margin-bottom: 1rem;
 }
-.post-figure-right {
+
+.post-figure {
+  width: 40%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+.post-figure-float-right {
   float: right;
   margin-left: 1.5rem;
 }
-.post-figure-left {
+.post-figure-float-left {
   float: left;
   margin-right: 1.5rem;
 }
@@ -43,8 +50,8 @@ article h2, article h3 { clear: both; }
 }
 
 @media (max-width: 768px) {
-  .post-figure-right,
-  .post-figure-left {
+  .post-figure-float-right,
+  .post-figure-float-left, .post-figure {
     float: none;
     width: 100%;
     max-width: none;

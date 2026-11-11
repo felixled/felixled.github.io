@@ -28,10 +28,10 @@ Our starting point is to consider a quantum state on $$n$$ quantum systems of lo
 
 where $$\ket{\Phi^+}_{(in)} = \sum_{\alpha=1}^d \ket{\alpha}_i \otimes \ket{\alpha}_n$$ denotes an unnormalized state on systems $$i$$ and $$n$$, and $$\mathbb{I}_{(in)^c}$$ denotes the identity on the $$n-2$$ systems $$1,\dots,n$$ excluding systems $$i,n$$ 
 <a href="javascript:void(0)" onclick="var e=document.getElementById('step0'); e.hidden=!e.hidden;">(a note on notation)</a><span id="step0" style="font-style: italic;" hidden> [Here we are using the common shorthand notation $$\psi\equiv \ket{\psi}\bra{\psi}$$ for the rank-1 density matrix associated with a pure state $$\ket{\psi}$$. We will be working with unnormalized states for cleaner exposition throughout, but of course all results hold by including normalization factors to obtain quantum states with unit trace.]</span>.
-The quantum state in \eqref{eq:pbt-operator} is actually proportional to the average state in the state discrimination problem at the heart of port-based teleportation {% cite ishizaka2008asymptotic ishizaka2009quantum --file pbt --style ieee %}, in the sense that teleporting a state using a PBT protocol is mathematically equivalent to distinguishing the $$n-1$$ states appearing in the linear combination in \eqref{eq:pbt-operator}.
+The quantum state in \eqref{eq:pbt-operator} is actually proportional to the average state in the state discrimination problem at the heart of port-based teleportation {% cite ishizaka2008asymptotic ishizaka2009quantum --file pbt --style ieee %}, in the sense that teleporting a state using a PBT protocol is mathematically equivalent to distinguishing the $$n-1$$ states appearing in the linear combination in \eqref{eq:pbt-operator} and visualized in [Figure 1](#fig:pbt).
 This is an instance of a more general correspondence between teleportation protocols and quantum state discrimination discussed in {% cite chitambar2024teleportation --file pbt --style ieee %}.
 
-<div id="fig:pbt" class="post-figure-left" markdown="0">
+<div id="fig:pbt" class="post-figure" markdown="0">
 {% include figure.liquid path="assets/img/posts/pbt_state.png" class="img-fluid rounded z-depth-1" caption="Figure 1: Graphical representation of the states appearing in the superposition making up the state $\rho$ in \eqref{eq:pbt-operator}." zoomable=true %}
 </div>
 
