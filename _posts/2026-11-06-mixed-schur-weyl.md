@@ -58,8 +58,8 @@ To summarize, $$\rho$$ has the symmetries
 <div markdown="0">
 \begin{equation}
 \begin{aligned}
-[\rho,U^{\otimes n-1}\otimes\overline{U}] &= 0 \:\forall U\in\mathcal{U}_d,\\
-[\rho,P_d(\pi)] &= 0 \: \forall \pi\in\mathcal{S}_{n-1},
+{}[\rho,U^{\otimes n-1}\otimes\overline{U}] &= 0 \:\forall U\in\mathcal{U}_d,\\
+{}[\rho,P_d(\pi)] &= 0 \: \forall \pi\in\mathcal{S}_{n-1},
 \end{aligned}
 \label{eq:pbt-symmetries}
 \end{equation}
