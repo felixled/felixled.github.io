@@ -58,11 +58,11 @@ To summarize, $$\rho$$ has the symmetries
 <div markdown="0">
 \begin{align}
 [\rho,U^{\otimes n-1}\otimes\overline{U}] &= 0 \:\forall U\in\mathcal{U}_d,\\
-[\rho,\pi] &= 0 \: \forall \pi\in\mathcal{S}_{n-1},
+[\rho,P_d(\pi)] &= 0 \: \forall \pi\in\mathcal{S}_{n-1},
 \end{align}
 </div>
 
-where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ systems of $$(\mathbb{C}^d)^{\otimes n}$$.
+where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ systems of $$(\mathbb{C}^d)^{\otimes n}$$, which we denote by $$\pi\mapsto P_d(\pi)$$ (with $$P_d(\pi)$$ defined as an operator acting on the full space $$(\mathbb{C}^d)^{\otimes n}$$).
 
 _Work in progress..._
 
