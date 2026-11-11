@@ -64,6 +64,10 @@ The following state $$\Omega$$ is symmetric in the second and third systems and 
 The marginal of $$\rho$$ on the first system is maximally mixed, and thus $$\rho$$ is a bona fide Choi state.
 Since a channel is antidegradable if and only if its Choi operator is 2-extendible {% cite myhr2010symmetric --file ppt --style ieee %}, the operator $$\rho$$ is in fact the Choi state of a channel that is PPT and antidegradable, but not entanglement-breaking. 
 
+### Code
+
+- [MATLAB script](/files/code/ppt_entangled_2_extendible.m) (requires the [QETLAB toolbox](https://qetlab.com/)) 
+
 ### References
 
 <div class="publications">
