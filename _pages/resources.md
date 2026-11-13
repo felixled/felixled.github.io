@@ -25,8 +25,8 @@ toc:
 - [Abstract Linear Algebra (undergraduate level)](https://mediaspace.illinois.edu/playlist/dedicated/1_r1og534q/1_dp8olnbt)
 
 ## Research-related posts
-- [A PPT-entangled and 2-extendible 2-qutrit state]({{ '/ppt_entangled_two_extendible/' | relative_url }}):<br/>Post describing a PPT-entangled, 2-extendible 2-qutrit state, showing that the intersection of PPT and 2-extendible (or equivalently, antidegradable) states strictly contains the set of separable states.
-- [Mixed Schur-Weyl duality in port-based teleportation]({{ '/mixed_sw/' | relative_url }}):<br/>Post describing the simple setting of mixed Schur-Weyl duality that is relevant in port-based teleportation and a recent paper on data hiding schemes.
+- [A PPT-entangled and 2-extendible 2-qutrit state]({{ '/ppt_entangled_two_extendible/' | relative_url }})<br/>Post describing a PPT-entangled, 2-extendible 2-qutrit state, showing that the intersection of PPT and 2-extendible (or equivalently, antidegradable) states strictly contains the set of separable states.
+- [Mixed Schur-Weyl duality in port-based teleportation]({{ '/mixed_sw/' | relative_url }})<br/>Post describing the simple setting of mixed Schur-Weyl duality that is relevant in port-based teleportation and a recent paper on data hiding schemes.
 
 ## Literature review
 - [Lists of references to topics in mathematics and quantum information science]({{ '/selected_references/' | relative_url }}) close to my own research. These lists are mainly intended for students who are either interested in working with me, or just want to learn more about these topics for their own research.
