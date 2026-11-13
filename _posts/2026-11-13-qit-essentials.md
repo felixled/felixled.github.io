@@ -2,6 +2,7 @@
 layout: post
 title: Some essential papers in quantum information theory
 permalink: /qit-essentials/
+redirect_from: /essential_papers/
 description: A crowd-sourced list of must-read papers in quantum information theory.
 date: 2026-11-10
 tags: research
@@ -25,7 +26,7 @@ It's merely a list of papers that came to the mind of quantum information theori
 - P. Hayden, D.W. Leung, A. Winter: [Aspects of generic entanglement](https://arxiv.org/abs/quant-ph/0407049), 2004.
 - C. Marriott, J. Watrous: [Quantum Arthur-Merlin Games](https://arxiv.org/abs/cs/0506068), 2005.
 - D. Poulin: [Stabilizer Formalism for Operator Quantum Error Correction](https://arxiv.org/abs/quant-ph/0508131), 2005.
-- C.H. Bennett: [On Random and Hard-to-Describe Numbers](https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=F97EE85D4ED62AAF48EDF6329A172BBD?doi=10.1.1.214.7866&rep=rep1&type=pdf), 2007.
+- C.H. Bennett: [On Random and Hard-to-Describe Numbers](https://web.archive.org/web/20200710012601id_/https://marcuschown.com/wp-content/uploads/2015/12/calude-book.pdf#page=17), 2007.
 - P. Hayden, J. Preskill: [Black holes as mirrors: quantum information in random subsystems](https://arxiv.org/abs/0708.4025), 2007.
 - M. Navascues, S. Pironio, A. Acin: [A convergent hierarchy of semidefinite programs characterizing the set of quantum correlations](https://arxiv.org/abs/0803.4290), 2008.
 - G. Smith, J. Yard: [Quantum Communication With Zero-Capacity Channels](https://arxiv.org/abs/0807.4935), 2008.
