@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Lists of references to topics in mathematics and quantum information science
 permalink: /selected_references/
 date: 2026-10-28

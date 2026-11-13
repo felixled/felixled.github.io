@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "A PPT-entangled and 2-extendible 2-qutrit state"
 permalink: /ppt_entangled_two_extendible/
 date: 2026-11-10

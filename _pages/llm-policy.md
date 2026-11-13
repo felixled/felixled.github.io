@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: My policy on using LLMs in academic work
 permalink: /llm_policy/
 redirect_from: /ai/

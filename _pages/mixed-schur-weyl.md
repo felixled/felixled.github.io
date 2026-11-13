@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Mixed Schur-Weyl duality in port-based teleportation
 permalink: /mixed_sw/
 date: 2026-11-06

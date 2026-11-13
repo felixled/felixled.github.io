@@ -1,8 +1,10 @@
 ---
-layout: post
+layout: page
 title: Some essential papers in quantum information theory
-permalink: /qit-essentials/
-redirect_from: /essential_papers/
+permalink: /qit_essentials/
+redirect_from:
+  - /essential_papers/
+  - /qit-essentials/
 description: A crowd-sourced list of must-read papers in quantum information theory.
 date: 2026-11-10
 tags: research

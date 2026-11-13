@@ -3,7 +3,7 @@ layout: default
 permalink: /posts/
 redirect_from: /blog/
 title: posts
-nav: true
+nav: false
 nav_order: 45
 pagination:
   enabled: true
