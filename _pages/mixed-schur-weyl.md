@@ -65,7 +65,7 @@ To summarize, $$\rho$$ has the symmetries
 \end{equation}
 </div>
 
-where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ systems of $$(\mathbb{C}^d)^{\otimes n}$$, which we denote by $$\pi\mapsto P_d(\pi)$$. <a href="javascript:void(0)" onclick="var e=document.getElementById('step2'); e.hidden=!e.hidden;">(Note on $$P_d(\pi)$$.)</a><span id="step2" style="font-style: italic;" hidden>  [$$P_d(\pi)$$ is defined as the permutation operator mapping $$\ket{v_1}\otimes \dots\otimes \ket{v_n}$$ to $$\ket{v_{\pi^{-1}(1)}}\otimes\dots\otimes \ket{v_{\pi^{-1}(n)}}$$, acting on the full space $$(\mathbb{C}^d)^{\otimes n}$$. Since $$\pi$$ is in the symmetric group $$\mathcal{S}_{n-1}$$, it fixes $$n$$ and hence $$P_d(\pi)$$ acts trivially on the last factor in $$(\mathbb{C}^d)^{\otimes n}$$. One can write $$P_d(\pi) = P_d(\pi)'\otimes\mathbb{I}$$, with $$P_d(\pi)'$$ only acting on the first $$n-1$$ systems, to make this explicit, which for example is used in {% cite akresh2026tight --file pbt --style ieee %}.]</span>
+where the symmetric group $$\mathcal{S}_{n-1}$$ acts by permuting the first $$n-1$$ systems of $$(\mathbb{C}^d)^{\otimes n}$$, which we denote by $$\pi\mapsto P_d(\pi)$$. <a id="permutation_operators" href="javascript:void(0)" onclick="var e=document.getElementById('step2'); e.hidden=!e.hidden;">(Note on $$P_d(\pi)$$.)</a><span id="step2" style="font-style: italic;" hidden>  [$$P_d(\pi)$$ is defined as the permutation operator mapping $$\ket{v_1}\otimes \dots\otimes \ket{v_n}$$ to $$\ket{v_{\pi^{-1}(1)}}\otimes\dots\otimes \ket{v_{\pi^{-1}(n)}}$$, acting on the full space $$(\mathbb{C}^d)^{\otimes n}$$. Since $$\pi$$ is in the symmetric group $$\mathcal{S}_{n-1}$$, it fixes $$n$$ and hence $$P_d(\pi)$$ acts trivially on the last factor in $$(\mathbb{C}^d)^{\otimes n}$$. One can write $$P_d(\pi) = P_d(\pi)'\otimes\mathbb{I}$$, with $$P_d(\pi)'$$ only acting on the first $$n-1$$ systems, to make this explicit, which for example is used in {% cite akresh2026tight --file pbt --style ieee %}.]</span>
 
 The goal of this post is to derive an efficient representation-theoretic description of all operators $$\rho$$ satisfying the two symmetries in \eqref{eq:pbt-symmetries}.
 We will first focus on the special case of qubits ($$d=2$$) in which we can make things explicit in a fairly straightforward way.
@@ -134,9 +134,30 @@ Extending this intertwiner to the full state space as $$J_n\equiv\mathbb{I_2}^{\
 
 <div markdown="0">
 \begin{align}
-U^{\otimes n-1}\otimes\overline{U} \overset{J_n}{\cong} U^{\otimes n} \otimes \det^{-1}(U).
+U^{\otimes n-1}\otimes\overline{U} \:\overset{J_n}{\cong}\: U^{\otimes n} \otimes \det(U)^{-1}.
+\label{eq:intertwined}
 \end{align}
 </div>
+
+What have we gained by doing this? Well, we understand the two representations $$U\mapsto U^{\otimes n}$$ and $$U\mapsto\det(U)^{-1}$$ on the RHS of \eqref{eq:intertwined}, and we know how to tensor them together to get a description of the LHS!
+
+#### Ordinary Schur-Weyl duality
+
+The representation $$U\mapsto U^{\otimes n}$$ is the subject of "ordinary" Schur-Weyl duality, which we will only briefly introduce here. You can learn more about in my [lecture notes](/files/Felix Leditzky - Math 595 Representation-theoretic methods in quantum information theory.pdf).
+Schur-Weyl duality says that, with respect to the representation $$\phi\colon U\mapsto U^{\otimes n}$$ of the unitary group $$\mathcal{U}_d$$, the state space $$(\mathbb{C}^d)^{\otimes n}$$ decomposes as
+
+<div markdown="0">
+\begin{equation}
+\begin{aligned}
+(\mathbb{C}^d)^{\otimes n} &\cong \bigoplus_{\lambda \vdash_d n} V_\lambda^d \otimes S_\lambda\\
+\phi(U) &\cong \bigoplus_{\lambda \vdash_d n} \phi_\lambda(U) \otimes \mathbb{I}_{S_\lambda}.
+\end{aligned}
+\label{eq:schur-weyl-duality}
+\end{equation}
+</div>
+
+Here, $$\lbrace \lambda \vdash_d n\rbrace$$ is the set of all partitions of $$n$$ into at most $$d$$ parts, $$(V_\lambda,\phi_\lambda)$$ is an irreducible representation (irrep) of $$\mathcal{U}_d$$ indexed by $$\lambda$$, and $$S_\lambda$$ is the _multiplicity space_ of $$V_\lambda$$: the irrep $$V_\lambda$$ occurs $$\dim S_\lambda$$ many times in the decomposition \eqref{eq:schur-weyl-duality}.
+The _duality_ part is that $$S_\lambda$$ is actually an irreducible representation of the symmetric group $$S_n$$ acting on $$(\mathbb{C}^d)^{\otimes n}$$ by permuting tensor factors, defined via the permutation operators $$P_d(\cdot)$$ [defined above](#permutation_operators).
 
 ## References
 
