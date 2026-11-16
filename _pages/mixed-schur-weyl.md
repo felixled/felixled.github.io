@@ -76,6 +76,8 @@ We will then describe the general case for arbitrary $$d$$.
 ### Warm-up: $$n=2$$
 
 In this simple case, we consider a single maximally entangled state, or Bell pair, on two qubits: $$\ket{\Phi^+} = \ket{00}+\ket{11}$$.
+Our goal is to decompose the state space $$\mathbb{C}^2\otimes \mathbb{C}^2$$ into subspaces adapted to the representation $$U\mapsto U\otimes \overline{U}$$ of the qubit unitary group.
+
 
 ## References
 
