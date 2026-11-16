@@ -77,7 +77,20 @@ We will then describe the general case for arbitrary $$d$$.
 
 In this simple case, we consider a single maximally entangled state, or Bell pair, on two qubits: $$\ket{\Phi^+} = \ket{00}+\ket{11}$$.
 Our goal is to decompose the state space $$\mathbb{C}^2\otimes \mathbb{C}^2$$ into subspaces adapted to the representation $$U\mapsto U\otimes \overline{U}$$ of the qubit unitary group.
-
+In representation-theoretic terms, the invariance property \eqref{eq:Phi-U-invariance} means that $$\ket{Phi^+}$$ spans a 1-dimensional _trivial_ representation of the unitary group.
+There is actually a whole orthonormal basis for $$\mathbb{C}^2\otimes \mathbb{C}^2$$ consisting of $$\Phi^+$$ and three other maximally entangled vectors:
+<div markdown="0">
+\begin{equation}
+\begin{aligned}
+{}\ket{\Phi^+} &= \ket{00}+\ket{11}\\
+\ket{\Phi^-} &= \ket{00}-\ket{11}\\
+\ket{\Psi^+} &= \ket{01}+\ket{10}\\
+\ket{\Psi^-} &= \ket{01}-\ket{10}.
+\end{aligned}
+\end{equation}
+</div>
+We can work out what the action of $$U\otimes \overline{U}$$ looks like on the remaining three basis vectors.
+Letting $$U=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$, we have
 
 ## References
 
