@@ -11,54 +11,154 @@ import {
   sub,
   unit,
 } from "../core/math3d.js";
-import { sharedStyles } from "../core/theme.js";
+
+import {
+  sharedStyles,
+} from "../core/theme.js";
+
 
 const DEFAULT_PLANES = [
-  { a: 1, b: 0, c: 0, d: 1 },
-  { a: 0, b: 1, c: 0, d: 1 },
-  { a: 0, b: 0, c: 1, d: 1 },
+  {
+    a: 1,
+    b: 0,
+    c: 0,
+    d: 1,
+  },
+  {
+    a: 0,
+    b: 1,
+    c: 0,
+    d: 1,
+  },
+  {
+    a: 0,
+    b: 0,
+    c: 1,
+    d: 1,
+  },
 ];
+
 
 const PRESETS = {
   point: {
-    planes: DEFAULT_PLANES,
-    useThird: true,
+    planes:
+      DEFAULT_PLANES,
+
+    useThird:
+      true,
   },
+
   line: {
     planes: [
-      { a: 1, b: 0, c: 0, d: 0 },
-      { a: 0, b: 1, c: 0, d: 0 },
-      { a: 1, b: 1, c: 0, d: 0 },
+      {
+        a: 1,
+        b: 0,
+        c: 0,
+        d: 0,
+      },
+      {
+        a: 0,
+        b: 1,
+        c: 0,
+        d: 0,
+      },
+      {
+        a: 1,
+        b: 1,
+        c: 0,
+        d: 0,
+      },
     ],
-    useThird: true,
+
+    useThird:
+      true,
   },
+
   pairwise: {
     planes: [
-      { a: 1, b: 0, c: 0, d: 0 },
-      { a: 0, b: 1, c: 0, d: 0 },
-      { a: 1, b: 1, c: 0, d: 1 },
+      {
+        a: 1,
+        b: 0,
+        c: 0,
+        d: 0,
+      },
+      {
+        a: 0,
+        b: 1,
+        c: 0,
+        d: 0,
+      },
+      {
+        a: 1,
+        b: 1,
+        c: 0,
+        d: 1,
+      },
     ],
-    useThird: true,
+
+    useThird:
+      true,
   },
+
   same: {
     planes: [
-      { a: 1, b: 1, c: 1, d: 2 },
-      { a: 2, b: 2, c: 2, d: 4 },
-      { a: 0, b: 0, c: 1, d: 0 },
+      {
+        a: 1,
+        b: 1,
+        c: 1,
+        d: 2,
+      },
+      {
+        a: 2,
+        b: 2,
+        c: 2,
+        d: 4,
+      },
+      {
+        a: 0,
+        b: 0,
+        c: 1,
+        d: 0,
+      },
     ],
-    useThird: false,
+
+    useThird:
+      false,
   },
+
   parallel: {
     planes: [
-      { a: 1, b: 0, c: 0, d: 0 },
-      { a: 1, b: 0, c: 0, d: 2 },
-      { a: 0, b: 1, c: 0, d: 0 },
+      {
+        a: 1,
+        b: 0,
+        c: 0,
+        d: 0,
+      },
+      {
+        a: 1,
+        b: 0,
+        c: 0,
+        d: 2,
+      },
+      {
+        a: 0,
+        b: 1,
+        c: 0,
+        d: 0,
+      },
     ],
-    useThird: false,
+
+    useThird:
+      false,
   },
 };
 
-const template = document.createElement("template");
+
+const template =
+  document.createElement(
+    "template"
+  );
+
 
 template.innerHTML = `
 <style>
@@ -66,7 +166,9 @@ ${sharedStyles}
 
 .wrap {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(280px, 0.9fr);
   gap: 1rem;
   align-items: start;
 }
@@ -80,46 +182,83 @@ svg {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
-  background: var(--m257-surface-muted);
-  border: 1px solid var(--m257-border);
-  border-radius: 0.75rem;
-  touch-action: pan-y;
+
+  background:
+    var(--m257-surface-muted);
+
+  border:
+    1px solid
+    var(--m257-border);
+
+  border-radius:
+    0.75rem;
+
+  touch-action:
+    pan-y;
 }
 
 .panel {
   min-width: 0;
-  padding: 0.9rem;
-  background: var(--m257-surface);
-  border: 1px solid var(--m257-border);
-  border-radius: 0.8rem;
+
+  padding:
+    0.9rem;
+
+  background:
+    var(--m257-surface);
+
+  border:
+    1px solid
+    var(--m257-border);
+
+  border-radius:
+    0.8rem;
 }
 
 .help,
 .caption,
 .status p {
-  color: var(--m257-muted);
+  color:
+    var(--m257-muted);
 }
 
 .help {
-  margin: 0.6rem 0;
-  font-size: 0.85rem;
-  line-height: 1.4;
+  margin:
+    0.6rem 0;
+
+  font-size:
+    0.85rem;
+
+  line-height:
+    1.4;
 }
 
 .check {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
+
+  margin-bottom:
+    0.4rem;
+
+  font-size:
+    0.9rem;
 }
 
 .equation-row {
   display: grid;
-  grid-template-columns: 1.5rem 1fr;
-  gap: 0.55rem;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid var(--m257-border);
+
+  grid-template-columns:
+    1.5rem 1fr;
+
+  gap:
+    0.55rem;
+
+  padding:
+    0.7rem 0;
+
+  border-bottom:
+    1px solid
+    var(--m257-border);
 }
 
 .equation-row:last-child {
@@ -127,273 +266,574 @@ svg {
 }
 
 /*
- * Important: .equation-row uses display:grid, so explicitly force
- * hidden rows to display:none. Otherwise some CSS/browser combinations
- * can leave the third equation visible after toggling it off.
+ * Important: .equation-row itself uses
+ * display:grid. Explicitly forcing hidden
+ * rows to display:none avoids the third
+ * equation remaining visible.
  */
 [hidden] {
   display: none !important;
 }
 
 .dot {
-  width: 0.8rem;
-  height: 0.8rem;
-  margin-top: 0.28rem;
-  border-radius: 999px;
+  width:
+    0.8rem;
+
+  height:
+    0.8rem;
+
+  margin-top:
+    0.28rem;
+
+  border-radius:
+    999px;
 }
 
 .equation {
-  margin-bottom: 0.45rem;
-  font-size: 0.96rem;
-  font-weight: 650;
+  margin-bottom:
+    0.45rem;
+
+  font-size:
+    0.96rem;
+
+  font-weight:
+    650;
 }
 
 .controls {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.28rem 0.7rem;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    0.28rem 0.7rem;
 }
 
 .control {
   display: grid;
-  grid-template-columns: 1rem 1fr 2.7rem;
-  gap: 0.3rem;
-  align-items: center;
-  min-width: 0;
-  color: var(--m257-muted);
-  font-size: 0.8rem;
+
+  grid-template-columns:
+    1rem 1fr 2.7rem;
+
+  gap:
+    0.3rem;
+
+  align-items:
+    center;
+
+  min-width:
+    0;
+
+  color:
+    var(--m257-muted);
+
+  font-size:
+    0.8rem;
 }
 
 input[type="range"] {
-  width: 100%;
-  min-width: 0;
-  accent-color: var(--m257-accent);
+  width:
+    100%;
+
+  min-width:
+    0;
+
+  accent-color:
+    var(--m257-accent);
 }
 
 output {
-  color: var(--m257-text);
-  text-align: right;
-  font-variant-numeric: tabular-nums;
+  color:
+    var(--m257-text);
+
+  text-align:
+    right;
+
+  font-variant-numeric:
+    tabular-nums;
 }
 
 .status,
 .solver {
-  margin-top: 0.8rem;
-  padding: 0.8rem;
-  background: var(--m257-surface-muted);
-  border: 1px solid var(--m257-border);
-  border-radius: 0.7rem;
+  margin-top:
+    0.8rem;
+
+  padding:
+    0.8rem;
+
+  background:
+    var(--m257-surface-muted);
+
+  border:
+    1px solid
+    var(--m257-border);
+
+  border-radius:
+    0.7rem;
 }
 
 .status strong,
 .solver h3 {
-  display: block;
-  margin: 0;
-  font-size: 1rem;
+  display:
+    block;
+
+  margin:
+    0;
+
+  font-size:
+    1rem;
 }
 
 .status p {
-  margin: 0.25rem 0 0;
-  font-size: 0.86rem;
-  line-height: 1.4;
+  margin:
+    0.25rem 0 0;
+
+  font-size:
+    0.86rem;
+
+  line-height:
+    1.4;
 }
 
 .ranks {
-  margin-top: 0.45rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.82rem;
+  margin-top:
+    0.45rem;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+
+  font-size:
+    0.82rem;
 }
 
 .solver-body {
-  margin-top: 0.55rem;
-  font-size: 0.87rem;
-  line-height: 1.5;
+  margin-top:
+    0.55rem;
+
+  font-size:
+    0.87rem;
+
+  line-height:
+    1.5;
 }
 
 .solver-item {
-  padding: 0.52rem 0;
-  border-top: 1px solid var(--m257-border);
+  padding:
+    0.52rem 0;
+
+  border-top:
+    1px solid
+    var(--m257-border);
 }
 
 .solver-item:first-child {
-  padding-top: 0;
-  border-top: 0;
+  padding-top:
+    0;
+
+  border-top:
+    0;
 }
 
 .solver-label {
-  margin-bottom: 0.15rem;
-  color: var(--m257-muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  margin-bottom:
+    0.15rem;
+
+  color:
+    var(--m257-muted);
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.035em;
+
+  text-transform:
+    uppercase;
 }
 
 .math {
-  overflow-wrap: anywhere;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.87rem;
+  overflow-wrap:
+    anywhere;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+
+  font-size:
+    0.87rem;
 }
 
 .actions,
-.rotate {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
+.rotate,
+.zoom {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    0.45rem;
 }
 
 .actions {
-  margin-top: 0.7rem;
+  margin-top:
+    0.7rem;
 }
 
 .rotate {
-  margin: 0.65rem 0;
+  margin:
+    0.65rem 0 0.35rem;
+}
+
+.zoom {
+  margin:
+    0 0 0.65rem;
 }
 
 button {
-  min-height: 2.6rem;
-  padding: 0.48rem 0.68rem;
-  color: var(--m257-text);
-  background: var(--m257-surface-muted);
-  border: 1px solid var(--m257-border);
-  border-radius: 0.6rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
+  min-height:
+    2.6rem;
+
+  padding:
+    0.48rem 0.68rem;
+
+  color:
+    var(--m257-text);
+
+  background:
+    var(--m257-surface-muted);
+
+  border:
+    1px solid
+    var(--m257-border);
+
+  border-radius:
+    0.6rem;
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    600;
+
+  cursor:
+    pointer;
 }
 
 button:hover {
-  border-color: var(--m257-accent);
+  border-color:
+    var(--m257-accent);
 }
 
-.rotate button {
-  min-width: 2.6rem;
+.rotate button,
+.zoom button {
+  min-width:
+    2.6rem;
 }
 
 .caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: 0.45rem;
-  font-size: 0.8rem;
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  gap:
+    0.6rem;
+
+  flex-wrap:
+    wrap;
+
+  margin-top:
+    0.45rem;
+
+  font-size:
+    0.8rem;
 }
 
 @media (max-width: 720px) {
   .wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 }
 
 @media (max-width: 400px) {
   .controls {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 }
 </style>
 
+
 <div class="wrap">
+
   <section class="view">
+
     <svg
       viewBox="0 0 640 640"
       role="img"
       aria-labelledby="title desc"
     >
-      <title id="title">Three-dimensional linear equations</title>
+
+      <title id="title">
+        Three-dimensional linear equations
+      </title>
+
       <desc id="desc">
-        A rotatable three-dimensional view of planes representing linear
-        equations in x, y, and z.
+        A rotatable three-dimensional view
+        of planes representing linear equations
+        in x, y, and z.
       </desc>
 
       <g data-layer="cube"></g>
+
       <g data-layer="planes"></g>
+
       <g data-layer="intersections"></g>
+
       <g data-layer="axes"></g>
+
     </svg>
 
+
     <div class="caption">
-      <span>Drag to rotate.</span>
+
+      <span>
+        Drag to rotate. Use the mouse wheel
+        or zoom buttons to zoom.
+      </span>
+
       <span data-role="range-caption"></span>
+
     </div>
 
-    <div class="rotate" aria-label="View controls">
-      <button type="button" data-rotate="left" aria-label="Rotate left">
+
+    <div
+      class="rotate"
+      aria-label="Rotation controls"
+    >
+
+      <button
+        type="button"
+        data-rotate="left"
+        aria-label="Rotate left"
+      >
         ←
       </button>
 
-      <button type="button" data-rotate="right" aria-label="Rotate right">
+      <button
+        type="button"
+        data-rotate="right"
+        aria-label="Rotate right"
+      >
         →
       </button>
 
-      <button type="button" data-rotate="up" aria-label="Rotate up">
+      <button
+        type="button"
+        data-rotate="up"
+        aria-label="Rotate up"
+      >
         ↑
       </button>
 
-      <button type="button" data-rotate="down" aria-label="Rotate down">
+      <button
+        type="button"
+        data-rotate="down"
+        aria-label="Rotate down"
+      >
         ↓
       </button>
 
-      <button type="button" data-rotate="reset">
+      <button
+        type="button"
+        data-rotate="reset"
+      >
         Reset view
       </button>
+
     </div>
+
+
+    <div
+      class="zoom"
+      aria-label="Zoom controls"
+    >
+
+      <button
+        type="button"
+        data-zoom="out"
+        aria-label="Zoom out"
+      >
+        −
+      </button>
+
+      <button
+        type="button"
+        data-zoom="reset"
+        aria-label="Reset zoom"
+      >
+
+        <span data-role="zoom-label">
+          100%
+        </span>
+
+      </button>
+
+      <button
+        type="button"
+        data-zoom="in"
+        aria-label="Zoom in"
+      >
+        +
+      </button>
+
+    </div>
+
   </section>
 
+
   <section class="panel">
-    <label class="check">
-      <input data-role="third" type="checkbox" checked>
-      Include a third plane
-    </label>
 
     <label class="check">
-      <input data-role="pair-lines" type="checkbox" checked>
-      Show pairwise intersection lines
+
+      <input
+        data-role="third"
+        type="checkbox"
+        checked
+      >
+
+      Include a third plane
+
     </label>
+
+
+    <label class="check">
+
+      <input
+        data-role="pair-lines"
+        type="checkbox"
+        checked
+      >
+
+      Show pairwise intersection lines
+
+    </label>
+
 
     <p class="help">
-      Each plane has equation <strong>ax + by + cz = d</strong>.
-      The vector (a,b,c) is normal to the plane.
+
+      Each plane has equation
+      <strong>ax + by + cz = d</strong>.
+      The vector (a,b,c) is normal
+      to the plane.
+
     </p>
+
 
     <div data-role="equations"></div>
 
-    <div class="status" aria-live="polite">
-      <strong data-role="status-title"></strong>
-      <p data-role="status-text"></p>
-      <div class="ranks" data-role="ranks"></div>
+
+    <div
+      class="status"
+      aria-live="polite"
+    >
+
+      <strong
+        data-role="status-title"
+      ></strong>
+
+      <p
+        data-role="status-text"
+      ></p>
+
+      <div
+        class="ranks"
+        data-role="ranks"
+      ></div>
+
     </div>
 
-    <div class="solver" aria-live="polite">
-      <h3>Solution set</h3>
-      <div class="solver-body" data-role="solver"></div>
+
+    <div
+      class="solver"
+      aria-live="polite"
+    >
+
+      <h3>
+        Solution set
+      </h3>
+
+      <div
+        class="solver-body"
+        data-role="solver"
+      ></div>
+
     </div>
+
 
     <div class="actions">
-      <button type="button" data-preset="point">
+
+      <button
+        type="button"
+        data-preset="point"
+      >
         Unique point
       </button>
 
-      <button type="button" data-preset="line">
+      <button
+        type="button"
+        data-preset="line"
+      >
         Common line
       </button>
 
-      <button type="button" data-preset="pairwise">
+      <button
+        type="button"
+        data-preset="pairwise"
+      >
         Pairwise only
       </button>
 
-      <button type="button" data-preset="same">
+      <button
+        type="button"
+        data-preset="same"
+      >
         Same plane
       </button>
 
-      <button type="button" data-preset="parallel">
+      <button
+        type="button"
+        data-preset="parallel"
+      >
         Parallel
       </button>
+
     </div>
+
   </section>
+
 </div>
 `;
 
-export class Math257PlaneSystem3D extends HTMLElement {
+
+export class Math257PlaneSystem3D
+  extends HTMLElement {
+
   static get observedAttributes() {
     return [
       "preset",
@@ -404,121 +844,220 @@ export class Math257PlaneSystem3D extends HTMLElement {
     ];
   }
 
+
   constructor() {
     super();
 
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.attachShadow({
+      mode: "open",
+    });
 
-    this.planes = DEFAULT_PLANES.map((plane) => ({ ...plane }));
+    this.shadowRoot.appendChild(
+      template.content.cloneNode(true)
+    );
 
-    this.useThird = true;
-    this.showPairwise = true;
+    this.planes =
+      DEFAULT_PLANES.map(
+        (plane) => ({
+          ...plane,
+        })
+      );
 
-    this.range = 4;
+    this.useThird =
+      true;
 
-    this.yaw = -0.65;
-    this.pitch = 0.48;
+    this.showPairwise =
+      true;
 
-    this.dragging = false;
-    this.lastX = 0;
-    this.lastY = 0;
+    this.range =
+      4;
 
-    this._connected = false;
+    this.zoom =
+      1;
+
+    this.yaw =
+      -0.65;
+
+    this.pitch =
+      0.48;
+
+    this.dragging =
+      false;
+
+    this.lastX =
+      0;
+
+    this.lastY =
+      0;
+
+    this._connected =
+      false;
+
 
     this.svg =
-      this.shadowRoot.querySelector("svg");
+      this.shadowRoot.querySelector(
+        "svg"
+      );
 
     this.cubeLayer =
-      this.shadowRoot.querySelector('[data-layer="cube"]');
+      this.shadowRoot.querySelector(
+        '[data-layer="cube"]'
+      );
 
     this.planeLayer =
-      this.shadowRoot.querySelector('[data-layer="planes"]');
+      this.shadowRoot.querySelector(
+        '[data-layer="planes"]'
+      );
 
     this.intersectionLayer =
-      this.shadowRoot.querySelector('[data-layer="intersections"]');
+      this.shadowRoot.querySelector(
+        '[data-layer="intersections"]'
+      );
 
     this.axisLayer =
-      this.shadowRoot.querySelector('[data-layer="axes"]');
+      this.shadowRoot.querySelector(
+        '[data-layer="axes"]'
+      );
 
     this.equationsElement =
-      this.shadowRoot.querySelector('[data-role="equations"]');
+      this.shadowRoot.querySelector(
+        '[data-role="equations"]'
+      );
 
     this.thirdCheckbox =
-      this.shadowRoot.querySelector('[data-role="third"]');
+      this.shadowRoot.querySelector(
+        '[data-role="third"]'
+      );
 
     this.pairwiseCheckbox =
-      this.shadowRoot.querySelector('[data-role="pair-lines"]');
+      this.shadowRoot.querySelector(
+        '[data-role="pair-lines"]'
+      );
 
     this.statusTitle =
-      this.shadowRoot.querySelector('[data-role="status-title"]');
+      this.shadowRoot.querySelector(
+        '[data-role="status-title"]'
+      );
 
     this.statusText =
-      this.shadowRoot.querySelector('[data-role="status-text"]');
+      this.shadowRoot.querySelector(
+        '[data-role="status-text"]'
+      );
 
     this.ranksElement =
-      this.shadowRoot.querySelector('[data-role="ranks"]');
+      this.shadowRoot.querySelector(
+        '[data-role="ranks"]'
+      );
 
     this.solverElement =
-      this.shadowRoot.querySelector('[data-role="solver"]');
+      this.shadowRoot.querySelector(
+        '[data-role="solver"]'
+      );
 
     this.rangeCaption =
-      this.shadowRoot.querySelector('[data-role="range-caption"]');
+      this.shadowRoot.querySelector(
+        '[data-role="range-caption"]'
+      );
+
+    this.zoomLabel =
+      this.shadowRoot.querySelector(
+        '[data-role="zoom-label"]'
+      );
   }
+
 
   connectedCallback() {
-    if (this._connected) return;
+    if (this._connected) {
+      return;
+    }
 
-    this._connected = true;
+    this._connected =
+      true;
 
     this.readAttributes();
+
     this.buildControls();
+
     this.bindEvents();
+
     this.update();
   }
+
 
   attributeChangedCallback() {
-    if (!this._connected) return;
+    if (!this._connected) {
+      return;
+    }
 
     this.readAttributes();
+
     this.buildControls();
+
     this.update();
   }
+
 
   get activePlanes() {
     return this.planes.slice(
       0,
-      this.useThird ? 3 : 2,
+      this.useThird ? 3 : 2
     );
   }
 
+
   readAttributes() {
     const presetName =
-      this.getAttribute("preset");
+      this.getAttribute(
+        "preset"
+      );
 
-    if (presetName && PRESETS[presetName]) {
-      this.applyPreset(presetName, false);
+    if (
+      presetName &&
+      PRESETS[presetName]
+    ) {
+      this.applyPreset(
+        presetName,
+        false
+      );
     }
 
+
     const range =
-      Number(this.getAttribute("range"));
+      Number(
+        this.getAttribute(
+          "range"
+        )
+      );
 
     if (
       Number.isFinite(range) &&
       range > 0
     ) {
       this.range =
-        Math.max(1, Math.min(20, range));
+        Math.max(
+          1,
+          Math.min(
+            20,
+            range
+          )
+        );
     }
 
+
     const equations =
-      this.getAttribute("equations");
+      this.getAttribute(
+        "equations"
+      );
 
     if (equations) {
       const parsed =
-        this.parseEquations(equations);
+        this.parseEquations(
+          equations
+        );
 
-      if (parsed.length >= 2) {
+      if (
+        parsed.length >= 2
+      ) {
         this.planes = [
           parsed[0],
           parsed[1],
@@ -532,36 +1071,55 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     }
 
-    if (this.hasAttribute("two-planes")) {
-      this.useThird = false;
+
+    if (
+      this.hasAttribute(
+        "two-planes"
+      )
+    ) {
+      this.useThird =
+        false;
     }
 
+
     this.showPairwise =
-      !this.hasAttribute("hide-pairwise");
+      !this.hasAttribute(
+        "hide-pairwise"
+      );
   }
+
 
   parseEquations(value) {
     return value
       .split(";")
-      .map((part) => part.trim())
+      .map(
+        (part) =>
+          part.trim()
+      )
       .filter(Boolean)
-      .map((part) =>
-        part
-          .split(/[\s,]+/)
-          .map(Number)
+      .map(
+        (part) =>
+          part
+            .split(/[\s,]+/)
+            .map(Number)
       )
       .filter(
         (values) =>
           values.length === 4 &&
-          values.every(Number.isFinite)
+          values.every(
+            Number.isFinite
+          )
       )
-      .map(([a, b, c, d]) => ({
-        a,
-        b,
-        c,
-        d,
-      }));
+      .map(
+        ([a, b, c, d]) => ({
+          a,
+          b,
+          c,
+          d,
+        })
+      );
   }
+
 
   setPlanes(planes) {
     if (
@@ -571,82 +1129,188 @@ export class Math257PlaneSystem3D extends HTMLElement {
       return;
     }
 
+
     const normalized =
       planes
         .slice(0, 3)
-        .map((plane) => {
-          if (Array.isArray(plane)) {
-            const [a, b, c, d] =
-              plane.map(Number);
+        .map(
+          (plane) => {
+            if (
+              Array.isArray(plane)
+            ) {
+              const [
+                a,
+                b,
+                c,
+                d,
+              ] =
+                plane.map(Number);
+
+              return {
+                a,
+                b,
+                c,
+                d,
+              };
+            }
 
             return {
-              a,
-              b,
-              c,
-              d,
+              a:
+                Number(plane.a),
+
+              b:
+                Number(plane.b),
+
+              c:
+                Number(plane.c),
+
+              d:
+                Number(plane.d),
             };
           }
+        );
 
-          return {
-            a: Number(plane.a),
-            b: Number(plane.b),
-            c: Number(plane.c),
-            d: Number(plane.d),
-          };
-        });
 
     if (
-      normalized.some((plane) =>
-        Object.values(plane).some(
-          (value) =>
-            !Number.isFinite(value)
-        )
+      normalized.some(
+        (plane) =>
+          Object.values(
+            plane
+          ).some(
+            (value) =>
+              !Number.isFinite(
+                value
+              )
+          )
       )
     ) {
       return;
     }
 
+
     this.planes = [
       normalized[0],
       normalized[1],
+
       normalized[2] ?? {
         ...DEFAULT_PLANES[2],
       },
     ];
 
+
     this.useThird =
       normalized.length >= 3;
 
+
     this.buildControls();
+
     this.update();
   }
+
 
   resetView() {
-    this.yaw = -0.65;
-    this.pitch = 0.48;
+    this.yaw =
+      -0.65;
+
+    this.pitch =
+      0.48;
+
+    this.zoom =
+      1;
+
     this.update();
   }
 
-  applyPreset(name, rerender = true) {
-    const preset = PRESETS[name];
 
-    if (!preset) return;
+  setZoom(value) {
+    this.zoom =
+      Math.max(
+        0.55,
+        Math.min(
+          2.5,
+          value
+        )
+      );
+
+    this.update();
+  }
+
+
+  /*
+   * Accept both the original
+   * { p, dir } representation
+   * and the newer
+   * { point, direction }
+   * representation.
+   */
+  normalizeLine(line) {
+    if (!line) {
+      return null;
+    }
+
+    const point =
+      line.point ??
+      line.p;
+
+    const direction =
+      line.direction ??
+      line.dir;
+
+    if (
+      !Array.isArray(point) ||
+      !Array.isArray(direction)
+    ) {
+      return null;
+    }
+
+    if (
+      point.length !== 3 ||
+      direction.length !== 3
+    ) {
+      return null;
+    }
+
+    return {
+      point,
+      direction,
+    };
+  }
+
+
+  applyPreset(
+    name,
+    rerender = true
+  ) {
+    const preset =
+      PRESETS[name];
+
+    if (!preset) {
+      return;
+    }
+
 
     this.planes =
       preset.planes.map(
-        (plane) => ({ ...plane })
+        (plane) => ({
+          ...plane,
+        })
       );
+
 
     this.useThird =
       preset.useThird;
 
+
     if (rerender) {
       this.buildControls();
+
       this.update();
     }
   }
 
+
   bindEvents() {
+
     this.thirdCheckbox.addEventListener(
       "change",
       () => {
@@ -656,6 +1320,7 @@ export class Math257PlaneSystem3D extends HTMLElement {
         this.update();
       }
     );
+
 
     this.pairwiseCheckbox.addEventListener(
       "change",
@@ -667,71 +1332,151 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     );
 
-    this.shadowRoot
-      .querySelectorAll("[data-preset]")
-      .forEach((button) => {
-        button.addEventListener(
-          "click",
-          () => {
-            this.applyPreset(
-              button.dataset.preset
-            );
-          }
-        );
-      });
 
     this.shadowRoot
-      .querySelectorAll("[data-rotate]")
-      .forEach((button) => {
-        button.addEventListener(
-          "click",
-          () => {
-            const step = 0.18;
-
-            switch (
-              button.dataset.rotate
-            ) {
-              case "left":
-                this.yaw -= step;
-                break;
-
-              case "right":
-                this.yaw += step;
-                break;
-
-              case "up":
-                this.pitch =
-                  Math.min(
-                    1.35,
-                    this.pitch + step
-                  );
-                break;
-
-              case "down":
-                this.pitch =
-                  Math.max(
-                    -1.35,
-                    this.pitch - step
-                  );
-                break;
-
-              case "reset":
-                this.resetView();
-                return;
-
-              default:
-                return;
+      .querySelectorAll(
+        "[data-preset]"
+      )
+      .forEach(
+        (button) => {
+          button.addEventListener(
+            "click",
+            () => {
+              this.applyPreset(
+                button.dataset.preset
+              );
             }
+          );
+        }
+      );
 
-            this.update();
-          }
+
+    this.shadowRoot
+      .querySelectorAll(
+        "[data-rotate]"
+      )
+      .forEach(
+        (button) => {
+          button.addEventListener(
+            "click",
+            () => {
+              const step =
+                0.18;
+
+              switch (
+                button.dataset.rotate
+              ) {
+                case "left":
+                  this.yaw -=
+                    step;
+                  break;
+
+                case "right":
+                  this.yaw +=
+                    step;
+                  break;
+
+                case "up":
+                  this.pitch =
+                    Math.min(
+                      1.35,
+                      this.pitch +
+                        step
+                    );
+                  break;
+
+                case "down":
+                  this.pitch =
+                    Math.max(
+                      -1.35,
+                      this.pitch -
+                        step
+                    );
+                  break;
+
+                case "reset":
+                  this.resetView();
+                  return;
+
+                default:
+                  return;
+              }
+
+              this.update();
+            }
+          );
+        }
+      );
+
+
+    this.shadowRoot
+      .querySelectorAll(
+        "[data-zoom]"
+      )
+      .forEach(
+        (button) => {
+          button.addEventListener(
+            "click",
+            () => {
+              switch (
+                button.dataset.zoom
+              ) {
+                case "in":
+                  this.setZoom(
+                    this.zoom *
+                      1.2
+                  );
+                  break;
+
+                case "out":
+                  this.setZoom(
+                    this.zoom /
+                      1.2
+                  );
+                  break;
+
+                case "reset":
+                  this.setZoom(
+                    1
+                  );
+                  break;
+
+                default:
+                  break;
+              }
+            }
+          );
+        }
+      );
+
+
+    this.svg.addEventListener(
+      "wheel",
+      (event) => {
+        event.preventDefault();
+
+        const factor =
+          Math.exp(
+            -event.deltaY *
+              0.001
+          );
+
+        this.setZoom(
+          this.zoom *
+            factor
         );
-      });
+      },
+      {
+        passive: false,
+      }
+    );
+
 
     this.svg.addEventListener(
       "pointerdown",
       (event) => {
-        this.dragging = true;
+        this.dragging =
+          true;
 
         this.lastX =
           event.clientX;
@@ -745,16 +1490,21 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     );
 
+
     this.svg.addEventListener(
       "pointermove",
       (event) => {
-        if (!this.dragging) return;
+        if (!this.dragging) {
+          return;
+        }
 
         const dx =
-          event.clientX - this.lastX;
+          event.clientX -
+          this.lastX;
 
         const dy =
-          event.clientY - this.lastY;
+          event.clientY -
+          this.lastY;
 
         this.lastX =
           event.clientX;
@@ -770,7 +1520,8 @@ export class Math257PlaneSystem3D extends HTMLElement {
             -1.35,
             Math.min(
               1.35,
-              this.pitch + dy * 0.008
+              this.pitch +
+                dy * 0.008
             )
           );
 
@@ -778,19 +1529,25 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     );
 
-    const endDrag = (event) => {
-      this.dragging = false;
 
-      if (
-        this.svg.hasPointerCapture?.(
-          event.pointerId
-        )
-      ) {
-        this.svg.releasePointerCapture(
-          event.pointerId
-        );
-      }
-    };
+    const endDrag =
+      (event) => {
+        this.dragging =
+          false;
+
+        if (
+          this.svg
+            .hasPointerCapture?.(
+              event.pointerId
+            )
+        ) {
+          this.svg
+            .releasePointerCapture(
+              event.pointerId
+            );
+        }
+      };
+
 
     this.svg.addEventListener(
       "pointerup",
@@ -803,13 +1560,19 @@ export class Math257PlaneSystem3D extends HTMLElement {
     );
   }
 
+
   buildControls() {
-    this.equationsElement.replaceChildren();
+    this.equationsElement
+      .replaceChildren();
+
 
     this.planes.forEach(
       (plane, index) => {
+
         const row =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
         row.className =
           "equation-row";
@@ -817,8 +1580,11 @@ export class Math257PlaneSystem3D extends HTMLElement {
         row.dataset.row =
           index;
 
+
         const marker =
-          document.createElement("span");
+          document.createElement(
+            "span"
+          );
 
         marker.className =
           "dot";
@@ -826,11 +1592,17 @@ export class Math257PlaneSystem3D extends HTMLElement {
         marker.style.background =
           `var(--m257-series-${index + 1})`;
 
+
         const body =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
+
 
         const equation =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
         equation.className =
           "equation";
@@ -838,13 +1610,19 @@ export class Math257PlaneSystem3D extends HTMLElement {
         equation.dataset.equation =
           index;
 
-        body.appendChild(equation);
+        body.appendChild(
+          equation
+        );
+
 
         const controls =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
         controls.className =
           "controls";
+
 
         for (
           const key of [
@@ -854,6 +1632,7 @@ export class Math257PlaneSystem3D extends HTMLElement {
             "d",
           ]
         ) {
+
           const label =
             document.createElement(
               "label"
@@ -862,6 +1641,7 @@ export class Math257PlaneSystem3D extends HTMLElement {
           label.className =
             "control";
 
+
           const name =
             document.createElement(
               "span"
@@ -869,6 +1649,7 @@ export class Math257PlaneSystem3D extends HTMLElement {
 
           name.textContent =
             key;
+
 
           const input =
             document.createElement(
@@ -892,12 +1673,15 @@ export class Math257PlaneSystem3D extends HTMLElement {
             "0.25";
 
           input.value =
-            String(plane[key]);
+            String(
+              plane[key]
+            );
 
           input.setAttribute(
             "aria-label",
             `Plane ${index + 1}, coefficient ${key}`
           );
+
 
           const output =
             document.createElement(
@@ -909,11 +1693,14 @@ export class Math257PlaneSystem3D extends HTMLElement {
               plane[key]
             );
 
+
           input.addEventListener(
             "input",
             () => {
               plane[key] =
-                Number(input.value);
+                Number(
+                  input.value
+                );
 
               output.textContent =
                 this.formatNumber(
@@ -923,6 +1710,7 @@ export class Math257PlaneSystem3D extends HTMLElement {
               this.update();
             }
           );
+
 
           label.append(
             name,
@@ -935,35 +1723,44 @@ export class Math257PlaneSystem3D extends HTMLElement {
           );
         }
 
+
         body.appendChild(
           controls
         );
+
 
         row.append(
           marker,
           body
         );
 
+
         this.equationsElement
-          .appendChild(row);
+          .appendChild(
+            row
+          );
       }
     );
   }
 
+
   update() {
     /*
-     * Important: take a fixed snapshot of the active
-     * equations at the beginning of each redraw.
+     * Take one snapshot of the active
+     * equations at the start of the redraw.
      *
-     * This prevents the plot, solver, and status display
-     * from accidentally using different plane sets during
-     * a two-plane/three-plane toggle.
+     * This prevents the plot, solver, and
+     * status from using different sets of
+     * planes while the checkbox is changing.
      */
     const activePlanes =
       this.planes.slice(
         0,
-        this.useThird ? 3 : 2
+        this.useThird
+          ? 3
+          : 2
       );
+
 
     this.thirdCheckbox.checked =
       this.useThird;
@@ -971,10 +1768,13 @@ export class Math257PlaneSystem3D extends HTMLElement {
     this.pairwiseCheckbox.checked =
       this.showPairwise;
 
+
     const thirdRow =
-      this.equationsElement.querySelector(
-        '[data-row="2"]'
-      );
+      this.equationsElement
+        .querySelector(
+          '[data-row="2"]'
+        );
+
 
     if (thirdRow) {
       thirdRow.hidden =
@@ -982,16 +1782,20 @@ export class Math257PlaneSystem3D extends HTMLElement {
 
       thirdRow.setAttribute(
         "aria-hidden",
-        String(!this.useThird)
+        String(
+          !this.useThird
+        )
       );
     }
+
 
     this.planes.forEach(
       (plane, index) => {
         const equation =
-          this.equationsElement.querySelector(
-            `[data-equation="${index}"]`
-          );
+          this.equationsElement
+            .querySelector(
+              `[data-equation="${index}"]`
+            );
 
         if (equation) {
           equation.textContent =
@@ -1002,22 +1806,33 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     );
 
+
     const result =
       classifySystem(
         activePlanes
       );
 
+
     this.updateClassification(
       result
     );
 
+
     this.rangeCaption.textContent =
       `Cube: −${this.range} ≤ x,y,z ≤ ${this.range}`;
 
+
+    this.zoomLabel.textContent =
+      `${Math.round(
+        this.zoom * 100
+      )}%`;
+
+
     /*
-     * Draw first. This also means that if we later introduce
-     * a bug into solver formatting, the visualization itself
-     * is less likely to become unresponsive.
+     * Redraw before formatting the solver.
+     * This helps keep the 3D view responsive
+     * even if a future solver-formatting bug
+     * is introduced.
      */
     this.drawCube();
 
@@ -1032,18 +1847,22 @@ export class Math257PlaneSystem3D extends HTMLElement {
 
     this.drawAxes();
 
-    this.solverElement.replaceChildren(
-      ...this.buildSolverNodes(
-        result,
-        activePlanes
-      )
-    );
+
+    this.solverElement
+      .replaceChildren(
+        ...this.buildSolverNodes(
+          result,
+          activePlanes
+        )
+      );
+
 
     this.dispatchEvent(
       new CustomEvent(
         "math257-change",
         {
-          bubbles: true,
+          bubbles:
+            true,
 
           detail: {
             planes:
@@ -1063,36 +1882,49 @@ export class Math257PlaneSystem3D extends HTMLElement {
     );
   }
 
+
   updateClassification(result) {
     const labels = {
       point: [
         "Unique solution",
-        `The common intersection is ${this.formatVector(result.point)}.`,
+
+        `The common intersection is ${this.formatVector(
+          result.point
+        )}.`,
       ],
 
       line: [
         "Infinitely many solutions: a line",
+
         "The common solution set is one-dimensional.",
       ],
 
       plane: [
         "Infinitely many solutions: a plane",
+
         "The active equations impose only one independent constraint.",
       ],
 
       space: [
         "Every point is a solution",
+
         "All active equations reduce to 0 = 0.",
       ],
 
       none: [
         "No common solution",
+
         "The system is inconsistent because rank(A) ≠ rank([A | b]).",
       ],
     };
 
-    const [title, text] =
+
+    const [
+      title,
+      text,
+    ] =
       labels[result.type];
+
 
     this.statusTitle.textContent =
       title;
@@ -1100,49 +1932,78 @@ export class Math257PlaneSystem3D extends HTMLElement {
     this.statusText.textContent =
       text;
 
+
     this.ranksElement.textContent =
       `rank(A) = ${result.rankA} · ` +
       `rank([A | b]) = ${result.rankAugmented}` +
       (
-        result.dimension !== undefined
+        result.dimension !==
+        undefined
+
           ? ` · solution dimension = ${result.dimension}`
+
           : ""
       );
   }
 
+
   buildSolverNodes(
     result,
-    activePlanes = this.activePlanes
+    activePlanes =
+      this.activePlanes
   ) {
-    if (result.type === "point") {
-      return [
-        this.solverItem(
-          "Solution",
-          `(x, y, z) = ${this.formatVector(result.point)}`
-        ),
-      ];
-    }
 
     if (
-      result.type === "line" &&
-      result.line
+      result.type ===
+      "point"
     ) {
       return [
         this.solverItem(
-          "Common intersection line",
-          `(x, y, z) = ${this.formatVector(result.line.point)} ` +
-          `+ t ${this.formatVector(result.line.direction)},  t ∈ ℝ`
+          "Solution",
+
+          `(x, y, z) = ${this.formatVector(
+            result.point
+          )}`
         ),
       ];
     }
 
+
     if (
-      result.type === "plane" &&
+      result.type ===
+        "line" &&
+      result.line
+    ) {
+      const line =
+        this.normalizeLine(
+          result.line
+        );
+
+      if (line) {
+        return [
+          this.solverItem(
+            "Common intersection line",
+
+            `(x, y, z) = ${this.formatVector(
+              line.point
+            )} + t ${this.formatVector(
+              line.direction
+            )},  t ∈ ℝ`
+          ),
+        ];
+      }
+    }
+
+
+    if (
+      result.type ===
+        "plane" &&
       result.plane
     ) {
       return [
         this.solverItem(
           "Solution plane",
+
           this.formatEquation(
             result.plane
           )
@@ -1150,8 +2011,10 @@ export class Math257PlaneSystem3D extends HTMLElement {
       ];
     }
 
+
     if (
-      result.type === "space"
+      result.type ===
+      "space"
     ) {
       return [
         this.solverItem(
@@ -1161,12 +2024,15 @@ export class Math257PlaneSystem3D extends HTMLElement {
       ];
     }
 
+
     const nodes = [
       this.solverItem(
         "System",
+
         "No common solution. Pairwise intersections:"
       ),
     ];
+
 
     for (
       let i = 0;
@@ -1178,49 +2044,73 @@ export class Math257PlaneSystem3D extends HTMLElement {
         j < activePlanes.length;
         j += 1
       ) {
+
         const relation =
           pairRelation(
             activePlanes[i],
             activePlanes[j]
           );
 
+
         const label =
           `P${i + 1} ∩ P${j + 1}`;
+
 
         if (
           relation.type ===
           "line"
         ) {
+
+          const line =
+            this.normalizeLine(
+              relation.line
+            );
+
+
           nodes.push(
             this.solverItem(
               label,
-              `(x, y, z) = ${this.formatVector(relation.line.point)} ` +
-              `+ t ${this.formatVector(relation.line.direction)},  t ∈ ℝ`
+
+              line
+                ? `(x, y, z) = ${this.formatVector(
+                    line.point
+                  )} + t ${this.formatVector(
+                    line.direction
+                  )},  t ∈ ℝ`
+
+                : "Intersection line unavailable."
             )
           );
+
         } else if (
           relation.type ===
           "plane"
         ) {
+
           nodes.push(
             this.solverItem(
               label,
+
               this.formatEquation(
                 relation.plane
               )
             )
           );
+
         } else if (
           relation.type ===
           "space"
         ) {
+
           nodes.push(
             this.solverItem(
               label,
               "ℝ³"
             )
           );
+
         } else {
+
           nodes.push(
             this.solverItem(
               label,
@@ -1231,28 +2121,43 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     }
 
+
     return nodes;
   }
+
 
   cloneResult(result) {
     const clone = {
       ...result,
     };
 
+
     if (result.point) {
       clone.point =
         result.point.slice();
     }
 
-    if (result.line) {
-      clone.line = {
-        point:
-          result.line.point.slice(),
 
-        direction:
-          result.line.direction.slice(),
-      };
+    if (result.line) {
+      const line =
+        this.normalizeLine(
+          result.line
+        );
+
+      if (line) {
+        clone.line = {
+          point:
+            line.point.slice(),
+
+          direction:
+            line.direction.slice(),
+        };
+
+      } else {
+        delete clone.line;
+      }
     }
+
 
     if (result.plane) {
       clone.plane = {
@@ -1260,8 +2165,10 @@ export class Math257PlaneSystem3D extends HTMLElement {
       };
     }
 
+
     return clone;
   }
+
 
   solverItem(label, body) {
     const item =
@@ -1271,6 +2178,7 @@ export class Math257PlaneSystem3D extends HTMLElement {
 
     item.className =
       "solver-item";
+
 
     const heading =
       document.createElement(
@@ -1283,6 +2191,7 @@ export class Math257PlaneSystem3D extends HTMLElement {
     heading.textContent =
       label;
 
+
     const math =
       document.createElement(
         "div"
@@ -1294,19 +2203,23 @@ export class Math257PlaneSystem3D extends HTMLElement {
     math.textContent =
       body;
 
+
     item.append(
       heading,
       math
     );
 
+
     return item;
   }
+
 
   formatNumber(value) {
     const normalized =
       Math.abs(value) < 1e-9
         ? 0
         : value;
+
 
     if (
       Number.isInteger(
@@ -1318,60 +2231,100 @@ export class Math257PlaneSystem3D extends HTMLElement {
       );
     }
 
+
     return normalized
       .toFixed(3)
-      .replace(/0+$/, "")
-      .replace(/\.$/, "");
+      .replace(
+        /0+$/,
+        ""
+      )
+      .replace(
+        /\.$/,
+        ""
+      );
   }
+
 
   formatVector(vector) {
     return `(${vector
       .map(
         (value) =>
-          this.formatNumber(value)
+          this.formatNumber(
+            value
+          )
       )
       .join(", ")})`;
   }
 
+
   formatEquation(plane) {
     const terms = [
-      [plane.a, "x"],
-      [plane.b, "y"],
-      [plane.c, "z"],
+      [
+        plane.a,
+        "x",
+      ],
+
+      [
+        plane.b,
+        "y",
+      ],
+
+      [
+        plane.c,
+        "z",
+      ],
     ].filter(
       ([value]) =>
-        Math.abs(value) > EPS
+        Math.abs(value) >
+        EPS
     );
 
+
     if (!terms.length) {
-      return `0 = ${this.formatNumber(plane.d)}`;
+      return `0 = ${this.formatNumber(
+        plane.d
+      )}`;
     }
+
 
     return (
       terms
         .map(
           (
-            [value, symbol],
+            [
+              value,
+              symbol,
+            ],
             index
           ) => {
+
             const magnitude =
-              Math.abs(value);
+              Math.abs(
+                value
+              );
+
 
             const coefficient =
               Math.abs(
                 magnitude - 1
               ) < EPS
+
                 ? ""
+
                 : this.formatNumber(
                     magnitude
                   );
 
-            if (index === 0) {
+
+            if (
+              index === 0
+            ) {
               return (
                 `${value < 0 ? "−" : ""}` +
                 `${coefficient}${symbol}`
               );
             }
+
 
             return (
               `${value < 0 ? " − " : " + "}` +
@@ -1380,9 +2333,13 @@ export class Math257PlaneSystem3D extends HTMLElement {
           }
         )
         .join("") +
-      ` = ${this.formatNumber(plane.d)}`
+
+      ` = ${this.formatNumber(
+        plane.d
+      )}`
     );
   }
+
 
   svgElement(
     name,
@@ -1394,8 +2351,12 @@ export class Math257PlaneSystem3D extends HTMLElement {
         name
       );
 
+
     for (
-      const [key, value]
+      const [
+        key,
+        value,
+      ]
       of Object.entries(
         attributes
       )
@@ -1406,37 +2367,52 @@ export class Math257PlaneSystem3D extends HTMLElement {
       );
     }
 
+
     return element;
   }
 
+
   rotatePoint(point) {
     const cy =
-      Math.cos(this.yaw);
+      Math.cos(
+        this.yaw
+      );
 
     const sy =
-      Math.sin(this.yaw);
+      Math.sin(
+        this.yaw
+      );
 
     const cp =
-      Math.cos(this.pitch);
+      Math.cos(
+        this.pitch
+      );
 
     const sp =
-      Math.sin(this.pitch);
+      Math.sin(
+        this.pitch
+      );
+
 
     const x1 =
       cy * point[0] +
       sy * point[2];
 
+
     const z1 =
       -sy * point[0] +
       cy * point[2];
+
 
     const y2 =
       cp * point[1] -
       sp * z1;
 
+
     const z2 =
       sp * point[1] +
       cp * z1;
+
 
     return [
       x1,
@@ -1445,33 +2421,42 @@ export class Math257PlaneSystem3D extends HTMLElement {
     ];
   }
 
+
   project(point) {
     const rotated =
       this.rotatePoint(
         point
       );
 
+
     const scale =
       15 /
-      (15 - rotated[2]);
+      (
+        15 -
+        rotated[2]
+      );
+
 
     return {
       x:
         320 +
         rotated[0] *
           (232 / this.range) *
-          scale,
+          scale *
+          this.zoom,
 
       y:
         320 -
         rotated[1] *
           (232 / this.range) *
-          scale,
+          scale *
+          this.zoom,
 
       z:
         rotated[2],
     };
   }
+
 
   get cubeVertices() {
     const values = [
@@ -1479,11 +2464,19 @@ export class Math257PlaneSystem3D extends HTMLElement {
       this.range,
     ];
 
+
     const vertices = [];
 
-    for (const x of values) {
-      for (const y of values) {
-        for (const z of values) {
+
+    for (
+      const x of values
+    ) {
+      for (
+        const y of values
+      ) {
+        for (
+          const z of values
+        ) {
           vertices.push(
             [x, y, z]
           );
@@ -1491,14 +2484,18 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     }
 
+
     return vertices;
   }
+
 
   get cubeEdges() {
     const vertices =
       this.cubeVertices;
 
+
     const edges = [];
+
 
     for (
       let i = 0;
@@ -1510,7 +2507,10 @@ export class Math257PlaneSystem3D extends HTMLElement {
         j < vertices.length;
         j += 1
       ) {
-        let differences = 0;
+
+        let differences =
+          0;
+
 
         for (
           let k = 0;
@@ -1521,9 +2521,11 @@ export class Math257PlaneSystem3D extends HTMLElement {
             vertices[i][k] !==
             vertices[j][k]
           ) {
-            differences += 1;
+            differences +=
+              1;
           }
         }
+
 
         if (
           differences === 1
@@ -1536,8 +2538,10 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     }
 
+
     return edges;
   }
+
 
   planePolygon(plane) {
     const normal = [
@@ -1546,49 +2550,82 @@ export class Math257PlaneSystem3D extends HTMLElement {
       plane.c,
     ];
 
+
     if (
-      norm(normal) < EPS
+      norm(normal) <
+      EPS
     ) {
       return [];
     }
 
+
     const points = [];
 
+
     for (
-      const [p0, p1]
+      const [
+        p0,
+        p1,
+      ]
       of this.cubeEdges
     ) {
+
       const f0 =
-        dot(normal, p0) -
+        dot(
+          normal,
+          p0
+        ) -
         plane.d;
+
 
       const f1 =
-        dot(normal, p1) -
+        dot(
+          normal,
+          p1
+        ) -
         plane.d;
 
-      if (
-        Math.abs(f0) < EPS
-      ) {
-        points.push(p0);
-      }
 
       if (
-        Math.abs(f1) < EPS
+        Math.abs(f0) <
+        EPS
       ) {
-        points.push(p1);
+        points.push(
+          p0
+        );
       }
 
+
       if (
-        f0 * f1 < 0
+        Math.abs(f1) <
+        EPS
+      ) {
+        points.push(
+          p1
+        );
+      }
+
+
+      if (
+        f0 * f1 <
+        0
       ) {
         const t =
-          f0 / (f0 - f1);
+          f0 /
+          (
+            f0 -
+            f1
+          );
+
 
         points.push(
           add(
             p0,
             mul(
-              sub(p1, p0),
+              sub(
+                p1,
+                p0
+              ),
               t
             )
           )
@@ -1596,10 +2633,13 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     }
 
+
     const unique = [];
 
+
     for (
-      const point of points
+      const point
+      of points
     ) {
       if (
         !unique.some(
@@ -1612,33 +2652,56 @@ export class Math257PlaneSystem3D extends HTMLElement {
             ) < 1e-6
         )
       ) {
-        unique.push(point);
+        unique.push(
+          point
+        );
       }
     }
 
+
     if (
-      unique.length < 3
+      unique.length <
+      3
     ) {
       return [];
     }
 
+
     const center =
       mul(
         unique.reduce(
-          (sum, point) =>
-            add(sum, point),
+          (
+            sum,
+            point
+          ) =>
+            add(
+              sum,
+              point
+            ),
+
           [0, 0, 0]
         ),
-        1 / unique.length
+
+        1 /
+          unique.length
       );
 
+
     const n =
-      unit(normal);
+      unit(
+        normal
+      );
+
 
     const reference =
-      Math.abs(n[2]) < 0.8
+      Math.abs(
+        n[2]
+      ) < 0.8
+
         ? [0, 0, 1]
+
         : [0, 1, 0];
+
 
     const u =
       unit(
@@ -1648,92 +2711,160 @@ export class Math257PlaneSystem3D extends HTMLElement {
         )
       );
 
+
     const v =
-      cross(n, u);
+      cross(
+        n,
+        u
+      );
+
 
     unique.sort(
       (a, b) =>
         Math.atan2(
           dot(
-            sub(a, center),
+            sub(
+              a,
+              center
+            ),
             v
           ),
           dot(
-            sub(a, center),
+            sub(
+              a,
+              center
+            ),
             u
           )
         ) -
+
         Math.atan2(
           dot(
-            sub(b, center),
+            sub(
+              b,
+              center
+            ),
             v
           ),
           dot(
-            sub(b, center),
+            sub(
+              b,
+              center
+            ),
             u
           )
         )
     );
 
+
     return unique;
   }
 
-  clipLine(line) {
-    if (!line) return null;
 
-    let low = -1e9;
-    let high = 1e9;
+  clipLine(line) {
+    line =
+      this.normalizeLine(
+        line
+      );
+
+
+    if (!line) {
+      return null;
+    }
+
+
+    let low =
+      -1e9;
+
+    let high =
+      1e9;
+
 
     for (
       let k = 0;
       k < 3;
       k += 1
     ) {
+
       const p =
         line.point[k];
 
       const v =
         line.direction[k];
 
+
       if (
-        Math.abs(v) < EPS
+        Math.abs(v) <
+        EPS
       ) {
         if (
           p <
-            -this.range - EPS ||
+            -this.range -
+              EPS ||
           p >
-            this.range + EPS
+            this.range +
+              EPS
         ) {
           return null;
         }
 
+
         continue;
       }
 
+
       let t1 =
-        (-this.range - p) /
+        (
+          -this.range -
+          p
+        ) /
         v;
+
 
       let t2 =
-        (this.range - p) /
+        (
+          this.range -
+          p
+        ) /
         v;
 
-      if (t1 > t2) {
-        [t1, t2] =
-          [t2, t1];
+
+      if (
+        t1 > t2
+      ) {
+        [
+          t1,
+          t2,
+        ] =
+          [
+            t2,
+            t1,
+          ];
       }
 
+
       low =
-        Math.max(low, t1);
+        Math.max(
+          low,
+          t1
+        );
+
 
       high =
-        Math.min(high, t2);
+        Math.min(
+          high,
+          t2
+        );
     }
 
-    return low <= high
+
+    return (
+      low <= high
+    )
       ? [
           add(
             line.point,
+
             mul(
               line.direction,
               low
@@ -1742,38 +2873,59 @@ export class Math257PlaneSystem3D extends HTMLElement {
 
           add(
             line.point,
+
             mul(
               line.direction,
               high
             )
           ),
         ]
+
       : null;
   }
+
 
   drawCube() {
     this.cubeLayer
       .replaceChildren();
 
+
     for (
-      const [a, b]
+      const [
+        a,
+        b,
+      ]
       of this.cubeEdges
     ) {
+
       const p =
-        this.project(a);
+        this.project(
+          a
+        );
+
 
       const q =
-        this.project(b);
+        this.project(
+          b
+        );
+
 
       this.cubeLayer
         .appendChild(
           this.svgElement(
             "line",
             {
-              x1: p.x,
-              y1: p.y,
-              x2: q.x,
-              y2: q.y,
+              x1:
+                p.x,
+
+              y1:
+                p.y,
+
+              x2:
+                q.x,
+
+              y2:
+                q.y,
 
               stroke:
                 "var(--m257-border)",
@@ -1786,17 +2938,22 @@ export class Math257PlaneSystem3D extends HTMLElement {
     }
   }
 
+
   drawAxes() {
     this.axisLayer
       .replaceChildren();
+
 
     const origin =
       this.project(
         [0, 0, 0]
       );
 
+
     const extension =
-      this.range + 0.55;
+      this.range +
+      0.55;
+
 
     const axes = [
       [
@@ -1827,12 +2984,20 @@ export class Math257PlaneSystem3D extends HTMLElement {
       ],
     ];
 
+
     for (
-      const [end, label]
+      const [
+        end,
+        label,
+      ]
       of axes
     ) {
+
       const point =
-        this.project(end);
+        this.project(
+          end
+        );
+
 
       this.axisLayer
         .appendChild(
@@ -1860,15 +3025,18 @@ export class Math257PlaneSystem3D extends HTMLElement {
           )
         );
 
+
       const text =
         this.svgElement(
           "text",
           {
             x:
-              point.x + 5,
+              point.x +
+              5,
 
             y:
-              point.y - 5,
+              point.y -
+              5,
 
             fill:
               "var(--m257-text)",
@@ -1881,8 +3049,10 @@ export class Math257PlaneSystem3D extends HTMLElement {
           }
         );
 
+
       text.textContent =
         label;
+
 
       this.axisLayer
         .appendChild(
@@ -1891,42 +3061,62 @@ export class Math257PlaneSystem3D extends HTMLElement {
     }
   }
 
+
   drawPlanes(
     activePlanes =
       this.activePlanes
   ) {
+
     this.planeLayer
       .replaceChildren();
 
+
     const items = [];
 
+
     activePlanes.forEach(
-      (plane, index) => {
+      (
+        plane,
+        index
+      ) => {
+
         const polygon =
           this.planePolygon(
             plane
           );
 
+
         if (
-          polygon.length < 3
+          polygon.length <
+          3
         ) {
           return;
         }
 
+
         const projected =
           polygon.map(
             (point) =>
-              this.project(point)
+              this.project(
+                point
+              )
           );
+
 
         items.push({
           index,
+
           projected,
 
           depth:
             projected.reduce(
-              (sum, point) =>
-                sum + point.z,
+              (
+                sum,
+                point
+              ) =>
+                sum +
+                point.z,
+
               0
             ) /
             projected.length,
@@ -1934,16 +3124,22 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     );
 
+
     items.sort(
       (a, b) =>
-        a.depth - b.depth
+        a.depth -
+        b.depth
     );
 
+
     for (
-      const item of items
+      const item
+      of items
     ) {
+
       const color =
         `var(--m257-series-${item.index + 1})`;
+
 
       this.planeLayer
         .appendChild(
@@ -1979,21 +3175,34 @@ export class Math257PlaneSystem3D extends HTMLElement {
           )
         );
 
+
       const x =
         item.projected.reduce(
-          (sum, point) =>
-            sum + point.x,
+          (
+            sum,
+            point
+          ) =>
+            sum +
+            point.x,
+
           0
         ) /
         item.projected.length;
 
+
       const y =
         item.projected.reduce(
-          (sum, point) =>
-            sum + point.y,
+          (
+            sum,
+            point
+          ) =>
+            sum +
+            point.y,
+
           0
         ) /
         item.projected.length;
+
 
       const label =
         this.svgElement(
@@ -2025,8 +3234,10 @@ export class Math257PlaneSystem3D extends HTMLElement {
           }
         );
 
+
       label.textContent =
         `P${item.index + 1}`;
+
 
       this.planeLayer
         .appendChild(
@@ -2035,51 +3246,62 @@ export class Math257PlaneSystem3D extends HTMLElement {
     }
   }
 
+
   drawIntersections(
     result,
     activePlanes =
       this.activePlanes
   ) {
+
     this.intersectionLayer
       .replaceChildren();
+
 
     if (
       this.showPairwise
     ) {
+
       for (
         let i = 0;
         i < activePlanes.length;
         i += 1
       ) {
+
         for (
           let j = i + 1;
           j < activePlanes.length;
           j += 1
         ) {
+
           const line =
             pairIntersectionLine(
               activePlanes[i],
               activePlanes[j]
             );
 
+
           const segment =
             this.clipLine(
               line
             );
 
+
           if (!segment) {
             continue;
           }
+
 
           const p =
             this.project(
               segment[0]
             );
 
+
           const q =
             this.project(
               segment[1]
             );
+
 
           this.intersectionLayer
             .appendChild(
@@ -2116,19 +3338,26 @@ export class Math257PlaneSystem3D extends HTMLElement {
       }
     }
 
+
     if (
       result.type ===
         "point" &&
+
       result.point.every(
         (value) =>
-          Math.abs(value) <=
-          this.range + EPS
+          Math.abs(
+            value
+          ) <=
+          this.range +
+          EPS
       )
     ) {
+
       const point =
         this.project(
           result.point
         );
+
 
       this.intersectionLayer
         .appendChild(
@@ -2158,6 +3387,7 @@ export class Math257PlaneSystem3D extends HTMLElement {
     }
   }
 }
+
 
 if (
   !customElements.get(
