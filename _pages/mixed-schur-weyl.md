@@ -111,7 +111,7 @@ U\otimes \overline{U} &\cong \phi_{(0,0)}(U) \oplus \phi_{(1,-1)}(U),
 \end{equation}
 </div>
 where $$\phi_{(0,0)}(U)$$ is the trivial representation.
-The choice of notation using $$(0,0)$$ and $$(1,-1)$$ will become clear in the following section.
+The choice of notation using $$(0,0)$$ and $$(1,-1)$$ as subscripts will become clear in the following section.
 
 ### General case of $$n$$ qubits
 
