@@ -96,6 +96,7 @@ Letting $$U=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$, we have the following action
 \phi_{(1,-1)}(U) = \begin{pmatrix} |a|^2-|b|^2 & 2 \operatorname{Re}(a\overline{b}) & 2i\operatorname{Im}(a\overline{b})\\
 2\operatorname{Re}(a\overline{c}) & \operatorname{Re}(a\overline{d}+b\overline{c}) & i\operatorname{Im}(a\overline{d}-b\overline{c})\\
 2i \operatorname{Im}(a\overline{c}) & i\operatorname{Im}(a\overline{d}+b\overline{c}) & \operatorname{Re}(a\overline{d}-b\overline{c}).
+\end{pmatrix}
 \end{align}
 </div>
 It is not too hard to check that this is an _irreducible_ action of the unitary group on the subspace $$\operatorname{span}(\ket{\Phi^-},\ket{\Psi^+},\ket{\Psi^-})$$, since there are no non-trivial invariant subspaces.
