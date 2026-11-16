@@ -162,7 +162,7 @@ Schur-Weyl duality says that, with respect to the representation $$\phi\colon U\
 Here, $$\lbrace \lambda \vdash_d n\rbrace$$ is the set of all partitions of $$n$$ into at most $$d$$ parts, $$(V_\lambda,\phi_\lambda)$$ is an irreducible representation (irrep) of $$\mathcal{U}_d$$ indexed by $$\lambda$$, and $$S_\lambda$$ is the _multiplicity space_ of $$V_\lambda$$: the irrep $$V_\lambda$$ occurs $$\dim S_\lambda$$ many times in the decomposition \eqref{eq:schur-weyl-duality}.
 The _duality_ part is that $$S_\lambda$$ is actually an irreducible representation of the symmetric group $$S_n$$ acting on $$(\mathbb{C}^d)^{\otimes n}$$ by permuting tensor factors via the permutation operators $$P_d(\cdot)$$ [defined above](#permutation_operators).
 
-####
+_Under construction!_
 
 ## References
 
