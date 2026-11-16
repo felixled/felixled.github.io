@@ -18,158 +18,66 @@ import {
 
 
 const DEFAULT_PLANES = [
-  {
-    a: 1,
-    b: 0,
-    c: 0,
-    d: 1,
-  },
-  {
-    a: 0,
-    b: 1,
-    c: 0,
-    d: 1,
-  },
-  {
-    a: 0,
-    b: 0,
-    c: 1,
-    d: 1,
-  },
+  { a: 1, b: 0, c: 0, d: 1 },
+  { a: 0, b: 1, c: 0, d: 1 },
+  { a: 0, b: 0, c: 1, d: 1 },
 ];
 
 
 const PRESETS = {
-  point: {
-    planes:
-      DEFAULT_PLANES,
+  point: [
+    { a: 1, b: 0, c: 0, d: 1 },
+    { a: 0, b: 1, c: 0, d: 1 },
+    { a: 0, b: 0, c: 1, d: 1 },
+  ],
 
-    useThird:
-      true,
-  },
+  line: [
+    { a: 1, b: 0, c: 0, d: 0 },
+    { a: 0, b: 1, c: 0, d: 0 },
+    { a: 1, b: 1, c: 0, d: 0 },
+  ],
 
-  line: {
-    planes: [
-      {
-        a: 1,
-        b: 0,
-        c: 0,
-        d: 0,
-      },
-      {
-        a: 0,
-        b: 1,
-        c: 0,
-        d: 0,
-      },
-      {
-        a: 1,
-        b: 1,
-        c: 0,
-        d: 0,
-      },
-    ],
+  pairwise: [
+    { a: 1, b: 0, c: 0, d: 0 },
+    { a: 0, b: 1, c: 0, d: 0 },
+    { a: 1, b: 1, c: 0, d: 1 },
+  ],
 
-    useThird:
-      true,
-  },
+  same: [
+    { a: 1, b: 1, c: 1, d: 2 },
+    { a: 2, b: 2, c: 2, d: 4 },
+    { a: -1, b: -1, c: -1, d: -2 },
+  ],
 
-  pairwise: {
-    planes: [
-      {
-        a: 1,
-        b: 0,
-        c: 0,
-        d: 0,
-      },
-      {
-        a: 0,
-        b: 1,
-        c: 0,
-        d: 0,
-      },
-      {
-        a: 1,
-        b: 1,
-        c: 0,
-        d: 1,
-      },
-    ],
-
-    useThird:
-      true,
-  },
-
-  same: {
-    planes: [
-      {
-        a: 1,
-        b: 1,
-        c: 1,
-        d: 2,
-      },
-      {
-        a: 2,
-        b: 2,
-        c: 2,
-        d: 4,
-      },
-      {
-        a: 0,
-        b: 0,
-        c: 1,
-        d: 0,
-      },
-    ],
-
-    useThird:
-      false,
-  },
-
-  parallel: {
-    planes: [
-      {
-        a: 1,
-        b: 0,
-        c: 0,
-        d: 0,
-      },
-      {
-        a: 1,
-        b: 0,
-        c: 0,
-        d: 2,
-      },
-      {
-        a: 0,
-        b: 1,
-        c: 0,
-        d: 0,
-      },
-    ],
-
-    useThird:
-      false,
-  },
+  parallel: [
+    { a: 1, b: 0, c: 0, d: -2 },
+    { a: 1, b: 0, c: 0, d: 0 },
+    { a: 1, b: 0, c: 0, d: 2 },
+  ],
 };
 
 
 const template =
-  document.createElement(
-    "template"
-  );
+  document.createElement("template");
 
 
 template.innerHTML = `
 <style>
 ${sharedStyles}
 
+:host {
+  display: block;
+}
+
 .wrap {
   display: grid;
+
   grid-template-columns:
     minmax(0, 1.35fr)
     minmax(280px, 0.9fr);
+
   gap: 1rem;
+
   align-items: start;
 }
 
@@ -179,8 +87,10 @@ ${sharedStyles}
 
 svg {
   display: block;
+
   width: 100%;
   height: auto;
+
   aspect-ratio: 1 / 1;
 
   background:
@@ -200,8 +110,7 @@ svg {
 .panel {
   min-width: 0;
 
-  padding:
-    0.9rem;
+  padding: 0.9rem;
 
   background:
     var(--m257-surface);
@@ -223,7 +132,7 @@ svg {
 
 .help {
   margin:
-    0.6rem 0;
+    0.2rem 0 0.6rem;
 
   font-size:
     0.85rem;
@@ -234,11 +143,13 @@ svg {
 
 .check {
   display: flex;
+
   align-items: center;
+
   gap: 0.5rem;
 
   margin-bottom:
-    0.4rem;
+    0.5rem;
 
   font-size:
     0.9rem;
@@ -263,16 +174,6 @@ svg {
 
 .equation-row:last-child {
   border-bottom: 0;
-}
-
-/*
- * Important: .equation-row itself uses
- * display:grid. Explicitly forcing hidden
- * rows to display:none avoids the third
- * equation remaining visible.
- */
-[hidden] {
-  display: none !important;
 }
 
 .dot {
@@ -314,7 +215,7 @@ svg {
   display: grid;
 
   grid-template-columns:
-    1rem 1fr 2.7rem;
+    1rem 1fr 2.8rem;
 
   gap:
     0.3rem;
@@ -375,11 +276,9 @@ output {
 
 .status strong,
 .solver h3 {
-  display:
-    block;
+  display: block;
 
-  margin:
-    0;
+  margin: 0;
 
   font-size:
     1rem;
@@ -432,11 +331,9 @@ output {
 }
 
 .solver-item:first-child {
-  padding-top:
-    0;
+  padding-top: 0;
 
-  border-top:
-    0;
+  border-top: 0;
 }
 
 .solver-label {
@@ -477,8 +374,7 @@ output {
 .actions,
 .rotate,
 .zoom {
-  display:
-    flex;
+  display: flex;
 
   flex-wrap:
     wrap;
@@ -544,8 +440,7 @@ button:hover {
 }
 
 .caption {
-  display:
-    flex;
+  display: flex;
 
   justify-content:
     space-between;
@@ -595,8 +490,8 @@ button:hover {
 
       <desc id="desc">
         A rotatable three-dimensional view
-        of planes representing linear equations
-        in x, y, and z.
+        of three planes representing linear
+        equations in x, y, and z.
       </desc>
 
       <g data-layer="cube"></g>
@@ -712,19 +607,6 @@ button:hover {
     <label class="check">
 
       <input
-        data-role="third"
-        type="checkbox"
-        checked
-      >
-
-      Include a third plane
-
-    </label>
-
-
-    <label class="check">
-
-      <input
         data-role="pair-lines"
         type="checkbox"
         checked
@@ -736,12 +618,10 @@ button:hover {
 
 
     <p class="help">
-
       Each plane has equation
       <strong>ax + by + cz = d</strong>.
       The vector (a,b,c) is normal
       to the plane.
-
     </p>
 
 
@@ -839,7 +719,6 @@ export class Math257PlaneSystem3D
       "preset",
       "range",
       "equations",
-      "two-planes",
       "hide-pairwise",
     ];
   }
@@ -856,6 +735,12 @@ export class Math257PlaneSystem3D
       template.content.cloneNode(true)
     );
 
+
+    /*
+     * These three objects are never replaced.
+     * All controls and presets modify them
+     * in place.
+     */
     this.planes =
       DEFAULT_PLANES.map(
         (plane) => ({
@@ -863,11 +748,6 @@ export class Math257PlaneSystem3D
         })
       );
 
-    this.useThird =
-      true;
-
-    this.showPairwise =
-      true;
 
     this.range =
       4;
@@ -881,6 +761,9 @@ export class Math257PlaneSystem3D
     this.pitch =
       0.48;
 
+    this.showPairwise =
+      true;
+
     this.dragging =
       false;
 
@@ -892,6 +775,12 @@ export class Math257PlaneSystem3D
 
     this._connected =
       false;
+
+
+    /*
+     * Slider/input references.
+     */
+    this.inputs = [];
 
 
     this.svg =
@@ -922,11 +811,6 @@ export class Math257PlaneSystem3D
     this.equationsElement =
       this.shadowRoot.querySelector(
         '[data-role="equations"]'
-      );
-
-    this.thirdCheckbox =
-      this.shadowRoot.querySelector(
-        '[data-role="third"]'
       );
 
     this.pairwiseCheckbox =
@@ -976,11 +860,16 @@ export class Math257PlaneSystem3D
 
     this.readAttributes();
 
-    this.buildControls();
+    /*
+     * Controls are created exactly once.
+     */
+    this.buildControlsOnce();
 
     this.bindEvents();
 
-    this.update();
+    this.syncControls();
+
+    this.render();
   }
 
 
@@ -991,43 +880,20 @@ export class Math257PlaneSystem3D
 
     this.readAttributes();
 
-    this.buildControls();
+    this.syncControls();
 
-    this.update();
-  }
-
-
-  get activePlanes() {
-    return this.planes.slice(
-      0,
-      this.useThird ? 3 : 2
-    );
+    this.render();
   }
 
 
   readAttributes() {
-    const presetName =
-      this.getAttribute(
-        "preset"
-      );
-
-    if (
-      presetName &&
-      PRESETS[presetName]
-    ) {
-      this.applyPreset(
-        presetName,
-        false
-      );
-    }
-
-
     const range =
       Number(
         this.getAttribute(
           "range"
         )
       );
+
 
     if (
       Number.isFinite(range) &&
@@ -1044,10 +910,17 @@ export class Math257PlaneSystem3D
     }
 
 
+    this.showPairwise =
+      !this.hasAttribute(
+        "hide-pairwise"
+      );
+
+
     const equations =
       this.getAttribute(
         "equations"
       );
+
 
     if (equations) {
       const parsed =
@@ -1056,53 +929,50 @@ export class Math257PlaneSystem3D
         );
 
       if (
-        parsed.length >= 2
+        parsed.length === 3
       ) {
-        this.planes = [
-          parsed[0],
-          parsed[1],
-          parsed[2] ?? {
-            ...DEFAULT_PLANES[2],
-          },
-        ];
-
-        this.useThird =
-          parsed.length >= 3;
+        this.replacePlanes(
+          parsed
+        );
       }
     }
 
 
-    if (
-      this.hasAttribute(
-        "two-planes"
-      )
-    ) {
-      this.useThird =
-        false;
-    }
-
-
-    this.showPairwise =
-      !this.hasAttribute(
-        "hide-pairwise"
+    const preset =
+      this.getAttribute(
+        "preset"
       );
+
+
+    if (
+      preset &&
+      PRESETS[preset]
+    ) {
+      this.replacePlanes(
+        PRESETS[preset]
+      );
+    }
   }
 
 
   parseEquations(value) {
     return value
       .split(";")
+
       .map(
         (part) =>
           part.trim()
       )
+
       .filter(Boolean)
+
       .map(
         (part) =>
           part
             .split(/[\s,]+/)
             .map(Number)
       )
+
       .filter(
         (values) =>
           values.length === 4 &&
@@ -1110,6 +980,7 @@ export class Math257PlaneSystem3D
             Number.isFinite
           )
       )
+
       .map(
         ([a, b, c, d]) => ({
           a,
@@ -1121,54 +992,72 @@ export class Math257PlaneSystem3D
   }
 
 
+  /*
+   * Crucially, this does NOT replace
+   * this.planes or any of its three objects.
+   */
+  replacePlanes(source) {
+    for (
+      let i = 0;
+      i < 3;
+      i += 1
+    ) {
+      Object.assign(
+        this.planes[i],
+        source[i]
+      );
+    }
+  }
+
+
   setPlanes(planes) {
     if (
       !Array.isArray(planes) ||
-      planes.length < 2
+      planes.length !== 3
     ) {
       return;
     }
 
 
     const normalized =
-      planes
-        .slice(0, 3)
-        .map(
-          (plane) => {
-            if (
-              Array.isArray(plane)
-            ) {
-              const [
-                a,
-                b,
-                c,
-                d,
-              ] =
-                plane.map(Number);
+      planes.map(
+        (plane) => {
 
-              return {
-                a,
-                b,
-                c,
-                d,
-              };
-            }
+          if (
+            Array.isArray(plane)
+          ) {
+            const [
+              a,
+              b,
+              c,
+              d,
+            ] =
+              plane.map(Number);
 
             return {
-              a:
-                Number(plane.a),
-
-              b:
-                Number(plane.b),
-
-              c:
-                Number(plane.c),
-
-              d:
-                Number(plane.d),
+              a,
+              b,
+              c,
+              d,
             };
           }
-        );
+
+
+          return {
+            a:
+              Number(plane.a),
+
+            b:
+              Number(plane.b),
+
+            c:
+              Number(plane.c),
+
+            d:
+              Number(plane.d),
+          };
+        }
+      );
 
 
     if (
@@ -1188,149 +1077,325 @@ export class Math257PlaneSystem3D
     }
 
 
-    this.planes = [
-      normalized[0],
-      normalized[1],
+    this.replacePlanes(
+      normalized
+    );
 
-      normalized[2] ?? {
-        ...DEFAULT_PLANES[2],
-      },
-    ];
+    this.syncControls();
 
-
-    this.useThird =
-      normalized.length >= 3;
-
-
-    this.buildControls();
-
-    this.update();
+    this.render();
   }
 
 
-  resetView() {
-    this.yaw =
-      -0.65;
-
-    this.pitch =
-      0.48;
-
-    this.zoom =
-      1;
-
-    this.update();
-  }
-
-
-  setZoom(value) {
-    this.zoom =
-      Math.max(
-        0.55,
-        Math.min(
-          2.5,
-          value
-        )
-      );
-
-    this.update();
-  }
-
-
-  /*
-   * Accept both the original
-   * { p, dir } representation
-   * and the newer
-   * { point, direction }
-   * representation.
-   */
-  normalizeLine(line) {
-    if (!line) {
-      return null;
-    }
-
-    const point =
-      line.point ??
-      line.p;
-
-    const direction =
-      line.direction ??
-      line.dir;
-
-    if (
-      !Array.isArray(point) ||
-      !Array.isArray(direction)
-    ) {
-      return null;
-    }
-
-    if (
-      point.length !== 3 ||
-      direction.length !== 3
-    ) {
-      return null;
-    }
-
-    return {
-      point,
-      direction,
-    };
-  }
-
-
-  applyPreset(
-    name,
-    rerender = true
-  ) {
+  applyPreset(name) {
     const preset =
       PRESETS[name];
+
 
     if (!preset) {
       return;
     }
 
 
-    this.planes =
-      preset.planes.map(
-        (plane) => ({
-          ...plane,
-        })
+    /*
+     * Mutate existing plane objects.
+     */
+    this.replacePlanes(
+      preset
+    );
+
+
+    /*
+     * Update all slider positions,
+     * equations and output labels.
+     */
+    this.syncControls();
+
+
+    /*
+     * Then redraw everything from the
+     * exact same plane objects.
+     */
+    this.render();
+  }
+
+
+  buildControlsOnce() {
+    this.equationsElement
+      .replaceChildren();
+
+
+    this.inputs = [];
+
+
+    for (
+      let i = 0;
+      i < 3;
+      i += 1
+    ) {
+
+      const row =
+        document.createElement(
+          "div"
+        );
+
+      row.className =
+        "equation-row";
+
+
+      const marker =
+        document.createElement(
+          "span"
+        );
+
+      marker.className =
+        "dot";
+
+      marker.style.background =
+        `var(--m257-series-${i + 1})`;
+
+
+      const body =
+        document.createElement(
+          "div"
+        );
+
+
+      const equation =
+        document.createElement(
+          "div"
+        );
+
+      equation.className =
+        "equation";
+
+      equation.dataset.equation =
+        String(i);
+
+
+      body.appendChild(
+        equation
       );
 
 
-    this.useThird =
-      preset.useThird;
+      const controls =
+        document.createElement(
+          "div"
+        );
+
+      controls.className =
+        "controls";
 
 
-    if (rerender) {
-      this.buildControls();
+      const refs = {};
 
-      this.update();
+
+      for (
+        const key of [
+          "a",
+          "b",
+          "c",
+          "d",
+        ]
+      ) {
+
+        const label =
+          document.createElement(
+            "label"
+          );
+
+        label.className =
+          "control";
+
+
+        const name =
+          document.createElement(
+            "span"
+          );
+
+        name.textContent =
+          key;
+
+
+        const input =
+          document.createElement(
+            "input"
+          );
+
+        input.type =
+          "range";
+
+        input.min =
+          key === "d"
+            ? "-6"
+            : "-4";
+
+        input.max =
+          key === "d"
+            ? "6"
+            : "4";
+
+        input.step =
+          "0.25";
+
+
+        input.setAttribute(
+          "aria-label",
+
+          `Plane ${i + 1}, coefficient ${key}`
+        );
+
+
+        const output =
+          document.createElement(
+            "output"
+          );
+
+
+        /*
+         * Notice that the listener does NOT
+         * close over an old plane object.
+         *
+         * It always accesses this.planes[i].
+         */
+        input.addEventListener(
+          "input",
+          () => {
+
+            this.planes[i][key] =
+              Number(
+                input.value
+              );
+
+
+            output.textContent =
+              this.formatNumber(
+                this.planes[i][key]
+              );
+
+
+            this.render();
+          }
+        );
+
+
+        label.append(
+          name,
+          input,
+          output
+        );
+
+
+        controls.appendChild(
+          label
+        );
+
+
+        refs[key] = {
+          input,
+          output,
+        };
+      }
+
+
+      this.inputs.push(
+        refs
+      );
+
+
+      body.appendChild(
+        controls
+      );
+
+
+      row.append(
+        marker,
+        body
+      );
+
+
+      this.equationsElement
+        .appendChild(
+          row
+        );
     }
   }
 
 
+  syncControls() {
+    this.pairwiseCheckbox.checked =
+      this.showPairwise;
+
+
+    this.planes.forEach(
+      (
+        plane,
+        index
+      ) => {
+
+        const equation =
+          this.equationsElement
+            .querySelector(
+              `[data-equation="${index}"]`
+            );
+
+
+        if (equation) {
+          equation.textContent =
+            this.formatEquation(
+              plane
+            );
+        }
+
+
+        if (
+          !this.inputs[index]
+        ) {
+          return;
+        }
+
+
+        for (
+          const key of [
+            "a",
+            "b",
+            "c",
+            "d",
+          ]
+        ) {
+
+          this.inputs[index][key]
+            .input.value =
+              String(
+                plane[key]
+              );
+
+
+          this.inputs[index][key]
+            .output.textContent =
+              this.formatNumber(
+                plane[key]
+              );
+        }
+      }
+    );
+  }
+
+
   bindEvents() {
+    this.pairwiseCheckbox
+      .addEventListener(
+        "change",
+        () => {
 
-    this.thirdCheckbox.addEventListener(
-      "change",
-      () => {
-        this.useThird =
-          this.thirdCheckbox.checked;
-
-        this.update();
-      }
-    );
+          this.showPairwise =
+            this.pairwiseCheckbox
+              .checked;
 
 
-    this.pairwiseCheckbox.addEventListener(
-      "change",
-      () => {
-        this.showPairwise =
-          this.pairwiseCheckbox.checked;
-
-        this.update();
-      }
-    );
+          this.render();
+        }
+      );
 
 
     this.shadowRoot
@@ -1339,9 +1404,11 @@ export class Math257PlaneSystem3D
       )
       .forEach(
         (button) => {
+
           button.addEventListener(
             "click",
             () => {
+
               this.applyPreset(
                 button.dataset.preset
               );
@@ -1357,24 +1424,30 @@ export class Math257PlaneSystem3D
       )
       .forEach(
         (button) => {
+
           button.addEventListener(
             "click",
             () => {
+
               const step =
                 0.18;
+
 
               switch (
                 button.dataset.rotate
               ) {
+
                 case "left":
                   this.yaw -=
                     step;
                   break;
 
+
                 case "right":
                   this.yaw +=
                     step;
                   break;
+
 
                 case "up":
                   this.pitch =
@@ -1385,6 +1458,7 @@ export class Math257PlaneSystem3D
                     );
                   break;
 
+
                 case "down":
                   this.pitch =
                     Math.max(
@@ -1394,15 +1468,26 @@ export class Math257PlaneSystem3D
                     );
                   break;
 
+
                 case "reset":
-                  this.resetView();
-                  return;
+                  this.yaw =
+                    -0.65;
+
+                  this.pitch =
+                    0.48;
+
+                  this.zoom =
+                    1;
+
+                  break;
+
 
                 default:
                   return;
               }
 
-              this.update();
+
+              this.render();
             }
           );
         }
@@ -1415,35 +1500,47 @@ export class Math257PlaneSystem3D
       )
       .forEach(
         (button) => {
+
           button.addEventListener(
             "click",
             () => {
-              switch (
-                button.dataset.zoom
+
+              if (
+                button.dataset.zoom ===
+                "in"
               ) {
-                case "in":
-                  this.setZoom(
+                this.zoom =
+                  Math.min(
+                    2.5,
                     this.zoom *
                       1.2
                   );
-                  break;
+              }
 
-                case "out":
-                  this.setZoom(
+
+              if (
+                button.dataset.zoom ===
+                "out"
+              ) {
+                this.zoom =
+                  Math.max(
+                    0.55,
                     this.zoom /
                       1.2
                   );
-                  break;
-
-                case "reset":
-                  this.setZoom(
-                    1
-                  );
-                  break;
-
-                default:
-                  break;
               }
+
+
+              if (
+                button.dataset.zoom ===
+                "reset"
+              ) {
+                this.zoom =
+                  1;
+              }
+
+
+              this.render();
             }
           );
         }
@@ -1453,19 +1550,29 @@ export class Math257PlaneSystem3D
     this.svg.addEventListener(
       "wheel",
       (event) => {
+
         event.preventDefault();
 
-        const factor =
-          Math.exp(
-            -event.deltaY *
-              0.001
+
+        this.zoom =
+          Math.max(
+            0.55,
+
+            Math.min(
+              2.5,
+
+              this.zoom *
+                Math.exp(
+                  -event.deltaY *
+                    0.001
+                )
+            )
           );
 
-        this.setZoom(
-          this.zoom *
-            factor
-        );
+
+        this.render();
       },
+
       {
         passive: false,
       }
@@ -1475,6 +1582,7 @@ export class Math257PlaneSystem3D
     this.svg.addEventListener(
       "pointerdown",
       (event) => {
+
         this.dragging =
           true;
 
@@ -1484,9 +1592,11 @@ export class Math257PlaneSystem3D
         this.lastY =
           event.clientY;
 
-        this.svg.setPointerCapture(
-          event.pointerId
-        );
+
+        this.svg
+          .setPointerCapture(
+            event.pointerId
+          );
       }
     );
 
@@ -1494,17 +1604,23 @@ export class Math257PlaneSystem3D
     this.svg.addEventListener(
       "pointermove",
       (event) => {
-        if (!this.dragging) {
+
+        if (
+          !this.dragging
+        ) {
           return;
         }
+
 
         const dx =
           event.clientX -
           this.lastX;
 
+
         const dy =
           event.clientY -
           this.lastY;
+
 
         this.lastX =
           event.clientX;
@@ -1512,28 +1628,37 @@ export class Math257PlaneSystem3D
         this.lastY =
           event.clientY;
 
+
         this.yaw +=
-          dx * 0.008;
+          dx *
+          0.008;
+
 
         this.pitch =
           Math.max(
             -1.35,
+
             Math.min(
               1.35,
+
               this.pitch +
-                dy * 0.008
+                dy *
+                0.008
             )
           );
 
-        this.update();
+
+        this.render();
       }
     );
 
 
-    const endDrag =
+    const stop =
       (event) => {
+
         this.dragging =
           false;
+
 
         if (
           this.svg
@@ -1551,265 +1676,28 @@ export class Math257PlaneSystem3D
 
     this.svg.addEventListener(
       "pointerup",
-      endDrag
+      stop
     );
+
 
     this.svg.addEventListener(
       "pointercancel",
-      endDrag
+      stop
     );
   }
 
 
-  buildControls() {
-    this.equationsElement
-      .replaceChildren();
-
-
-    this.planes.forEach(
-      (plane, index) => {
-
-        const row =
-          document.createElement(
-            "div"
-          );
-
-        row.className =
-          "equation-row";
-
-        row.dataset.row =
-          index;
-
-
-        const marker =
-          document.createElement(
-            "span"
-          );
-
-        marker.className =
-          "dot";
-
-        marker.style.background =
-          `var(--m257-series-${index + 1})`;
-
-
-        const body =
-          document.createElement(
-            "div"
-          );
-
-
-        const equation =
-          document.createElement(
-            "div"
-          );
-
-        equation.className =
-          "equation";
-
-        equation.dataset.equation =
-          index;
-
-        body.appendChild(
-          equation
-        );
-
-
-        const controls =
-          document.createElement(
-            "div"
-          );
-
-        controls.className =
-          "controls";
-
-
-        for (
-          const key of [
-            "a",
-            "b",
-            "c",
-            "d",
-          ]
-        ) {
-
-          const label =
-            document.createElement(
-              "label"
-            );
-
-          label.className =
-            "control";
-
-
-          const name =
-            document.createElement(
-              "span"
-            );
-
-          name.textContent =
-            key;
-
-
-          const input =
-            document.createElement(
-              "input"
-            );
-
-          input.type =
-            "range";
-
-          input.min =
-            key === "d"
-              ? "-6"
-              : "-4";
-
-          input.max =
-            key === "d"
-              ? "6"
-              : "4";
-
-          input.step =
-            "0.25";
-
-          input.value =
-            String(
-              plane[key]
-            );
-
-          input.setAttribute(
-            "aria-label",
-            `Plane ${index + 1}, coefficient ${key}`
-          );
-
-
-          const output =
-            document.createElement(
-              "output"
-            );
-
-          output.textContent =
-            this.formatNumber(
-              plane[key]
-            );
-
-
-          input.addEventListener(
-            "input",
-            () => {
-              plane[key] =
-                Number(
-                  input.value
-                );
-
-              output.textContent =
-                this.formatNumber(
-                  plane[key]
-                );
-
-              this.update();
-            }
-          );
-
-
-          label.append(
-            name,
-            input,
-            output
-          );
-
-          controls.appendChild(
-            label
-          );
-        }
-
-
-        body.appendChild(
-          controls
-        );
-
-
-        row.append(
-          marker,
-          body
-        );
-
-
-        this.equationsElement
-          .appendChild(
-            row
-          );
-      }
-    );
-  }
-
-
-  update() {
-    /*
-     * Take one snapshot of the active
-     * equations at the start of the redraw.
-     *
-     * This prevents the plot, solver, and
-     * status from using different sets of
-     * planes while the checkbox is changing.
-     */
-    const activePlanes =
-      this.planes.slice(
-        0,
-        this.useThird
-          ? 3
-          : 2
-      );
-
-
-    this.thirdCheckbox.checked =
-      this.useThird;
-
-    this.pairwiseCheckbox.checked =
-      this.showPairwise;
-
-
-    const thirdRow =
-      this.equationsElement
-        .querySelector(
-          '[data-row="2"]'
-        );
-
-
-    if (thirdRow) {
-      thirdRow.hidden =
-        !this.useThird;
-
-      thirdRow.setAttribute(
-        "aria-hidden",
-        String(
-          !this.useThird
-        )
-      );
-    }
-
-
-    this.planes.forEach(
-      (plane, index) => {
-        const equation =
-          this.equationsElement
-            .querySelector(
-              `[data-equation="${index}"]`
-            );
-
-        if (equation) {
-          equation.textContent =
-            this.formatEquation(
-              plane
-            );
-        }
-      }
-    );
+  /*
+   * Every possible interaction eventually
+   * arrives here.
+   */
+  render() {
+    this.syncControls();
 
 
     const result =
       classifySystem(
-        activePlanes
+        this.planes
       );
 
 
@@ -1824,25 +1712,17 @@ export class Math257PlaneSystem3D
 
     this.zoomLabel.textContent =
       `${Math.round(
-        this.zoom * 100
+        this.zoom *
+        100
       )}%`;
 
 
-    /*
-     * Redraw before formatting the solver.
-     * This helps keep the 3D view responsive
-     * even if a future solver-formatting bug
-     * is introduced.
-     */
     this.drawCube();
 
-    this.drawPlanes(
-      activePlanes
-    );
+    this.drawPlanes();
 
     this.drawIntersections(
-      result,
-      activePlanes
+      result
     );
 
     this.drawAxes();
@@ -1851,8 +1731,7 @@ export class Math257PlaneSystem3D
     this.solverElement
       .replaceChildren(
         ...this.buildSolverNodes(
-          result,
-          activePlanes
+          result
         )
       );
 
@@ -1861,21 +1740,17 @@ export class Math257PlaneSystem3D
       new CustomEvent(
         "math257-change",
         {
-          bubbles:
-            true,
+          bubbles: true,
 
           detail: {
             planes:
-              activePlanes.map(
+              this.planes.map(
                 (plane) => ({
                   ...plane,
                 })
               ),
 
-            result:
-              this.cloneResult(
-                result
-              ),
+            result,
           },
         }
       )
@@ -1883,8 +1758,12 @@ export class Math257PlaneSystem3D
   }
 
 
-  updateClassification(result) {
-    const labels = {
+  updateClassification(
+    result
+  ) {
+
+    const copy = {
+
       point: [
         "Unique solution",
 
@@ -1893,23 +1772,27 @@ export class Math257PlaneSystem3D
         )}.`,
       ],
 
+
       line: [
         "Infinitely many solutions: a line",
 
         "The common solution set is one-dimensional.",
       ],
 
+
       plane: [
         "Infinitely many solutions: a plane",
 
-        "The active equations impose only one independent constraint.",
+        "The three equations describe one common plane.",
       ],
+
 
       space: [
         "Every point is a solution",
 
-        "All active equations reduce to 0 = 0.",
+        "All three equations reduce to 0 = 0.",
       ],
+
 
       none: [
         "No common solution",
@@ -1923,11 +1806,12 @@ export class Math257PlaneSystem3D
       title,
       text,
     ] =
-      labels[result.type];
+      copy[result.type];
 
 
     this.statusTitle.textContent =
       title;
+
 
     this.statusText.textContent =
       text;
@@ -1936,6 +1820,7 @@ export class Math257PlaneSystem3D
     this.ranksElement.textContent =
       `rank(A) = ${result.rankA} · ` +
       `rank([A | b]) = ${result.rankAugmented}` +
+
       (
         result.dimension !==
         undefined
@@ -1948,9 +1833,7 @@ export class Math257PlaneSystem3D
 
 
   buildSolverNodes(
-    result,
-    activePlanes =
-      this.activePlanes
+    result
   ) {
 
     if (
@@ -1974,24 +1857,17 @@ export class Math257PlaneSystem3D
         "line" &&
       result.line
     ) {
-      const line =
-        this.normalizeLine(
-          result.line
-        );
+      return [
+        this.solverItem(
+          "Common intersection line",
 
-      if (line) {
-        return [
-          this.solverItem(
-            "Common intersection line",
-
-            `(x, y, z) = ${this.formatVector(
-              line.point
-            )} + t ${this.formatVector(
-              line.direction
-            )},  t ∈ ℝ`
-          ),
-        ];
-      }
+          `(x, y, z) = ${this.formatVector(
+            result.line.point
+          )} + t ${this.formatVector(
+            result.line.direction
+          )},  t ∈ ℝ`
+        ),
+      ];
     }
 
 
@@ -2036,19 +1912,20 @@ export class Math257PlaneSystem3D
 
     for (
       let i = 0;
-      i < activePlanes.length;
+      i < 3;
       i += 1
     ) {
+
       for (
         let j = i + 1;
-        j < activePlanes.length;
+        j < 3;
         j += 1
       ) {
 
         const relation =
           pairRelation(
-            activePlanes[i],
-            activePlanes[j]
+            this.planes[i],
+            this.planes[j]
           );
 
 
@@ -2061,24 +1938,15 @@ export class Math257PlaneSystem3D
           "line"
         ) {
 
-          const line =
-            this.normalizeLine(
-              relation.line
-            );
-
-
           nodes.push(
             this.solverItem(
               label,
 
-              line
-                ? `(x, y, z) = ${this.formatVector(
-                    line.point
-                  )} + t ${this.formatVector(
-                    line.direction
-                  )},  t ∈ ℝ`
-
-                : "Intersection line unavailable."
+              `(x, y, z) = ${this.formatVector(
+                relation.line.point
+              )} + t ${this.formatVector(
+                relation.line.direction
+              )},  t ∈ ℝ`
             )
           );
 
@@ -2126,51 +1994,11 @@ export class Math257PlaneSystem3D
   }
 
 
-  cloneResult(result) {
-    const clone = {
-      ...result,
-    };
+  solverItem(
+    label,
+    body
+  ) {
 
-
-    if (result.point) {
-      clone.point =
-        result.point.slice();
-    }
-
-
-    if (result.line) {
-      const line =
-        this.normalizeLine(
-          result.line
-        );
-
-      if (line) {
-        clone.line = {
-          point:
-            line.point.slice(),
-
-          direction:
-            line.direction.slice(),
-        };
-
-      } else {
-        delete clone.line;
-      }
-    }
-
-
-    if (result.plane) {
-      clone.plane = {
-        ...result.plane,
-      };
-    }
-
-
-    return clone;
-  }
-
-
-  solverItem(label, body) {
     const item =
       document.createElement(
         "div"
@@ -2215,33 +2043,28 @@ export class Math257PlaneSystem3D
 
 
   formatNumber(value) {
-    const normalized =
-      Math.abs(value) < 1e-9
+    const x =
+      Math.abs(value) <
+      1e-9
+
         ? 0
         : value;
 
 
-    if (
-      Number.isInteger(
-        normalized
-      )
-    ) {
-      return String(
-        normalized
-      );
-    }
+    return Number.isInteger(x)
 
+      ? String(x)
 
-    return normalized
-      .toFixed(3)
-      .replace(
-        /0+$/,
-        ""
-      )
-      .replace(
-        /\.$/,
-        ""
-      );
+      : x
+          .toFixed(3)
+          .replace(
+            /0+$/,
+            ""
+          )
+          .replace(
+            /\.$/,
+            ""
+          );
   }
 
 
@@ -2280,64 +2103,65 @@ export class Math257PlaneSystem3D
     );
 
 
-    if (!terms.length) {
+    if (
+      !terms.length
+    ) {
       return `0 = ${this.formatNumber(
         plane.d
       )}`;
     }
 
 
-    return (
-      terms
-        .map(
-          (
-            [
-              value,
-              symbol,
-            ],
-            index
-          ) => {
+    return terms
+      .map(
+        (
+          [
+            value,
+            symbol,
+          ],
+          index
+        ) => {
 
-            const magnitude =
-              Math.abs(
-                value
-              );
-
-
-            const coefficient =
-              Math.abs(
-                magnitude - 1
-              ) < EPS
-
-                ? ""
-
-                : this.formatNumber(
-                    magnitude
-                  );
+          const magnitude =
+            Math.abs(
+              value
+            );
 
 
-            if (
-              index === 0
-            ) {
-              return (
-                `${value < 0 ? "−" : ""}` +
-                `${coefficient}${symbol}`
-              );
-            }
+          const coefficient =
+            Math.abs(
+              magnitude -
+              1
+            ) < EPS
+
+              ? ""
+
+              : this.formatNumber(
+                  magnitude
+                );
 
 
+          if (
+            index === 0
+          ) {
             return (
-              `${value < 0 ? " − " : " + "}` +
+              `${value < 0 ? "−" : ""}` +
               `${coefficient}${symbol}`
             );
           }
-        )
-        .join("") +
+
+
+          return (
+            `${value < 0 ? " − " : " + "}` +
+            `${coefficient}${symbol}`
+          );
+        }
+      )
+      .join("") +
 
       ` = ${this.formatNumber(
         plane.d
-      )}`
-    );
+      )}`;
   }
 
 
@@ -2345,6 +2169,7 @@ export class Math257PlaneSystem3D
     name,
     attributes = {}
   ) {
+
     const element =
       document.createElementNS(
         "http://www.w3.org/2000/svg",
@@ -2361,6 +2186,7 @@ export class Math257PlaneSystem3D
         attributes
       )
     ) {
+
       element.setAttribute(
         key,
         value
@@ -2378,15 +2204,18 @@ export class Math257PlaneSystem3D
         this.yaw
       );
 
+
     const sy =
       Math.sin(
         this.yaw
       );
 
+
     const cp =
       Math.cos(
         this.pitch
       );
+
 
     const sp =
       Math.sin(
@@ -2429,7 +2258,7 @@ export class Math257PlaneSystem3D
       );
 
 
-    const scale =
+    const perspective =
       15 /
       (
         15 -
@@ -2437,20 +2266,25 @@ export class Math257PlaneSystem3D
       );
 
 
+    const scale =
+      (
+        232 /
+        this.range
+      ) *
+      perspective *
+      this.zoom;
+
+
     return {
       x:
         320 +
         rotated[0] *
-          (232 / this.range) *
-          scale *
-          this.zoom,
+        scale,
 
       y:
         320 -
         rotated[1] *
-          (232 / this.range) *
-          scale *
-          this.zoom,
+        scale,
 
       z:
         rotated[2],
@@ -2469,16 +2303,26 @@ export class Math257PlaneSystem3D
 
 
     for (
-      const x of values
+      const x
+      of values
     ) {
+
       for (
-        const y of values
+        const y
+        of values
       ) {
+
         for (
-          const z of values
+          const z
+          of values
         ) {
+
           vertices.push(
-            [x, y, z]
+            [
+              x,
+              y,
+              z,
+            ]
           );
         }
       }
@@ -2502,6 +2346,7 @@ export class Math257PlaneSystem3D
       i < vertices.length;
       i += 1
     ) {
+
       for (
         let j = i + 1;
         j < vertices.length;
@@ -2517,10 +2362,12 @@ export class Math257PlaneSystem3D
           k < 3;
           k += 1
         ) {
+
           if (
             vertices[i][k] !==
             vertices[j][k]
           ) {
+
             differences +=
               1;
           }
@@ -2530,10 +2377,13 @@ export class Math257PlaneSystem3D
         if (
           differences === 1
         ) {
-          edges.push([
-            vertices[i],
-            vertices[j],
-          ]);
+
+          edges.push(
+            [
+              vertices[i],
+              vertices[j],
+            ]
+          );
         }
       }
     }
@@ -2555,6 +2405,7 @@ export class Math257PlaneSystem3D
       norm(normal) <
       EPS
     ) {
+
       return [];
     }
 
@@ -2590,6 +2441,7 @@ export class Math257PlaneSystem3D
         Math.abs(f0) <
         EPS
       ) {
+
         points.push(
           p0
         );
@@ -2600,6 +2452,7 @@ export class Math257PlaneSystem3D
         Math.abs(f1) <
         EPS
       ) {
+
         points.push(
           p1
         );
@@ -2610,23 +2463,22 @@ export class Math257PlaneSystem3D
         f0 * f1 <
         0
       ) {
-        const t =
-          f0 /
-          (
-            f0 -
-            f1
-          );
-
 
         points.push(
           add(
             p0,
+
             mul(
               sub(
                 p1,
                 p0
               ),
-              t
+
+              f0 /
+              (
+                f0 -
+                f1
+              )
             )
           )
         );
@@ -2641,6 +2493,7 @@ export class Math257PlaneSystem3D
       const point
       of points
     ) {
+
       if (
         !unique.some(
           (candidate) =>
@@ -2649,9 +2502,11 @@ export class Math257PlaneSystem3D
                 candidate,
                 point
               )
-            ) < 1e-6
+            ) <
+            1e-6
         )
       ) {
+
         unique.push(
           point
         );
@@ -2663,6 +2518,7 @@ export class Math257PlaneSystem3D
       unique.length <
       3
     ) {
+
       return [];
     }
 
@@ -2679,11 +2535,15 @@ export class Math257PlaneSystem3D
               point
             ),
 
-          [0, 0, 0]
+          [
+            0,
+            0,
+            0,
+          ]
         ),
 
         1 /
-          unique.length
+        unique.length
       );
 
 
@@ -2696,11 +2556,20 @@ export class Math257PlaneSystem3D
     const reference =
       Math.abs(
         n[2]
-      ) < 0.8
+      ) <
+      0.8
 
-        ? [0, 0, 1]
+        ? [
+            0,
+            0,
+            1,
+          ]
 
-        : [0, 1, 0];
+        : [
+            0,
+            1,
+            0,
+          ];
 
 
     const u =
@@ -2720,7 +2589,11 @@ export class Math257PlaneSystem3D
 
 
     unique.sort(
-      (a, b) =>
+      (
+        a,
+        b
+      ) =>
+
         Math.atan2(
           dot(
             sub(
@@ -2729,6 +2602,7 @@ export class Math257PlaneSystem3D
             ),
             v
           ),
+
           dot(
             sub(
               a,
@@ -2736,7 +2610,9 @@ export class Math257PlaneSystem3D
             ),
             u
           )
-        ) -
+        )
+
+        -
 
         Math.atan2(
           dot(
@@ -2746,6 +2622,7 @@ export class Math257PlaneSystem3D
             ),
             v
           ),
+
           dot(
             sub(
               b,
@@ -2762,12 +2639,6 @@ export class Math257PlaneSystem3D
 
 
   clipLine(line) {
-    line =
-      this.normalizeLine(
-        line
-      );
-
-
     if (!line) {
       return null;
     }
@@ -2775,6 +2646,7 @@ export class Math257PlaneSystem3D
 
     let low =
       -1e9;
+
 
     let high =
       1e9;
@@ -2789,6 +2661,7 @@ export class Math257PlaneSystem3D
       const p =
         line.point[k];
 
+
       const v =
         line.direction[k];
 
@@ -2797,14 +2670,19 @@ export class Math257PlaneSystem3D
         Math.abs(v) <
         EPS
       ) {
+
         if (
           p <
             -this.range -
-              EPS ||
+            EPS
+
+          ||
+
           p >
             this.range +
-              EPS
+            EPS
         ) {
+
           return null;
         }
 
@@ -2830,8 +2708,10 @@ export class Math257PlaneSystem3D
 
 
       if (
-        t1 > t2
+        t1 >
+        t2
       ) {
+
         [
           t1,
           t2,
@@ -2858,9 +2738,8 @@ export class Math257PlaneSystem3D
     }
 
 
-    return (
-      low <= high
-    )
+    return low <= high
+
       ? [
           add(
             line.point,
@@ -2946,7 +2825,11 @@ export class Math257PlaneSystem3D
 
     const origin =
       this.project(
-        [0, 0, 0]
+        [
+          0,
+          0,
+          0,
+        ]
       );
 
 
@@ -3062,11 +2945,7 @@ export class Math257PlaneSystem3D
   }
 
 
-  drawPlanes(
-    activePlanes =
-      this.activePlanes
-  ) {
-
+  drawPlanes() {
     this.planeLayer
       .replaceChildren();
 
@@ -3074,7 +2953,7 @@ export class Math257PlaneSystem3D
     const items = [];
 
 
-    activePlanes.forEach(
+    this.planes.forEach(
       (
         plane,
         index
@@ -3090,6 +2969,7 @@ export class Math257PlaneSystem3D
           polygon.length <
           3
         ) {
+
           return;
         }
 
@@ -3126,7 +3006,10 @@ export class Math257PlaneSystem3D
 
 
     items.sort(
-      (a, b) =>
+      (
+        a,
+        b
+      ) =>
         a.depth -
         b.depth
     );
@@ -3247,12 +3130,7 @@ export class Math257PlaneSystem3D
   }
 
 
-  drawIntersections(
-    result,
-    activePlanes =
-      this.activePlanes
-  ) {
-
+  drawIntersections(result) {
     this.intersectionLayer
       .replaceChildren();
 
@@ -3263,20 +3141,20 @@ export class Math257PlaneSystem3D
 
       for (
         let i = 0;
-        i < activePlanes.length;
+        i < 3;
         i += 1
       ) {
 
         for (
           let j = i + 1;
-          j < activePlanes.length;
+          j < 3;
           j += 1
         ) {
 
           const line =
             pairIntersectionLine(
-              activePlanes[i],
-              activePlanes[j]
+              this.planes[i],
+              this.planes[j]
             );
 
 
@@ -3341,13 +3219,13 @@ export class Math257PlaneSystem3D
 
     if (
       result.type ===
-        "point" &&
+        "point"
+
+      &&
 
       result.point.every(
         (value) =>
-          Math.abs(
-            value
-          ) <=
+          Math.abs(value) <=
           this.range +
           EPS
       )
@@ -3394,6 +3272,7 @@ if (
     "math257-plane-system-3d"
   )
 ) {
+
   customElements.define(
     "math257-plane-system-3d",
     Math257PlaneSystem3D
