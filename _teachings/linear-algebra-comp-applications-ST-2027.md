@@ -21,5 +21,9 @@ toc:
 
 ## Course materials
 
+_Under construction!_
+
+<!-- 
 - [Week 1: Linear systems]({{ '/math257/week1' | relative_url }})
 - [Week 2: Gaussian elimination, linear combinations, matrix multiplication]({{ '/math257/week1' | relative_url }})
+-->
