@@ -1409,70 +1409,80 @@ export class Math257PlaneSystem3D extends HTMLElement {
     );
   }
 
-  updateClassification(
-    result
-  ) {
-    const labels = {
-      point: [
-        "Unique solution",
+  updateClassification(result) {
+  let title;
+  let text;
 
+  switch (result.type) {
+    case "point":
+      title =
+        "Unique solution";
+
+      text =
         `The common intersection is ${this.formatVector(
           result.point
-        )}.`,
-      ],
+        )}.`;
 
-      line: [
-        "Infinitely many solutions: a line",
+      break;
 
-        "The three planes have a common one-dimensional solution set.",
-      ],
+    case "line":
+      title =
+        "Infinitely many solutions: a line";
 
-      plane: [
-        "Infinitely many solutions: a plane",
+      text =
+        "The three planes have a common one-dimensional solution set.";
 
-        "The three equations describe the same affine plane.",
-      ],
+      break;
 
-      space: [
-        "Every point is a solution",
+    case "plane":
+      title =
+        "Infinitely many solutions: a plane";
 
-        "All three equations reduce to 0 = 0.",
-      ],
+      text =
+        "The three equations describe the same affine plane.";
 
-      none: [
-        "No common solution",
+      break;
 
-        "The system is inconsistent because rank(A) ≠ rank([A | b]).",
-      ],
-    };
+    case "space":
+      title =
+        "Every point is a solution";
 
-    const [
-      title,
-      text,
-    ] =
-      labels[result.type] ??
-      [
-        "Unknown system type",
-        "The system could not be classified.",
-      ];
+      text =
+        "All three equations reduce to 0 = 0.";
 
-    this.statusTitle.textContent =
-      title;
+      break;
 
-    this.statusText.textContent =
-      text;
+    case "none":
+      title =
+        "No common solution";
 
-    this.ranksElement.textContent =
-      `rank(A) = ${result.rankA} · ` +
-      `rank([A | b]) = ${result.rankAugmented}` +
-      (
-        result.dimension !==
-        undefined
+      text =
+        "The system is inconsistent because rank(A) ≠ rank([A | b]).";
 
-          ? ` · solution dimension = ${result.dimension}`
+      break;
 
-          : ""
-      );
+    default:
+      title =
+        "Unknown system type";
+
+      text =
+        "The system could not be classified.";
+  }
+
+  this.statusTitle.textContent =
+    title;
+
+  this.statusText.textContent =
+    text;
+
+  this.ranksElement.textContent =
+    `rank(A) = ${result.rankA} · ` +
+    `rank([A | b]) = ${result.rankAugmented}` +
+    (
+      result.dimension !== undefined
+        ? ` · solution dimension = ${result.dimension}`
+        : ""
+    );
   }
 
   buildSolverNodes(
