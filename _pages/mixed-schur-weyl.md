@@ -90,7 +90,7 @@ There is actually a whole orthonormal basis for $$\mathbb{C}^2\otimes \mathbb{C}
 \end{equation}
 </div>
 We can work out what the action of $$U\otimes \overline{U}$$ looks like on the remaining three basis vectors.
-Letting $$U=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$, we have the following action $$U\mapsto \phi_{(1,-1)}(U)$$ on the $$3$$-dimensional space spanned by $$\ket{\Phi^-},\ket{\Psi^+},\ket{\Psi^-}$$:
+Letting $$U=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$, we have the following action $$U\mapsto \phi_{(1,-1)}(U)$$ on the $$3$$-dimensional space $$V_{(1,-1)}^2$$ spanned by $$\ket{\Phi^-},\ket{\Psi^+},\ket{\Psi^-}$$:
 <div markdown="0">
 \begin{align}
 \phi_{(1,-1)}(U) = \begin{pmatrix} |a|^2-|b|^2 & 2 \operatorname{Re}(a\overline{b}) & 2i\operatorname{Im}(a\overline{b})\\
@@ -99,7 +99,7 @@ Letting $$U=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$, we have the following action
 \end{pmatrix}
 \end{align}
 </div>
-It is not too hard to check that this is an _irreducible_ action of the unitary group on the subspace $$\operatorname{span}(\ket{\Phi^-},\ket{\Psi^+},\ket{\Psi^-})$$, since there are no non-trivial invariant subspaces.
+It is not too hard to check that this is an _irreducible_ action of the unitary group on the subspace $$\operatorname{span}(\ket{\Phi^-},\ket{\Psi^+},\ket{\Psi^-})$$, since there are no non-trivial invariant subspaces <a href="javascript:void(0)" onclick="var e=document.getElementById('step3'); e.hidden=!e.hidden;">(Exercise.)</a><span id="step3" style="font-style: italic;" hidden> [Take an arbitrary vector in the span of $$\ket{\Phi^-},\ket{\Psi^+},\ket{\Psi^-}$$ and show that you can generate a basis for the whole space $$V_{(1,-1)}^2$$ by applying suitable unitaries $$U$$ via $$\phi_{(1,-1)}$$.]</span>.
 
 ## References
 
