@@ -115,7 +115,16 @@ The choice of notation using $$(0,0)$$ and $$(1,-1)$$ as subscripts will become 
 
 ### General case of $$n$$ qubits
 
-We now generalize the decomposition in \eqref{eq:two-qubits-decomposition} from two to $$n$$ qubits.
+We now generalize the decomposition in \eqref{eq:two-qubits-decomposition} from $$2$$ to $$n$$ qubits, using the state space $$(\mathbb{C}^2)^{\otimes n-1}\otimes \mathbb{C}^2$$ and the representation $$U\mapsto U^{\otimes n-1}\otimes \overline{U}$$.
+For qubits there is a simple trick that lets us understand this representation fairly explicitly in terms of the much more common representation $$U\mapsto U^{\otimes n}$$.
+To this end, we define the invertible matrix $$J=\left(\begin{smallmatrix}\phantom{-}0&1\\-1&0\end{smallmatrix}\right)$$.
+An explicit calculation shows that
+
+<div markdown="0">
+\begin{align}
+\overline{U} = \det(U)^{-1} J U J^{-1}.
+\end{align}
+</div>
 
 ## References
 
