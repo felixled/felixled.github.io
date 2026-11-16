@@ -73,7 +73,7 @@ We will then describe the general case for arbitrary $$d$$.
 
 ## Qubits
 
-### Warm-up: $$n=2$$
+### Warm-up: A single Bell pair ($$n=2$$)
 
 In this simple case, we consider a single maximally entangled state, or Bell pair, on two qubits: $$\ket{\Phi^+} = \ket{00}+\ket{11}$$.
 Our goal is to decompose the state space $$\mathbb{C}^2\otimes \mathbb{C}^2$$ into subspaces adapted to the representation $$U\mapsto U\otimes \overline{U}$$ of the qubit unitary group.
@@ -90,7 +90,15 @@ There is actually a whole orthonormal basis for $$\mathbb{C}^2\otimes \mathbb{C}
 \end{equation}
 </div>
 We can work out what the action of $$U\otimes \overline{U}$$ looks like on the remaining three basis vectors.
-Letting $$U=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$, we have
+Letting $$U=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$, we have the following action $$U\mapsto \phi_{(1,-1)}(U)$$ on the $$3$$-dimensional space spanned by $$\ket{\Phi^-},\ket{\Psi^+},\ket{\Psi^-}$$:
+<div markdown="0">
+\begin{align}
+\phi_{(1,-1)}(U) = \begin{pmatrix} |a|^2-|b|^2 & 2 \operatorname{Re}(a\overline{b}) & 2i\operatorname{Im}(a\overline{b})\\
+2\operatorname{Re}(a\overline{c}) & \operatorname{Re}(a\overline{d}+b\overline{c}) & i\operatorname{Im}(a\overline{d}-b\overline{c})\\
+2i \operatorname{Im}(a\overline{c}) & i\operatorname{Im}(a\overline{d}+b\overline{c}) & \operatorname{Re}(a\overline{d}-b\overline{c}).
+\end{align}
+</div>
+It is not too hard to check that this is an _irreducible_ action of the unitary group on the subspace $$\operatorname{span}(\ket{\Phi^-},\ket{\Psi^+},\ket{\Psi^-})$$, since there are no non-trivial invariant subspaces.
 
 ## References
 
