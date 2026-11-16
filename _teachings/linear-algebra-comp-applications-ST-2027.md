@@ -3,9 +3,10 @@ layout: course
 title: "Linear Algebra with Computational Applications"
 description: Undergraduate linear algebra course at the 200 level, focusing on computational applications.
 instructor: Felix Leditzky
-year: 2026
-term: Spring 2026
-course_id: math257_ST_2026
+year: 2027
+term: Spring 2027
+course_id: math257_ST_2027
+permalink: /math257/
 sitemap: false
 toc:
   sidebar: left
@@ -18,8 +19,7 @@ toc:
 
 [Department website](https://netmath.illinois.edu/summer/math-257)
 
-<script type="module" src="{{ '/assets/js/math257/math257.js' | relative_url }}"></script>
+## Course materials
 
-## Week 1: Linear systems
-
-<math257-plane-system-3d></math257-plane-system-3d>
+- [Week 1: Linear systems]({{ '/math257/week1' | relative_url }})
+- [Week 2: Gaussian elimination, linear combinations, matrix multiplication]({{ '/math257/week1' | relative_url }})
