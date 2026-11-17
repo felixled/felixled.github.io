@@ -21,37 +21,302 @@
   margin-right: auto;
 }
 
+/* =========================================================
+   iClicker question box
+   ========================================================= */
+
 .iclicker-question {
-  margin: 1.5rem 0;
-  padding: 1rem 1.2rem;
+  max-width: 760px;
 
-  background: rgba(255, 140, 0, 0.08);
+  margin:
+    1.5rem auto;
 
-  border: 2px solid #ff8c00;
-  border-radius: 0.8rem;
+  padding:
+    1.1rem 1.3rem;
+
+  background:
+    rgba(255, 149, 0, 0.10);
+
+  border:
+    2px solid
+    #ff9500;
+
+  border-radius:
+    0.85rem;
 
   box-shadow:
-    0 0 8px rgba(255, 140, 0, 0.35),
-    0 0 22px rgba(255, 140, 0, 0.18);
+    0 0 10px
+      rgba(255, 149, 0, 0.45),
+
+    0 0 28px
+      rgba(255, 149, 0, 0.22);
+
+  cursor:
+    pointer;
 }
+
+
+/* Automatic label at the top of every box */
 
 .iclicker-question::before {
-  content: "iClicker Question";
+  content:
+    "iClicker Question";
 
-  display: block;
-  margin-bottom: 0.6rem;
+  display:
+    block;
 
-  color: #e67e00;
+  margin-bottom:
+    0.7rem;
 
-  font-size: 0.8rem;
-  font-weight: 700;
+  color:
+    #e67e00;
 
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size:
+    0.8rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.06em;
+
+  text-transform:
+    uppercase;
 }
 
+
+/* Avoid unwanted extra space at the bottom */
+
 .iclicker-question > :last-child {
-  margin-bottom: 0;
+  margin-bottom:
+    0;
+}
+
+
+/* =========================================================
+   Optional image inside an iClicker question
+   ========================================================= */
+
+.iclicker-question img.iclicker-image {
+  float:
+    right;
+
+  width:
+    min(38%, 280px);
+
+  height:
+    auto;
+
+  margin:
+    0.1rem 0 0.8rem 1rem;
+
+  border-radius:
+    0.6rem;
+}
+
+
+/* Clear floated images properly */
+
+.iclicker-question::after {
+  content:
+    "";
+
+  display:
+    block;
+
+  clear:
+    both;
+}
+
+
+/* =========================================================
+   Small fullscreen hint
+   ========================================================= */
+
+.iclicker-fullscreen-hint {
+  margin-top:
+    0.75rem;
+
+  color:
+    var(
+      --global-text-color-light,
+      #777
+    );
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    500;
+
+  opacity:
+    0.8;
+}
+
+
+/* =========================================================
+   Fullscreen presentation mode
+   ========================================================= */
+
+.iclicker-question:fullscreen {
+  box-sizing:
+    border-box;
+
+  width:
+    100vw;
+
+  max-width:
+    none;
+
+  height:
+    100vh;
+
+  margin:
+    0;
+
+  padding:
+    clamp(
+      2rem,
+      5vw,
+      5rem
+    );
+
+  overflow:
+    auto;
+
+  background:
+    var(
+      --global-bg-color,
+      #fff
+    );
+
+  border:
+    10px solid
+    #ff9500;
+
+  border-radius:
+    0;
+
+  box-shadow:
+    inset 0 0 35px
+      rgba(
+        255,
+        149,
+        0,
+        0.28
+      );
+
+  font-size:
+    clamp(
+      1.25rem,
+      2.2vw,
+      2rem
+    );
+
+  line-height:
+    1.55;
+
+  cursor:
+    default;
+}
+
+
+/* Background around the fullscreen element */
+
+.iclicker-question::backdrop {
+  background:
+    var(
+      --global-bg-color,
+      #fff
+    );
+}
+
+
+/* Bigger iClicker label in fullscreen mode */
+
+.iclicker-question:fullscreen::before {
+  margin-bottom:
+    1.5rem;
+
+  font-size:
+    clamp(
+      1rem,
+      1.5vw,
+      1.35rem
+    );
+}
+
+
+/* Hide the "click to fullscreen" hint once fullscreen */
+
+.iclicker-question:fullscreen
+.iclicker-fullscreen-hint {
+  display:
+    none;
+}
+
+
+/* Allow images to grow in fullscreen mode */
+
+.iclicker-question:fullscreen
+img.iclicker-image {
+  width:
+    min(42%, 650px);
+
+  max-width:
+    650px;
+
+  margin-left:
+    2rem;
+}
+
+
+/* =========================================================
+   Mobile behavior
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .iclicker-question {
+    max-width:
+      100%;
+  }
+
+  .iclicker-question
+  img.iclicker-image {
+    float:
+      none;
+
+    display:
+      block;
+
+    width:
+      100%;
+
+    max-width:
+      420px;
+
+    margin:
+      0 auto 1rem;
+  }
+
+  .iclicker-question:fullscreen
+  img.iclicker-image {
+    float:
+      none;
+
+    display:
+      block;
+
+    width:
+      100%;
+
+    max-width:
+      520px;
+
+    margin:
+      0 auto 1.5rem;
+  }
 }
 
   /*
@@ -128,7 +393,44 @@
       text-align: left;
     }
   }
-</style> <div class="math257-page"> <div class="math257-text"> <h2 id="linear-systems">Linear systems</h2> <p>Some text with <em>markdown</em>. And math: \(ax+by+cz=0\)</p> </div> <math257-plane-system-3d></math257-plane-system-3d> <div class="math257-text"> <h2 id="solving-systems">Solving systems</h2> <div class="iclicker-question"> <p>Suppose we perform</p> \[R_2 \leftarrow R_2 - 3R_1.\] <p>What happens geometrically?</p> <p><strong>A.</strong> The solution set changes.</p> <p><strong>B.</strong> Plane 1 changes.</p> <p><strong>C.</strong> Plane 2 changes, but the solution set does not.</p> <p><strong>D.</strong> All three planes remain unchanged.</p> </div> <p>We will now solve the following system of linear equations:</p> <div> \begin{equation} \begin{aligned} \phantom{2}x \quad+\phantom{3}y \quad \phantom{ {} + 0z} \quad &amp;= \quad3\\ \phantom{2}x \quad+ 3y \quad-2z \quad&amp;= \quad7\\ 2x\quad - \phantom{3}y \quad +3z \quad &amp;= \quad0. \end{aligned} \label{eq:system} \end{equation} </div> <p>The augmented matrix of this system is</p> \[\left(\begin{array}{c|c} A &amp; \mathbf{b}\end{array}\right) = \left(\begin{array}{ccc|c} 1&amp;\phantom{-}1&amp;\phantom{-}0&amp;3\\1&amp;\phantom{-}3&amp;-2&amp;7\\2&amp;-1&amp;\phantom{-}3&amp;0 \end{array}\right).\] </div> <math257-row-reduction-3d></math257-row-reduction-3d> <div class="math257-text"> <p>The row-reduced echelon form of the system \eqref{eq:system} is</p> \[\left( \begin{array}{ccc|c} 1 &amp; 0 &amp; \phantom{-}1 &amp; 1\\0 &amp; 1 &amp; -1 &amp; 2\\0 &amp; 0 &amp; \phantom{-}0 &amp; 0 \end{array} \right),\] <p>which translates back to the equations</p> <div> \begin{align*} x_1 \phantom{ {} + x_2} \quad + x_3 \quad &amp;= \quad 1\\ \phantom{x_1 + {} } x_2 \quad - x_3 \quad &amp;= \quad 2. \end{align*} </div> <p>We declare \(x_3\) to be a parameter \(t\), and rewrite these equations in parametric form as</p> <div> \begin{align*} x_1 &amp;= 1 - t\\ x_2 &amp;= 2 + t\\ x_3 &amp;= 0 + t, \end{align*} </div> <p>which finally yields the solution space of \eqref{eq:system} as</p> <div> \begin{align*} \left\lbrace \begin{pmatrix}1\\2\\0\end{pmatrix} + t \begin{pmatrix} -1\\ \phantom{-}1\\\phantom{-}1\end{pmatrix} \right\rbrace. \end{align*} </div> <p>This is a 1-dimensional solution space, that is, an <em>affine line</em>: starting from the point \((1,2,0)^T\), any other point on the line can be reached by adding a \(t\)-multiple of the direction vector \((-1,1,1)^T\).</p> </div> <nav class="math257-week-nav" aria-label="Math 257 week navigation"> <div class="math257-week-nav__previous"> </div> <div class="math257-week-nav__home"> <a href="/math257/"> <span class="math257-week-nav__label">Math 257</span> <span class="math257-week-nav__title"> Course home </span> </a> </div> <div class="math257-week-nav__next"> <a href="/math257/week2/"> <span class="math257-week-nav__label">Next</span> <span class="math257-week-nav__title"> Week 2 → </span> </a> </div> </nav> </div> <script type="module" src="/assets/js/math257/math257.js"> </script> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Felix Leditzky. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: November 17, 2026. </div> </footer> <script>
+</style> <script>
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelectorAll(".iclicker-question")
+    .forEach((box) => {
+
+      const hint = document.createElement("div");
+
+      hint.className =
+        "iclicker-fullscreen-hint";
+
+      hint.textContent =
+        "Click to present fullscreen · Esc to return";
+
+      box.appendChild(hint);
+
+      box.addEventListener(
+        "click",
+        (event) => {
+
+          if (
+            event.target.closest(
+              "a, button, input, select, textarea"
+            )
+          ) {
+            return;
+          }
+
+          if (
+            !document.fullscreenElement
+          ) {
+            box.requestFullscreen?.();
+          }
+        }
+      );
+    });
+});
+</script> <div class="math257-page"> <div class="math257-text"> <h2 id="linear-systems">Linear systems</h2> <p>Some text with <em>markdown</em>. And math: \(ax+by+cz=0\)</p> </div> <math257-plane-system-3d></math257-plane-system-3d> <div class="math257-text"> <h2 id="solving-systems">Solving systems</h2> <div class="iclicker-question"> <p>Suppose we perform</p> \[R_2 \leftarrow R_2 - 3R_1.\] <p>What happens geometrically?</p> <p><strong>A.</strong> The solution set changes.</p> <p><strong>B.</strong> Plane 1 changes.</p> <p><strong>C.</strong> Plane 2 changes, but the solution set does not.</p> <p><strong>D.</strong> All three planes remain unchanged.</p> </div> <p>We will now solve the following system of linear equations:</p> <div> \begin{equation} \begin{aligned} \phantom{2}x \quad+\phantom{3}y \quad \phantom{ {} + 0z} \quad &amp;= \quad3\\ \phantom{2}x \quad+ 3y \quad-2z \quad&amp;= \quad7\\ 2x\quad - \phantom{3}y \quad +3z \quad &amp;= \quad0. \end{aligned} \label{eq:system} \end{equation} </div> <p>The augmented matrix of this system is</p> \[\left(\begin{array}{c|c} A &amp; \mathbf{b}\end{array}\right) = \left(\begin{array}{ccc|c} 1&amp;\phantom{-}1&amp;\phantom{-}0&amp;3\\1&amp;\phantom{-}3&amp;-2&amp;7\\2&amp;-1&amp;\phantom{-}3&amp;0 \end{array}\right).\] </div> <math257-row-reduction-3d></math257-row-reduction-3d> <div class="math257-text"> <p>The row-reduced echelon form of the system \eqref{eq:system} is</p> \[\left( \begin{array}{ccc|c} 1 &amp; 0 &amp; \phantom{-}1 &amp; 1\\0 &amp; 1 &amp; -1 &amp; 2\\0 &amp; 0 &amp; \phantom{-}0 &amp; 0 \end{array} \right),\] <p>which translates back to the equations</p> <div> \begin{align*} x_1 \phantom{ {} + x_2} \quad + x_3 \quad &amp;= \quad 1\\ \phantom{x_1 + {} } x_2 \quad - x_3 \quad &amp;= \quad 2. \end{align*} </div> <p>We declare \(x_3\) to be a parameter \(t\), and rewrite these equations in parametric form as</p> <div> \begin{align*} x_1 &amp;= 1 - t\\ x_2 &amp;= 2 + t\\ x_3 &amp;= 0 + t, \end{align*} </div> <p>which finally yields the solution space of \eqref{eq:system} as</p> <div> \begin{align*} \left\lbrace \begin{pmatrix}1\\2\\0\end{pmatrix} + t \begin{pmatrix} -1\\ \phantom{-}1\\\phantom{-}1\end{pmatrix} \right\rbrace. \end{align*} </div> <p>This is a 1-dimensional solution space, that is, an <em>affine line</em>: starting from the point \((1,2,0)^T\), any other point on the line can be reached by adding a \(t\)-multiple of the direction vector \((-1,1,1)^T\).</p> </div> <nav class="math257-week-nav" aria-label="Math 257 week navigation"> <div class="math257-week-nav__previous"> </div> <div class="math257-week-nav__home"> <a href="/math257/"> <span class="math257-week-nav__label">Math 257</span> <span class="math257-week-nav__title"> Course home </span> </a> </div> <div class="math257-week-nav__next"> <a href="/math257/week2/"> <span class="math257-week-nav__label">Next</span> <span class="math257-week-nav__title"> Week 2 → </span> </a> </div> </nav> </div> <script type="module" src="/assets/js/math257/math257.js"> </script> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Felix Leditzky. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: November 17, 2026. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
