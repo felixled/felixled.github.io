@@ -43,7 +43,31 @@ $$
 The row-reduced echelon form of the system \eqref{eq:system} is
 
 $$
-\newcommand{\collabel}[2]{\smash{\begin{array}[b]{@{}c@{}}#1\\[0.6ex]#2\end{array}}}
-\left( \begin{array}{ccc|c} \collabel{x_1} & \collabel{x_2} & \collabel{x_3}\\ 1 & 0 & \phantom{-}1 & 1\\0 & 1 & -1 & 2\\0 & 0 & \phantom{-}0 & 0 \end{array} \right)
+\left( \begin{array}{ccc|c} 1 & 0 & \phantom{-}1 & 1\\0 & 1 & -1 & 2\\0 & 0 & \phantom{-}0 & 0 \end{array} \right),
+$$
+
+which translates back to the equations
+
+<div markdown="0">
+\begin{align*}
+x_1 \phantom{ {} + x_2} \quad + x_3 \quad &= \quad 1\\
+\phantom{x_1 + {} } x_2 \quad - x_3 \quad &= \quad 2.
+\end{align*}
+</div>
+
+We declare $$x_3$$ to be a parameter $$t$$, and rewrite these equations in parametric form as
+
+<div markdown="0">
+\begin{align*}
+x_1 &= 1 - t\\
+x_2 &= 2 + t\\
+x_3 &= 0 + t,
+\end{align*}
+</div>
+
+which finally yields the solution space of \eqref{eq:system} as
+
+$$
+\left\lbrace \begin{pmatrix}1\\2\\0\end{pmatrix} + t \begin{pmatrix} -1\\1\\1\end{pmatrix} \right\rbrace.
 $$
 </div>
