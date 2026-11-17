@@ -64,7 +64,7 @@ ${sharedStyles}
 
 .wrap {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 1fr);
   gap: 1rem;
   align-items: start;
 }
