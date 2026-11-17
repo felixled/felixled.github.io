@@ -14,7 +14,8 @@ Some text with _markdown_. And math: $$ax+by+cz=0$$
 <math257-plane-system-3d></math257-plane-system-3d>
 
 <div class="math257-text" markdown="1">
-## Echelon form of matrices
+## Solving systems
 
-More text..
 </div>
+
+<math257-row-reduction-3d></math257-row-reduction-3d>
