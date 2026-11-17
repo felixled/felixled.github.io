@@ -15,309 +15,149 @@
     width: 94% !important;
   }
 
-  .math257-text,.iclicker-question {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* =========================================================
-   iClicker question box
-   ========================================================= */
-
-.iclicker-question {
-  max-width: 760px;
-
-  margin:
-    1.5rem auto;
-
-  padding:
-    1.1rem 1.3rem;
-
-  background:
-    rgba(255, 149, 0, 0.10);
-
-  border:
-    2px solid
-    #ff9500;
-
-  border-radius:
-    0.85rem;
-
-  box-shadow:
-    0 0 10px
-      rgba(255, 149, 0, 0.45),
-
-    0 0 28px
-      rgba(255, 149, 0, 0.22);
-
-  cursor:
-    pointer;
-}
-
-
-/* Automatic label at the top of every box */
-
-.iclicker-question::before {
-  content:
-    "iClicker Question";
-
-  display:
-    block;
-
-  margin-bottom:
-    0.7rem;
-
-  color:
-    #e67e00;
-
-  font-size:
-    0.8rem;
-
-  font-weight:
-    700;
-
-  letter-spacing:
-    0.06em;
-
-  text-transform:
-    uppercase;
-}
-
-
-/* Avoid unwanted extra space at the bottom */
-
-.iclicker-question > :last-child {
-  margin-bottom:
-    0;
-}
-
-
-/* =========================================================
-   Optional image inside an iClicker question
-   ========================================================= */
-
-.iclicker-question img.iclicker-image {
-  float:
-    right;
-
-  width:
-    min(38%, 280px);
-
-  height:
-    auto;
-
-  margin:
-    0.1rem 0 0.8rem 1rem;
-
-  border-radius:
-    0.6rem;
-}
-
-
-/* Clear floated images properly */
-
-.iclicker-question::after {
-  content:
-    "";
-
-  display:
-    block;
-
-  clear:
-    both;
-}
-
-
-/* =========================================================
-   Small fullscreen hint
-   ========================================================= */
-
-.iclicker-fullscreen-hint {
-  margin-top:
-    0.75rem;
-
-  color:
-    var(
-      --global-text-color-light,
-      #777
-    );
-
-  font-size:
-    0.72rem;
-
-  font-weight:
-    500;
-
-  opacity:
-    0.8;
-}
-
-
-/* =========================================================
-   Fullscreen presentation mode
-   ========================================================= */
-
-.iclicker-question:fullscreen {
-  box-sizing:
-    border-box;
-
-  width:
-    100vw;
-
-  max-width:
-    none;
-
-  height:
-    100vh;
-
-  margin:
-    0;
-
-  padding:
-    clamp(
-      2rem,
-      5vw,
-      5rem
-    );
-
-  overflow:
-    auto;
-
-  background:
-    var(
-      --global-bg-color,
-      #fff
-    );
-
-  border:
-    10px solid
-    #ff9500;
-
-  border-radius:
-    0;
-
-  box-shadow:
-    inset 0 0 35px
-      rgba(
-        255,
-        149,
-        0,
-        0.28
-      );
-
-  font-size:
-    clamp(
-      1.25rem,
-      2.2vw,
-      2rem
-    );
-
-  line-height:
-    1.55;
-
-  cursor:
-    default;
-}
-
-
-/* Background around the fullscreen element */
-
-.iclicker-question::backdrop {
-  background:
-    var(
-      --global-bg-color,
-      #fff
-    );
-}
-
-
-/* Bigger iClicker label in fullscreen mode */
-
-.iclicker-question:fullscreen::before {
-  margin-bottom:
-    1.5rem;
-
-  font-size:
-    clamp(
-      1rem,
-      1.5vw,
-      1.35rem
-    );
-}
-
-
-/* Hide the "click to fullscreen" hint once fullscreen */
-
-.iclicker-question:fullscreen
-.iclicker-fullscreen-hint {
-  display:
-    none;
-}
-
-
-/* Allow images to grow in fullscreen mode */
-
-.iclicker-question:fullscreen
-img.iclicker-image {
-  width:
-    min(42%, 650px);
-
-  max-width:
-    650px;
-
-  margin-left:
-    2rem;
-}
-
-
-/* =========================================================
-   Mobile behavior
-   ========================================================= */
-
-@media (max-width: 700px) {
+  .math257-text,
+  .iclicker-question {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* =========================================================
+     iClicker question box
+     ========================================================= */
 
   .iclicker-question {
-    max-width:
-      100%;
+    max-width: 760px;
+    margin: 1.5rem auto;
+    padding: 1.1rem 1.3rem;
+    background: rgba(255, 149, 0, 0.10);
+    border: 2px solid #ff9500;
+    border-radius: 0.85rem;
+    box-shadow: 0 0 10px rgba(255, 149, 0, 0.45), 0 0 28px rgba(255, 149, 0, 0.22);
+    cursor: pointer;
   }
 
-  .iclicker-question
-  img.iclicker-image {
-    float:
-      none;
-
-    display:
-      block;
-
-    width:
-      100%;
-
-    max-width:
-      420px;
-
-    margin:
-      0 auto 1rem;
+  /* Automatic label at the top of every box */
+  .iclicker-question::before {
+    content: "iClicker Question";
+    display: block;
+    margin-bottom: 0.7rem;
+    color: #e67e00;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
-  .iclicker-question:fullscreen
-  img.iclicker-image {
-    float:
-      none;
-
-    display:
-      block;
-
-    width:
-      100%;
-
-    max-width:
-      520px;
-
-    margin:
-      0 auto 1.5rem;
+  /* Avoid unwanted extra space at the bottom */
+  .iclicker-question > :last-child {
+    margin-bottom: 0;
   }
-}
+
+  /* =========================================================
+     Optional image inside an iClicker question
+     ========================================================= */
+
+  .iclicker-question img.iclicker-image {
+    float: right;
+    width: min(38%, 280px);
+    height: auto;
+    margin: 0.1rem 0 0.8rem 1rem;
+    border-radius: 0.6rem;
+  }
+
+  /* Clear floated images properly */
+  .iclicker-question::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  /* =========================================================
+     Small fullscreen hint
+     ========================================================= */
+
+  .iclicker-fullscreen-hint {
+    margin-top: 0.75rem;
+    color: var(--global-text-color-light, #777);
+    font-size: 0.72rem;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  /* =========================================================
+     Fullscreen presentation mode
+     ========================================================= */
+
+  .iclicker-question:fullscreen {
+    box-sizing: border-box;
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    margin: 0;
+    padding: clamp(1rem, 2.5vw, 2.5rem);
+    overflow: auto;
+    background: var(--global-bg-color, #fff);
+    border: 8px solid #ff9500;
+    border-radius: 0;
+    box-shadow: inset 0 0 35px rgba(255, 149, 0, 0.28);
+    font-size: inherit;
+    line-height: 1.4;
+    cursor: default;
+  }
+
+  /* Background around the fullscreen element */
+  .iclicker-question::backdrop {
+    background: var(--global-bg-color, #fff);
+  }
+
+  /* Keep the label close to its normal size in fullscreen mode */
+  .iclicker-question:fullscreen::before {
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hide the "click to fullscreen" hint once fullscreen */
+  .iclicker-question:fullscreen .iclicker-fullscreen-hint {
+    display: none;
+  }
+
+  /* Keep images from taking over the fullscreen view */
+  .iclicker-question:fullscreen img.iclicker-image {
+    float: right;
+    width: min(35%, 400px);
+    max-width: 400px;
+    max-height: 55vh;
+    object-fit: contain;
+    margin: 0.1rem 0 1rem 1.5rem;
+  }
+
+  /* =========================================================
+     Mobile behavior
+     ========================================================= */
+
+  @media (max-width: 700px) {
+    .iclicker-question {
+      max-width: 100%;
+    }
+
+    .iclicker-question img.iclicker-image {
+      float: none;
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 1rem;
+    }
+
+    .iclicker-question:fullscreen img.iclicker-image {
+      float: none;
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      max-height: 40vh;
+      margin: 0 auto 1rem;
+    }
+  }
 
   /*
    * Keep sensible margins on small screens.
@@ -336,10 +176,8 @@ img.iclicker-image {
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 1rem;
-
     margin-top: 3rem;
     padding-top: 1rem;
-
     border-top: 1px solid var(--global-divider-color, #ddd);
   }
 
@@ -364,11 +202,9 @@ img.iclicker-image {
   .math257-week-nav__label {
     display: block;
     margin-bottom: 0.15rem;
-
     color: var(--global-text-color-light, #666);
     font-size: 0.78rem;
     line-height: 1.2;
-
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
@@ -398,7 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll(".iclicker-question")
     .forEach((box) => {
-
       const hint = document.createElement("div");
 
       hint.className =
@@ -412,7 +247,6 @@ document.addEventListener("DOMContentLoaded", () => {
       box.addEventListener(
         "click",
         (event) => {
-
           if (
             event.target.closest(
               "a, button, input, select, textarea"
