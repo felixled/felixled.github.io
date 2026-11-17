@@ -125,10 +125,11 @@ Consider the following system of linear equations together with the RREF of its 
 0 & 0 & 1 & -1\\
 0 & 0& 0 & 0
 \end{array}\right)
+\end{align*}
 </div>
 
 Which set describes the solutions of this system?
-**A.** $$\varemtpy$$
+**A.** $$\varempty$$
 
 **B.** $$\left\lbrace \begin{pmatrix} \phantom{-}3\\-1\\ \phantom{-}0\end{pmatrix}\right\rbrace$$
 
