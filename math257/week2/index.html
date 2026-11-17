@@ -6,39 +6,48 @@
     initTheme();
   </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Felix</span> Leditzky </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/slides/">slides </a> </li> <li class="nav-item "> <a class="nav-link" href="/group/">my group </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">teaching </a> </li> <li class="nav-item "> <a class="nav-link" href="/resources/">resources </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Math 257 Week 2</h1> <p class="post-description"></p> </header> <article> <style>
   /* =========================================================
-     Teaching header: current date plus al-folio's progress bar
-     Set math257_header: progress-only in a page's front matter
-     to hide the date bar while keeping the progress bar.
+     Teaching header: one-line date plus al-folio's progress bar
+     Set math257_header: progress-only to keep only the progress bar.
      ========================================================= */
 
-  /* Keep the header itself visible: it also contains the progress bar. */
+  /* Keep the header visible because it also contains the progress bar. */
   body > header {
     display: block !important;
   }
 
   
   body > header #navbar {
-    min-height: 3rem;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box;
+    height: 3rem !important;
+    min-height: 3rem !important;
+    padding: 0 1rem !important;
+    overflow: hidden;
   }
 
-  body > header #navbar > .container {
-    justify-content: center;
-  }
-
-  /* Hide the original navigation contents, not the navbar itself. */
-  body > header #navbar > .container > :not(.math257-header-date) {
+  /* The date is a direct child of #navbar, outside the original menu. */
+  body > header #navbar > :not(.math257-header-date) {
     display: none !important;
   }
 
-  .math257-header-date {
-    display: block;
-    width: 100%;
-    padding: 0.35rem 0;
+  body > header #navbar > .math257-header-date {
+    display: block !important;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     color: var(--global-text-color, #222);
-    font-size: 0.95rem;
+    font-size: clamp(0.75rem, 2.8vw, 0.95rem);
     font-weight: 500;
     line-height: 1.4;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
 
@@ -324,12 +333,28 @@
 </style> <script>
 document.addEventListener("DOMContentLoaded", () => {
   
-  const navbarContainer = document.querySelector("body > header #navbar > .container");
+  const navbar = document.querySelector("body > header #navbar");
 
-  if (navbarContainer) {
+  if (navbar) {
+    // Remove a previous date element if this setup runs again.
+    navbar.querySelectorAll(".math257-header-date").forEach((element) => {
+      element.remove();
+    });
+
+    // Keep the original elements available to al-folio's scripts, but
+    // hide and disable their entire container, not individual menu items.
+    // Inline !important also overrides the theme's layered display rules.
+    Array.from(navbar.children).forEach((element) => {
+      element.hidden = true;
+      element.setAttribute("inert", "");
+      element.setAttribute("aria-hidden", "true");
+      element.style.setProperty("display", "none", "important");
+    });
+
+    // Append directly to #navbar so the date cannot share a row with a menu.
     const dateElement = document.createElement("time");
     dateElement.className = "math257-header-date";
-    navbarContainer.appendChild(dateElement);
+    navbar.appendChild(dateElement);
 
     const dateFormatter = new Intl.DateTimeFormat("en-US", {
       weekday: "long",
@@ -338,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
       day: "numeric",
     });
 
-    // Use the viewer's current local date, not the date Jekyll built the site.
+    // Use the viewer's local date, not the date Jekyll built the site.
     const updateHeaderDate = () => {
       const now = new Date();
       const year = now.getFullYear();
@@ -351,13 +376,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateHeaderDate();
 
-    // Refresh after midnight or when returning to a previously opened tab.
     window.setInterval(updateHeaderDate, 60000);
     document.addEventListener("visibilitychange", () => {
       if (!document.hidden) updateHeaderDate();
     });
 
-    // Let al-folio remeasure the navbar for its progress-bar positioning.
+    // Keep al-folio's existing progress element and let its script
+    // remeasure the new, single-line navbar height.
     window.requestAnimationFrame(() => {
       window.dispatchEvent(new Event("resize"));
     });
