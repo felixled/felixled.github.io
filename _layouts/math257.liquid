@@ -6,12 +6,11 @@ layout: page
 
 <style>
   /* =========================================================
-     Teaching header: current date plus al-folio's progress bar
-     Set math257_header: progress-only in a page's front matter
-     to hide the date bar while keeping the progress bar.
+     Teaching header: one-line date plus al-folio's progress bar
+     Set math257_header: progress-only to keep only the progress bar.
      ========================================================= */
 
-  /* Keep the header itself visible: it also contains the progress bar. */
+  /* Keep the header visible because it also contains the progress bar. */
   body > header {
     display: block !important;
   }
@@ -31,27 +30,37 @@ layout: page
   }
   {% else %}
   body > header #navbar {
-    min-height: 3rem;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box;
+    height: 3rem !important;
+    min-height: 3rem !important;
+    padding: 0 1rem !important;
+    overflow: hidden;
   }
 
-  body > header #navbar > .container {
-    justify-content: center;
-  }
-
-  /* Hide the original navigation contents, not the navbar itself. */
-  body > header #navbar > .container > :not(.math257-header-date) {
+  /* The date is a direct child of #navbar, outside the original menu. */
+  body > header #navbar > :not(.math257-header-date) {
     display: none !important;
   }
 
-  .math257-header-date {
-    display: block;
-    width: 100%;
-    padding: 0.35rem 0;
+  body > header #navbar > .math257-header-date {
+    display: block !important;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     color: var(--global-text-color, #222);
-    font-size: 0.95rem;
+    font-size: clamp(0.75rem, 2.8vw, 0.95rem);
     font-weight: 500;
     line-height: 1.4;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   {% endif %}
 
@@ -339,12 +348,28 @@ layout: page
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   {% unless math257_header_mode == 'progress-only' %}
-  const navbarContainer = document.querySelector("body > header #navbar > .container");
+  const navbar = document.querySelector("body > header #navbar");
 
-  if (navbarContainer) {
+  if (navbar) {
+    // Remove a previous date element if this setup runs again.
+    navbar.querySelectorAll(".math257-header-date").forEach((element) => {
+      element.remove();
+    });
+
+    // Keep the original elements available to al-folio's scripts, but
+    // hide and disable their entire container, not individual menu items.
+    // Inline !important also overrides the theme's layered display rules.
+    Array.from(navbar.children).forEach((element) => {
+      element.hidden = true;
+      element.setAttribute("inert", "");
+      element.setAttribute("aria-hidden", "true");
+      element.style.setProperty("display", "none", "important");
+    });
+
+    // Append directly to #navbar so the date cannot share a row with a menu.
     const dateElement = document.createElement("time");
     dateElement.className = "math257-header-date";
-    navbarContainer.appendChild(dateElement);
+    navbar.appendChild(dateElement);
 
     const dateFormatter = new Intl.DateTimeFormat("en-US", {
       weekday: "long",
@@ -353,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
       day: "numeric",
     });
 
-    // Use the viewer's current local date, not the date Jekyll built the site.
+    // Use the viewer's local date, not the date Jekyll built the site.
     const updateHeaderDate = () => {
       const now = new Date();
       const year = now.getFullYear();
@@ -366,13 +391,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateHeaderDate();
 
-    // Refresh after midnight or when returning to a previously opened tab.
     window.setInterval(updateHeaderDate, 60000);
     document.addEventListener("visibilitychange", () => {
       if (!document.hidden) updateHeaderDate();
     });
 
-    // Let al-folio remeasure the navbar for its progress-bar positioning.
+    // Keep al-folio's existing progress element and let its script
+    // remeasure the new, single-line navbar height.
     window.requestAnimationFrame(() => {
       window.dispatchEvent(new Event("resize"));
     });
