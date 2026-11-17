@@ -127,9 +127,9 @@ Consider the following system of linear equations:
 
 <div markdown="0">
 \begin{align*}
-\phantom{-}2x \quad-2y \quad -3z \quad &= \quad \phantom{-}9\\
--1x \quad+ 1y \quad 4z \quad&= \quad -7\\
-3x\quad -3y \quad  +2z \quad &= \quad 7.
+\phantom{-}2x \quad -2y \quad -3z \quad &= \quad \phantom{-}9\\
+-1x \quad+ 1y \quad +4z \quad&= \quad -7\\
+3x\quad -3y \quad  +2z \quad &= \quad \phantom{-}7.
 \end{align*}
 </div>
 
