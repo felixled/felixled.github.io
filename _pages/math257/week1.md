@@ -67,7 +67,11 @@ x_3 &= 0 + t,
 
 which finally yields the solution space of \eqref{eq:system} as
 
-$$
-\left\lbrace \begin{pmatrix}1\\2\\0\end{pmatrix} + t \begin{pmatrix} -1\\1\\1\end{pmatrix} \right\rbrace.
-$$
+<div markdown="0">
+\begin{align*}
+\left\lbrace \begin{pmatrix}1\\2\\0\end{pmatrix} + t \begin{pmatrix} -1\\ \phantom{-}1\\\phantom{-}1\end{pmatrix} \right\rbrace.
+\end{align*}
+</div>
+
+This is a 1-dimensional solution space, that is, an _affine line_: starting from the point $$(1,2,0)^T$$, any other point on the line can be reached by adding a $$t$$-multiple of the direction vector $$(-1,1,1)^T$$.
 </div>
