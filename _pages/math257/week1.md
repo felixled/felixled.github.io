@@ -8,7 +8,18 @@ next_week: 2
 <div class="math257-text" markdown="1">
 ## Linear systems
 
-Some text with _markdown_. And math: $$ax+by+cz=0$$
+A **linear equation** has the form
+
+$$
+a_1 x_1 + a_2 x_2 + \dots + a_n x_n = b,
+$$
+
+where $$a_i,b\in\mathbb{R}$$ are the **coefficients** of the equation, and the $$x_1,\dots,x_n$$ are the **variables**.
+
+Geometrically, a single equation in $$n$$ variables $$x_1,\dots,x_n$$ represents the set of points on an (affine) **$$n-1$$-dimensional hyperplane** in $$\mathbb{R}^n$$.
+The solution set of a system of $$m$$ linear equations corresponds geometrically to the intersection of these $$m$$ hyperplanes.
+
+Let's inspect systems of $$3$$ equations in $$3$$ variables $$x_1,x_2,x_3$$ (or $$x,y,z$$).
 </div>
 
 <math257-plane-system-3d></math257-plane-system-3d>
