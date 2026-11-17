@@ -16,6 +16,22 @@ Some text with _markdown_. And math: $$ax+by+cz=0$$
 <div class="math257-text" markdown="1">
 ## Solving systems
 
+We will now solve the following system of linear equations:
+
+<div markdown="0">
+\begin{align*}
+\phantom{2}x+\phantom{3}y \phantom{ + 0z} &= 3\\
+\phantom{2}x + 3y -2z &= 7\\
+2x - \phantom{3}y + 3z &= 0.
+\end{align*}
+</div>
+
+The augmented matrix of this system is
+
+$$
+\left(\begin{array}{c|c} A & \mathbf{b}\end{array}\right) = \left(\begin{array}{ccc|c} 1&\phantom{-}1&\phantom{-}0&3\\1&\phantom{-}3&-2&7\\2&-1&\phantom{-}3&0 \end{array}\right).
+$$
+
 </div>
 
 <math257-row-reduction-3d></math257-row-reduction-3d>
