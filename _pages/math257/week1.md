@@ -119,7 +119,7 @@ Consider the following system of linear equations together with the RREF of its 
 -1 & 1 & 4 & -7\\
 3 & -3 & 2 & 7
 \end{array}\right)
-\quad \sim\quad
+\quad \overset{\text{RREF}}{\sim}\quad
 \left(\begin{array}{ccc|c}
 1 & -1 & 0 & 3\\
 0 & 0 & 1 & -1\\
@@ -129,7 +129,8 @@ Consider the following system of linear equations together with the RREF of its 
 </div>
 
 Which set describes the solutions of this system?
-**A.** $$\varempty$$
+
+**A.** $$\varnothing$$
 
 **B.** $$\left\lbrace \begin{pmatrix} \phantom{-}3\\-1\\ \phantom{-}0\end{pmatrix}\right\rbrace$$
 
