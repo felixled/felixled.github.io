@@ -6,5 +6,8 @@ previous_week: 1
 next_week: 3
 ---
 
-## Linear systems
-<math257-plane-system-3d></math257-plane-system-3d>
+<div class="math257-text" markdown="1">
+## Linear combinations
+</div>
+
+<math257-linear-combinations-3d></math257-linear-combinations-3d>
