@@ -15,7 +15,94 @@ import { sharedStyles } from "../core/theme.js";
 const STEPS = [
   {
     title: "Initial system",
-    operation:
+    operation: null,
+    changedRow: null,
+
+    rows: [
+      [1, 1, 0, 3],
+      [1, 3, -2, 7],
+      [2, -1, 3, 0],
+    ],
+
+    explanation:
+      "Three different planes contain the same line. We begin row reduction by turning the first column into the first standard basis vector (1, 0, 0)ᵀ.",
+  },
+
+  {
+    title: "Eliminate x from row 2",
+    operation: "R₂ ← R₂ − R₁",
+    changedRow: 1,
+
+    rows: [
+      [1, 1, 0, 3],
+      [0, 2, -2, 4],
+      [2, -1, 3, 0],
+    ],
+
+    explanation:
+      "The second entry of the first column is now zero. Geometrically, plane P₂ rotates about the fixed solution line.",
+  },
+
+  {
+    title: "Eliminate x from row 3",
+    operation: "R₃ ← R₃ − 2R₁",
+    changedRow: 2,
+
+    rows: [
+      [1, 1, 0, 3],
+      [0, 2, -2, 4],
+      [0, -3, 3, -6],
+    ],
+
+    explanation:
+      "The first column is now (1, 0, 0)ᵀ. Plane P₃ changes, but the common solution line remains fixed.",
+  },
+
+  {
+    title: "Normalize the second pivot",
+    operation: "R₂ ← ½R₂",
+    changedRow: 1,
+
+    rows: [
+      [1, 1, 0, 3],
+      [0, 1, -1, 2],
+      [0, -3, 3, -6],
+    ],
+
+    explanation:
+      "The second pivot is scaled to 1. Multiplying an equation by a nonzero scalar does not change its geometric plane. At this stage P₃ is the same plane as P₂.",
+  },
+
+  {
+    title: "Eliminate below the second pivot",
+    operation: "R₃ ← R₃ + 3R₂",
+    changedRow: 2,
+
+    rows: [
+      [1, 1, 0, 3],
+      [0, 1, -1, 2],
+      [0, 0, 0, 0],
+    ],
+
+    explanation:
+      "The third row becomes 0 = 0, so it imposes no constraint. Geometrically, the third plane disappears. The remaining two planes still intersect in the same line.",
+  },
+
+  {
+    title: "Eliminate above the second pivot",
+    operation: "R₁ ← R₁ − R₂",
+    changedRow: 0,
+
+    rows: [
+      [1, 0, 1, 1],
+      [0, 1, -1, 2],
+      [0, 0, 0, 0],
+    ],
+
+    explanation:
+      "The matrix is now in reduced row echelon form. Plane P₁ rotates one final time, while the solution line remains unchanged.",
+  },
+];
 
 
 const SOLUTION_LINE = {
