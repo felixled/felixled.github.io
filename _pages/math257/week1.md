@@ -16,7 +16,24 @@ $$
 
 where $$a_i,b\in\mathbb{R}$$ are the **coefficients** of the equation, and the $$x_1,\dots,x_n$$ are the **variables**.
 
-Geometrically, a single equation in $$n$$ variables $$x_1,\dots,x_n$$ represents the set of points on an (affine) **$$n-1$$-dimensional hyperplane** in $$\mathbb{R}^n$$.
+</div>
+
+<div class="iclicker-question" markdown="1">
+
+Which of the following expressions are linear in the variables $$x_i$$?
+
+**A.** $$3 x_1 + 2x_2 = 0$$
+
+**B.** $$(x_1 + x_2)^2 = 5$$
+
+**C.** $$x_1 x_2 = 1$$
+
+**D.** $$x_1 = \sin(\pi) x_2$$
+
+</div>
+
+<div class="math257-text" markdown="1">
+Geometrically, a single linear equation in $$n$$ variables $$x_1,\dots,x_n$$ represents the set of points on an (affine) **$$n-1$$-dimensional hyperplane** in $$\mathbb{R}^n$$.
 The solution set of a system of $$m$$ linear equations corresponds geometrically to the intersection of these $$m$$ hyperplanes.
 
 Let's inspect systems of $$3$$ equations in $$3$$ variables $$x_1,x_2,x_3$$ (or $$x,y,z$$).
@@ -115,15 +132,15 @@ Consider the following system of linear equations together with the RREF of its 
 <div markdown="0">
 \begin{align*}
 \left(\begin{array}{c|c} A | \mathbf{b}\end{array}\right) = \left(\begin{array}{ccc|c}
-2 & -2 & -3 & 9\\
--1 & 1 & 4 & -7\\
-3 & -3 & 2 & 7
+\phantom{-}2 & -2 & -3 & \phantom{-}9\\
+-1 & \phantom{-}1 & \phantom{-}4 & -7\\
+\phantom{-}3 & -3 & \phantom{-}2 & \phantom{-}7
 \end{array}\right)
 \quad \overset{\text{RREF}}{\sim}\quad
 \left(\begin{array}{ccc|c}
-1 & -1 & 0 & 3\\
-0 & 0 & 1 & -1\\
-0 & 0& 0 & 0
+1 & -1 & 0 & \phantom{-}3\\
+0 & \phantom{-}0 & 1 & -1\\
+0 & \phantom{-}0 & 0 & \phantom{-}0
 \end{array}\right)
 \end{align*}
 </div>
