@@ -17,7 +17,7 @@ toc:
 * TOC
 {:toc}
 
-[Department website](https://netmath.illinois.edu/summer/math-257)
+<!--[Department website](https://netmath.illinois.edu/summer/math-257) -->
 
 ## Course materials
 

@@ -20,19 +20,19 @@ Some text with _markdown_. And math: $$ax+by+cz=0$$
 
 Suppose we perform
 
-\[
+$$
 R_2 \leftarrow R_2 - 3R_1.
-\]
+$$
 
 What happens geometrically?
 
-A. The solution set changes.
+**A.** The solution set changes.
 
-B. Plane 1 changes.
+**B.** Plane 1 changes.
 
-C. Plane 2 changes, but the solution set does not.
+**C.** Plane 2 changes, but the solution set does not.
 
-D. All three planes remain unchanged.
+**D.** All three planes remain unchanged.
 
 </div>
 
