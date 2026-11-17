@@ -16,6 +16,26 @@ Some text with _markdown_. And math: $$ax+by+cz=0$$
 <div class="math257-text" markdown="1">
 ## Solving systems
 
+<div class="iclicker-question" markdown="1">
+
+Suppose we perform
+
+\[
+R_2 \leftarrow R_2 - 3R_1.
+\]
+
+What happens geometrically?
+
+A. The solution set changes.
+
+B. Plane 1 changes.
+
+C. Plane 2 changes, but the solution set does not.
+
+D. All three planes remain unchanged.
+
+</div>
+
 We will now solve the following system of linear equations:
 
 <div markdown="0">
