@@ -20,9 +20,9 @@ We will now solve the following system of linear equations:
 
 <div markdown="0">
 \begin{align*}
-\phantom{2}x+\phantom{3}y \phantom{ + 0z} &= 3\\
-\phantom{2}x + 3y -2z &= 7\\
-2x - \phantom{3}y + 3z &= 0.
+\phantom{2}x \quad+\phantom{3}y \quad \phantom{{} + 0z}\quad &= \quad3\\
+\phantom{2}x \quad+ 3y \quad-2z \quad&= \quad7\\
+2x\quad - \phantom{3}y \quad  +3z \quad &= \quad0.
 \end{align*}
 </div>
 
