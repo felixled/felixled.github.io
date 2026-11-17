@@ -19,37 +19,302 @@ layout: page
   margin-right: auto;
 }
 
+/* =========================================================
+   iClicker question box
+   ========================================================= */
+
 .iclicker-question {
-  margin: 1.5rem 0;
-  padding: 1rem 1.2rem;
+  max-width: 760px;
 
-  background: rgba(255, 140, 0, 0.08);
+  margin:
+    1.5rem auto;
 
-  border: 2px solid #ff8c00;
-  border-radius: 0.8rem;
+  padding:
+    1.1rem 1.3rem;
+
+  background:
+    rgba(255, 149, 0, 0.10);
+
+  border:
+    2px solid
+    #ff9500;
+
+  border-radius:
+    0.85rem;
 
   box-shadow:
-    0 0 8px rgba(255, 140, 0, 0.35),
-    0 0 22px rgba(255, 140, 0, 0.18);
+    0 0 10px
+      rgba(255, 149, 0, 0.45),
+
+    0 0 28px
+      rgba(255, 149, 0, 0.22);
+
+  cursor:
+    pointer;
 }
+
+
+/* Automatic label at the top of every box */
 
 .iclicker-question::before {
-  content: "iClicker Question";
+  content:
+    "iClicker Question";
 
-  display: block;
-  margin-bottom: 0.6rem;
+  display:
+    block;
 
-  color: #e67e00;
+  margin-bottom:
+    0.7rem;
 
-  font-size: 0.8rem;
-  font-weight: 700;
+  color:
+    #e67e00;
 
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size:
+    0.8rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.06em;
+
+  text-transform:
+    uppercase;
 }
 
+
+/* Avoid unwanted extra space at the bottom */
+
 .iclicker-question > :last-child {
-  margin-bottom: 0;
+  margin-bottom:
+    0;
+}
+
+
+/* =========================================================
+   Optional image inside an iClicker question
+   ========================================================= */
+
+.iclicker-question img.iclicker-image {
+  float:
+    right;
+
+  width:
+    min(38%, 280px);
+
+  height:
+    auto;
+
+  margin:
+    0.1rem 0 0.8rem 1rem;
+
+  border-radius:
+    0.6rem;
+}
+
+
+/* Clear floated images properly */
+
+.iclicker-question::after {
+  content:
+    "";
+
+  display:
+    block;
+
+  clear:
+    both;
+}
+
+
+/* =========================================================
+   Small fullscreen hint
+   ========================================================= */
+
+.iclicker-fullscreen-hint {
+  margin-top:
+    0.75rem;
+
+  color:
+    var(
+      --global-text-color-light,
+      #777
+    );
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    500;
+
+  opacity:
+    0.8;
+}
+
+
+/* =========================================================
+   Fullscreen presentation mode
+   ========================================================= */
+
+.iclicker-question:fullscreen {
+  box-sizing:
+    border-box;
+
+  width:
+    100vw;
+
+  max-width:
+    none;
+
+  height:
+    100vh;
+
+  margin:
+    0;
+
+  padding:
+    clamp(
+      2rem,
+      5vw,
+      5rem
+    );
+
+  overflow:
+    auto;
+
+  background:
+    var(
+      --global-bg-color,
+      #fff
+    );
+
+  border:
+    10px solid
+    #ff9500;
+
+  border-radius:
+    0;
+
+  box-shadow:
+    inset 0 0 35px
+      rgba(
+        255,
+        149,
+        0,
+        0.28
+      );
+
+  font-size:
+    clamp(
+      1.25rem,
+      2.2vw,
+      2rem
+    );
+
+  line-height:
+    1.55;
+
+  cursor:
+    default;
+}
+
+
+/* Background around the fullscreen element */
+
+.iclicker-question::backdrop {
+  background:
+    var(
+      --global-bg-color,
+      #fff
+    );
+}
+
+
+/* Bigger iClicker label in fullscreen mode */
+
+.iclicker-question:fullscreen::before {
+  margin-bottom:
+    1.5rem;
+
+  font-size:
+    clamp(
+      1rem,
+      1.5vw,
+      1.35rem
+    );
+}
+
+
+/* Hide the "click to fullscreen" hint once fullscreen */
+
+.iclicker-question:fullscreen
+.iclicker-fullscreen-hint {
+  display:
+    none;
+}
+
+
+/* Allow images to grow in fullscreen mode */
+
+.iclicker-question:fullscreen
+img.iclicker-image {
+  width:
+    min(42%, 650px);
+
+  max-width:
+    650px;
+
+  margin-left:
+    2rem;
+}
+
+
+/* =========================================================
+   Mobile behavior
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .iclicker-question {
+    max-width:
+      100%;
+  }
+
+  .iclicker-question
+  img.iclicker-image {
+    float:
+      none;
+
+    display:
+      block;
+
+    width:
+      100%;
+
+    max-width:
+      420px;
+
+    margin:
+      0 auto 1rem;
+  }
+
+  .iclicker-question:fullscreen
+  img.iclicker-image {
+    float:
+      none;
+
+    display:
+      block;
+
+    width:
+      100%;
+
+    max-width:
+      520px;
+
+    margin:
+      0 auto 1.5rem;
+  }
 }
 
   /*
@@ -127,6 +392,45 @@ layout: page
     }
   }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelectorAll(".iclicker-question")
+    .forEach((box) => {
+
+      const hint = document.createElement("div");
+
+      hint.className =
+        "iclicker-fullscreen-hint";
+
+      hint.textContent =
+        "Click to present fullscreen · Esc to return";
+
+      box.appendChild(hint);
+
+      box.addEventListener(
+        "click",
+        (event) => {
+
+          if (
+            event.target.closest(
+              "a, button, input, select, textarea"
+            )
+          ) {
+            return;
+          }
+
+          if (
+            !document.fullscreenElement
+          ) {
+            box.requestFullscreen?.();
+          }
+        }
+      );
+    });
+});
+</script>
 
 <div class="math257-page">
   {{ content }}
