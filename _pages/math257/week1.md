@@ -26,7 +26,7 @@ We will now solve the following system of linear equations:
 2x\quad - \phantom{3}y \quad  +3z \quad &= \quad0.
 \end{aligned}
 \label{eq:system}
-\begin{equation}
+\end{equation}
 </div>
 
 The augmented matrix of this system is
