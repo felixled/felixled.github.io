@@ -126,11 +126,14 @@ This is a 1-dimensional solution space, that is, an _affine line_: starting from
 Consider the following system of linear equations:
 
 <div markdown="0">
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 \phantom{-}2x \quad -2y \quad -3z \quad &= \quad \phantom{-}9\\
 -1x \quad+ 1y \quad +4z \quad&= \quad -7\\
 3x\quad -3y \quad  +2z \quad &= \quad \phantom{-}7.
-\end{align*}
+\end{aligned}
+\label{eq:system2}
+\end{equation}
 </div>
 
 Compute the RREF of the associated augmented coefficient matrix!
@@ -139,7 +142,7 @@ Compute the RREF of the associated augmented coefficient matrix!
 
 <div class="iclicker-question" markdown="1">
 
-Consider the following system of linear equations together with the RREF of its augmented coefficient matrix:
+The system of linear equations in \eqref{eq:system2} has the following augmented coefficient matrix:
 
 <div markdown="0">
 \begin{align*}
@@ -148,7 +151,7 @@ Consider the following system of linear equations together with the RREF of its 
 -1 & \phantom{-}1 & \phantom{-}4 & -7\\
 \phantom{-}3 & -3 & \phantom{-}2 & \phantom{-}7
 \end{array}\right)
-\quad \overset{\text{RREF}}{\sim}\quad
+\quad \xrightarrow{\text{RREF}} \quad
 \left(\begin{array}{ccc|c}
 1 & -1 & 0 & \phantom{-}3\\
 0 & \phantom{-}0 & 1 & -1\\

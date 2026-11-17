@@ -2,7 +2,65 @@
 layout: page
 ---
 
+{% assign math257_header_mode = page.math257_header | default: 'date' %}
+
 <style>
+  /* =========================================================
+     Teaching header: current date plus al-folio's progress bar
+     Set math257_header: progress-only in a page's front matter
+     to hide the date bar while keeping the progress bar.
+     ========================================================= */
+
+  /* Keep the header itself visible: it also contains the progress bar. */
+  body > header {
+    display: block !important;
+  }
+
+  {% if math257_header_mode == 'progress-only' %}
+  body > header #navbar {
+    display: none !important;
+  }
+
+  body,
+  body.fixed-top-nav {
+    padding-top: 0 !important;
+  }
+
+  body > header #progress {
+    top: 0 !important;
+  }
+  {% else %}
+  body > header #navbar {
+    min-height: 3rem;
+  }
+
+  body > header #navbar > .container {
+    justify-content: center;
+  }
+
+  /* Hide the original navigation contents, not the navbar itself. */
+  body > header #navbar > .container > :not(.math257-header-date) {
+    display: none !important;
+  }
+
+  .math257-header-date {
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0;
+    color: var(--global-text-color, #222);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+  }
+  {% endif %}
+
+  /* Keep a modest gap above the lesson. */
+  main.container,
+  .container[role="main"] {
+    margin-top: 1.5rem !important;
+  }
+
   /*
    * Math 257 pages need more horizontal space for interactive applets.
    * This CSS is only emitted on pages using layout: math257.
@@ -188,9 +246,7 @@ layout: page
     }
   }
 
-  /*
-   * Keep sensible margins on small screens.
-   */
+  /* Keep sensible margins on small screens. */
   @media (max-width: 576px) {
     main.container,
     .container[role="main"] {
@@ -264,9 +320,7 @@ layout: page
     font-weight: 600;
   }
 
-  /*
-   * On narrow screens, stack the navigation links.
-   */
+  /* On narrow screens, stack the navigation links. */
   @media (max-width: 576px) {
     .math257-week-nav {
       grid-template-columns: 1fr;
@@ -284,6 +338,47 @@ layout: page
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  {% unless math257_header_mode == 'progress-only' %}
+  const navbarContainer = document.querySelector("body > header #navbar > .container");
+
+  if (navbarContainer) {
+    const dateElement = document.createElement("time");
+    dateElement.className = "math257-header-date";
+    navbarContainer.appendChild(dateElement);
+
+    const dateFormatter = new Intl.DateTimeFormat("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    // Use the viewer's current local date, not the date Jekyll built the site.
+    const updateHeaderDate = () => {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+      const day = String(now.getDate()).padStart(2, "0");
+
+      dateElement.dateTime = `${year}-${month}-${day}`;
+      dateElement.textContent = dateFormatter.format(now);
+    };
+
+    updateHeaderDate();
+
+    // Refresh after midnight or when returning to a previously opened tab.
+    window.setInterval(updateHeaderDate, 60000);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) updateHeaderDate();
+    });
+
+    // Let al-folio remeasure the navbar for its progress-bar positioning.
+    window.requestAnimationFrame(() => {
+      window.dispatchEvent(new Event("resize"));
+    });
+  }
+  {% endunless %}
+
   document
     .querySelectorAll(".iclicker-question, .groupwork-question")
     .forEach((box) => {
