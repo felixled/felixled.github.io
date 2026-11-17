@@ -26,6 +26,7 @@ Let's inspect systems of $$3$$ equations in $$3$$ variables $$x_1,x_2,x_3$$ (or 
 
 <div class="math257-text" markdown="1">
 ## Solving systems
+</div>
 
 <div class="iclicker-question" markdown="1">
 
@@ -47,6 +48,7 @@ What happens geometrically?
 
 </div>
 
+<div class="math257-text" markdown="1">
 We will now solve the following system of linear equations:
 
 <div markdown="0">
@@ -105,4 +107,32 @@ which finally yields the solution space of \eqref{eq:system} as
 </div>
 
 This is a 1-dimensional solution space, that is, an _affine line_: starting from the point $$(1,2,0)^T$$, any other point on the line can be reached by adding a $$t$$-multiple of the direction vector $$(-1,1,1)^T$$.
+</div>
+<div class="iclicker-question" markdown="1">
+
+Consider the following system of linear equations together with the RREF of its augmented coefficient matrix:
+
+<div markdown="0">
+\begin{align*}
+\left(\begin{array}{c|c} A | \mathbf{b}\end{array}\right) = \left(\begin{array}{ccc|c}
+2 & -2 & -3 & 9\\
+-1 & 1 & 4 & -7\\
+3 & -3 & 2 & 7
+\end{array}\right)
+\quad \sim\quad
+\left(\begin{array}{ccc|c}
+1 & -1 & 0 & 3\\
+0 & 0 & 1 & -1\\
+0 & 0& 0 & 0
+\end{array}\right)
+</div>
+
+Which set describes the solutions of this system?
+**A.** $$\varemtpy$$
+
+**B.** $$\left\lbrace \begin{pmatrix} \phantom{-}3\\-1\\ \phantom{-}0\end{pmatrix}\right\rbrace$$
+
+**C.** $$\left\lbrace \begin{pmatrix} \phantom{-}3\\-1\\ \phantom{-}0\end{pmatrix} + t \begin{pmatrix}1\\1\\0\end{pmatrix}\right\rbrace$$
+
+**D.** $$\left\lbrace \begin{pmatrix} \phantom{-}3\\-1\\ \phantom{-}0\end{pmatrix} + t \begin{pmatrix}1\\0\\0\end{pmatrix} + s \begin{pmatrix}0\\1\\0\end{pmatrix} \right\rbrace$$
 </div>
