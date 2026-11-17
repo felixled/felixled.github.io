@@ -14,49 +14,71 @@ layout: page
   }
 
   .math257-text,
-  .iclicker-question {
+  .iclicker-question,
+  .groupwork-question {
     max-width: 760px;
     margin-left: auto;
     margin-right: auto;
   }
 
   /* =========================================================
-     iClicker question box
+     Activity boxes: shared styling
      ========================================================= */
 
   .iclicker-question {
+    --activity-color: #ff9500;
+    --activity-rgb: 255, 149, 0;
+  }
+
+  .groupwork-question {
+    --activity-color: #9b59b6;
+    --activity-rgb: 155, 89, 182;
+  }
+
+  .iclicker-question,
+  .groupwork-question {
     max-width: 760px;
     margin: 1.5rem auto;
     padding: 1.1rem 1.3rem;
-    background: rgba(255, 149, 0, 0.10);
-    border: 2px solid #ff9500;
+    background: rgba(var(--activity-rgb), 0.10);
+    border: 2px solid var(--activity-color);
     border-radius: 0.85rem;
-    box-shadow: 0 0 10px rgba(255, 149, 0, 0.45), 0 0 28px rgba(255, 149, 0, 0.22);
+    box-shadow: 0 0 10px rgba(var(--activity-rgb), 0.45), 0 0 28px rgba(var(--activity-rgb), 0.22);
     cursor: pointer;
   }
 
-  /* Automatic label at the top of every box */
-  .iclicker-question::before {
-    content: "iClicker Question";
+  /* Automatic labels at the top of the boxes */
+  .iclicker-question::before,
+  .groupwork-question::before {
     display: block;
     margin-bottom: 0.7rem;
-    color: #e67e00;
+    color: var(--activity-color);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
+  .iclicker-question::before {
+    content: "iClicker Question";
+  }
+
+  .groupwork-question::before {
+    content: "Group Work";
+  }
+
   /* Avoid unwanted extra space at the bottom */
-  .iclicker-question > :last-child {
+  .iclicker-question > :last-child,
+  .groupwork-question > :last-child {
     margin-bottom: 0;
   }
 
   /* =========================================================
-     Optional image inside an iClicker question
+     Optional images inside activity boxes
      ========================================================= */
 
-  .iclicker-question img.iclicker-image {
+  .iclicker-question img.iclicker-image,
+  .groupwork-question img.groupwork-image {
     float: right;
     width: min(38%, 280px);
     height: auto;
@@ -65,7 +87,8 @@ layout: page
   }
 
   /* Clear floated images properly */
-  .iclicker-question::after {
+  .iclicker-question::after,
+  .groupwork-question::after {
     content: "";
     display: block;
     clear: both;
@@ -75,7 +98,7 @@ layout: page
      Small fullscreen hint
      ========================================================= */
 
-  .iclicker-fullscreen-hint {
+  .activity-fullscreen-hint {
     margin-top: 0.75rem;
     color: var(--global-text-color-light, #777);
     font-size: 0.72rem;
@@ -87,7 +110,8 @@ layout: page
      Fullscreen presentation mode
      ========================================================= */
 
-  .iclicker-question:fullscreen {
+  .iclicker-question:fullscreen,
+  .groupwork-question:fullscreen {
     box-sizing: border-box;
     width: 100vw;
     max-width: none;
@@ -96,32 +120,36 @@ layout: page
     padding: clamp(1rem, 2.5vw, 2.5rem);
     overflow: auto;
     background: var(--global-bg-color, #fff);
-    border: 8px solid #ff9500;
+    border: 8px solid var(--activity-color);
     border-radius: 0;
-    box-shadow: inset 0 0 35px rgba(255, 149, 0, 0.28);
+    box-shadow: inset 0 0 35px rgba(var(--activity-rgb), 0.28);
     font-size: inherit;
     line-height: 1.4;
     cursor: default;
   }
 
   /* Background around the fullscreen element */
-  .iclicker-question::backdrop {
+  .iclicker-question::backdrop,
+  .groupwork-question::backdrop {
     background: var(--global-bg-color, #fff);
   }
 
-  /* Keep the label close to its normal size in fullscreen mode */
-  .iclicker-question:fullscreen::before {
+  /* Keep the activity label close to its normal size in fullscreen mode */
+  .iclicker-question:fullscreen::before,
+  .groupwork-question:fullscreen::before {
     margin-bottom: 0.8rem;
     font-size: 0.9rem;
   }
 
   /* Hide the "click to fullscreen" hint once fullscreen */
-  .iclicker-question:fullscreen .iclicker-fullscreen-hint {
+  .iclicker-question:fullscreen .activity-fullscreen-hint,
+  .groupwork-question:fullscreen .activity-fullscreen-hint {
     display: none;
   }
 
   /* Keep images from taking over the fullscreen view */
-  .iclicker-question:fullscreen img.iclicker-image {
+  .iclicker-question:fullscreen img.iclicker-image,
+  .groupwork-question:fullscreen img.groupwork-image {
     float: right;
     width: min(35%, 400px);
     max-width: 400px;
@@ -135,11 +163,13 @@ layout: page
      ========================================================= */
 
   @media (max-width: 700px) {
-    .iclicker-question {
+    .iclicker-question,
+    .groupwork-question {
       max-width: 100%;
     }
 
-    .iclicker-question img.iclicker-image {
+    .iclicker-question img.iclicker-image,
+    .groupwork-question img.groupwork-image {
       float: none;
       display: block;
       width: 100%;
@@ -147,7 +177,8 @@ layout: page
       margin: 0 auto 1rem;
     }
 
-    .iclicker-question:fullscreen img.iclicker-image {
+    .iclicker-question:fullscreen img.iclicker-image,
+    .groupwork-question:fullscreen img.groupwork-image {
       float: none;
       display: block;
       width: 100%;
@@ -232,12 +263,12 @@ layout: page
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   document
-    .querySelectorAll(".iclicker-question")
+    .querySelectorAll(".iclicker-question, .groupwork-question")
     .forEach((box) => {
       const hint = document.createElement("div");
 
       hint.className =
-        "iclicker-fullscreen-hint";
+        "activity-fullscreen-hint";
 
       hint.textContent =
         "Click to present fullscreen · Esc to return";

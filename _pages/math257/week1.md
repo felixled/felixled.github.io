@@ -47,11 +47,7 @@ Let's inspect systems of $$3$$ equations in $$3$$ variables $$x_1,x_2,x_3$$ (or 
 
 <div class="iclicker-question" markdown="1">
 
-Suppose we perform
-
-$$
-R_2 \leftarrow R_2 - 3R_1.
-$$
+Suppose we perform the row operation $$R_2 \leftarrow R_2 - 3R_1$$ to the augmented coefficient matrix of a system of linear equations (with at least two equations).
 
 What happens geometrically?
 
@@ -125,6 +121,22 @@ which finally yields the solution space of \eqref{eq:system} as
 
 This is a 1-dimensional solution space, that is, an _affine line_: starting from the point $$(1,2,0)^T$$, any other point on the line can be reached by adding a $$t$$-multiple of the direction vector $$(-1,1,1)^T$$.
 </div>
+
+<div class="groupwork-question" markdown="1">
+Consider the following system of linear equations:
+
+<div markdown="0">
+\begin{align*}
+\phantom{-}2x \quad-2y \quad -3z \quad &= \quad \phantom{-}9\\
+-1x \quad+ 1y \quad 4z \quad&= \quad -7\\
+3x\quad -3y \quad  +2z \quad &= \quad 7.
+\end{align*}
+</div>
+
+Compute the RREF of the associated augmented coefficient matrix!
+
+</div>
+
 <div class="iclicker-question" markdown="1">
 
 Consider the following system of linear equations together with the RREF of its augmented coefficient matrix:
