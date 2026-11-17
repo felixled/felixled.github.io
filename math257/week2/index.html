@@ -15,10 +15,43 @@
     width: 94% !important;
   }
 
-  .math257-text {
+  .math257-text,.iclicker-question {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.iclicker-question {
+  margin: 1.5rem 0;
+  padding: 1rem 1.2rem;
+
+  background: rgba(255, 140, 0, 0.08);
+
+  border: 2px solid #ff8c00;
+  border-radius: 0.8rem;
+
+  box-shadow:
+    0 0 8px rgba(255, 140, 0, 0.35),
+    0 0 22px rgba(255, 140, 0, 0.18);
+}
+
+.iclicker-question::before {
+  content: "iClicker Question";
+
+  display: block;
+  margin-bottom: 0.6rem;
+
+  color: #e67e00;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.iclicker-question > :last-child {
+  margin-bottom: 0;
 }
 
   /*
