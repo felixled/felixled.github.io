@@ -200,12 +200,34 @@ layout: page
     }
   }
 
+  /* =========================================================
+     Course footer
+     ========================================================= */
+
+  .math257-footer {
+    max-width: 760px;
+    margin: 3rem auto 0;
+    color: var(--global-text-color-light, #666);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .math257-footer a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  /* =========================================================
+     Week navigation
+     ========================================================= */
+
   .math257-week-nav {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 1rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--global-divider-color, #ddd);
   }
@@ -299,6 +321,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <div class="math257-page">
   {{ content }}
+
+  <div class="math257-footer">
+    This website has been designed with the assistance of ChatGPT (GPT-5.6 Sol).
+    The source code can be found at
+    <a href="https://github.com/felixled/felixled.github.io">https://github.com/felixled/felixled.github.io</a>.
+  </div>
 
   {% assign course_home = page.course_home | default: '/math257/' %}
 
