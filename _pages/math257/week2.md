@@ -61,6 +61,12 @@ Select all true statements:
 
 </div>
 
+<div class="groupwork-question" markdown="1">
+Consider the matrix $$M=\begin{pmatrix} 1 & 1 & 0 & 2\\ 0 & 0 & 1 & -1\end{pmatrix}$$.
+
+Find two **distinct** matrices $$A$$ and $$B$$ that both have $$M$$ as their RREF!
+</div>
+
 <div class="math257-text" markdown="1">
 ## Linear combinations
 </div>
