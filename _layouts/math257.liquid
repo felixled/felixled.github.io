@@ -81,29 +81,19 @@ layout: page
   }
 
   .math257-text,
-  .iclicker-question,
-  .groupwork-question {
+  .math257-activity {
     max-width: 760px;
     margin-left: auto;
     margin-right: auto;
   }
 
   /* =========================================================
-     Activity boxes: shared styling
+     Activity boxes: shared styling for every category
+     Labels and colors are defined once in ACTIVITY_TYPES below.
+     JavaScript adds .math257-activity to each recognized box.
      ========================================================= */
 
-  .iclicker-question {
-    --activity-color: #ff9500;
-    --activity-rgb: 255, 149, 0;
-  }
-
-  .groupwork-question {
-    --activity-color: #9b59b6;
-    --activity-rgb: 155, 89, 182;
-  }
-
-  .iclicker-question,
-  .groupwork-question {
+  .math257-activity {
     max-width: 760px;
     margin: 1.5rem auto;
     padding: 1.1rem 1.3rem;
@@ -114,9 +104,9 @@ layout: page
     cursor: pointer;
   }
 
-  /* Automatic labels at the top of the boxes */
-  .iclicker-question::before,
-  .groupwork-question::before {
+  /* The same label is used on the page and in the fullscreen toolbar. */
+  .math257-activity::before {
+    content: attr(data-activity-label);
     display: block;
     margin-bottom: 0.7rem;
     color: var(--activity-color);
@@ -126,21 +116,11 @@ layout: page
     text-transform: uppercase;
   }
 
-  .iclicker-question::before {
-    content: "iClicker Question";
-  }
-
-  .groupwork-question::before {
-    content: "Group Work";
-  }
-
-  /* Avoid unwanted extra space at the bottom */
-  .iclicker-question > :last-child,
-  .groupwork-question > :last-child {
+  .math257-activity > :last-child {
     margin-bottom: 0;
   }
 
-  /* This wrapper keeps the question separate from its fullscreen controls. */
+  /* This wrapper keeps the content separate from its fullscreen controls. */
   .activity-fullscreen-content {
     display: flow-root;
   }
@@ -150,11 +130,11 @@ layout: page
   }
 
   /* =========================================================
-     Optional images inside activity boxes
+     Optional images: use class="activity-image" for any category.
+     Existing category-specific image classes are recognized by JavaScript.
      ========================================================= */
 
-  .iclicker-question img.iclicker-image,
-  .groupwork-question img.groupwork-image {
+  .math257-activity img.activity-image {
     float: right;
     width: min(38%, 280px);
     height: auto;
@@ -162,9 +142,7 @@ layout: page
     border-radius: 0.6rem;
   }
 
-  /* Clear floated images properly */
-  .iclicker-question::after,
-  .groupwork-question::after {
+  .math257-activity::after {
     content: "";
     display: block;
     clear: both;
@@ -190,8 +168,7 @@ layout: page
     display: none;
   }
 
-  .iclicker-question:fullscreen,
-  .groupwork-question:fullscreen {
+  .math257-activity:fullscreen {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -216,23 +193,18 @@ layout: page
     cursor: default;
   }
 
-  .iclicker-question::backdrop,
-  .groupwork-question::backdrop {
+  .math257-activity::backdrop {
     background: var(--global-bg-color, #fff);
   }
 
   /* The toolbar supplies the label while fullscreen. */
-  .iclicker-question:fullscreen::before,
-  .groupwork-question:fullscreen::before,
-  .iclicker-question:fullscreen::after,
-  .groupwork-question:fullscreen::after,
-  .iclicker-question:fullscreen .activity-fullscreen-hint,
-  .groupwork-question:fullscreen .activity-fullscreen-hint {
+  .math257-activity:fullscreen::before,
+  .math257-activity:fullscreen::after,
+  .math257-activity:fullscreen .activity-fullscreen-hint {
     display: none;
   }
 
-  .iclicker-question:fullscreen > .activity-fullscreen-toolbar,
-  .groupwork-question:fullscreen > .activity-fullscreen-toolbar {
+  .math257-activity:fullscreen > .activity-fullscreen-toolbar {
     display: flex;
     flex: 0 0 auto;
     flex-wrap: wrap;
@@ -284,8 +256,7 @@ layout: page
   }
 
   .activity-fullscreen-controls button:focus-visible,
-  .iclicker-question:focus-visible,
-  .groupwork-question:focus-visible {
+  .math257-activity:focus-visible {
     outline: 3px solid var(--activity-color);
     outline-offset: 3px;
   }
@@ -311,9 +282,8 @@ layout: page
     text-align: center;
   }
 
-  /* Only the question scrolls; the controls always stay above it. */
-  .iclicker-question:fullscreen > .activity-fullscreen-content,
-  .groupwork-question:fullscreen > .activity-fullscreen-content {
+  /* Only the content scrolls; the controls always stay above it. */
+  .math257-activity:fullscreen > .activity-fullscreen-content {
     flex: 1 1 auto;
     min-width: 0;
     min-height: 0;
@@ -325,14 +295,12 @@ layout: page
   }
 
   /* Preserve relative sizes, including headings or code styled in rem. */
-  .iclicker-question:fullscreen [data-activity-font-size],
-  .groupwork-question:fullscreen [data-activity-font-size] {
+  .math257-activity:fullscreen [data-activity-font-size] {
     font-size: calc(var(--activity-base-font-size) * var(--activity-font-scale, 1)) !important;
   }
 
   /* Images keep their existing size limits when the text is enlarged. */
-  .iclicker-question:fullscreen img.iclicker-image,
-  .groupwork-question:fullscreen img.groupwork-image {
+  .math257-activity:fullscreen img.activity-image {
     float: right;
     width: min(35%, 400px);
     max-width: 400px;
@@ -346,13 +314,11 @@ layout: page
      ========================================================= */
 
   @media (max-width: 700px) {
-    .iclicker-question,
-    .groupwork-question {
+    .math257-activity {
       max-width: 100%;
     }
 
-    .iclicker-question img.iclicker-image,
-    .groupwork-question img.groupwork-image {
+    .math257-activity img.activity-image {
       float: none;
       display: block;
       width: 100%;
@@ -360,8 +326,7 @@ layout: page
       margin: 0 auto 1rem;
     }
 
-    .iclicker-question:fullscreen img.iclicker-image,
-    .groupwork-question:fullscreen img.groupwork-image {
+    .math257-activity:fullscreen img.activity-image {
       float: none;
       display: block;
       width: 100%;
@@ -520,6 +485,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   {% endunless %}
 
+  /* =========================================================
+     Activity categories: edit only this list to add another type.
+     Use a CSS class name without a leading dot and a six-digit hex color.
+     RGB values, labels, shared styling, and controls are set automatically.
+     Example additional entry:
+     "worked-example": { label: "Worked Example", color: "#2563eb" },
+     ========================================================= */
+  const ACTIVITY_TYPES = {
+    "iclicker-question": { label: "iClicker Question", color: "#ff9500" },
+    "groupwork-question": { label: "Group Work", color: "#9b59b6" },
+    "demonstration": { label: "Demonstration", color: "#009988" },
+  };
+
+  const hexToRgb = (hex) => {
+    return hex.slice(1).match(/../g).map((pair) => parseInt(pair, 16)).join(", ");
+  };
+
+  // Skip an invalid entry without disabling the other categories.
+  const activityTypes = Object.entries(ACTIVITY_TYPES).flatMap(([className, type]) => {
+    const validClass = /^[a-z][a-z0-9_-]*$/i.test(className);
+    const validLabel = typeof type?.label === "string" && type.label.trim().length > 0;
+    const validColor = typeof type?.color === "string" && /^#[0-9a-f]{6}$/i.test(type.color);
+
+    if (!validClass || !validLabel || !validColor) {
+      console.warn("Skipping an invalid Math 257 activity category:", className);
+      return [];
+    }
+
+    return [{ className, label: type.label, color: type.color, rgb: hexToRgb(type.color) }];
+  });
+
+  if (activityTypes.length === 0) return;
+  const activitySelector = activityTypes.map((type) => `.${type.className}`).join(", ");
+
   const MIN_TEXT_SIZE = 60;
   const MAX_TEXT_SIZE = 250;
   const TEXT_SIZE_STEP = 10;
@@ -541,9 +540,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  document.querySelectorAll(".iclicker-question, .groupwork-question").forEach((box) => {
+  document.querySelectorAll(activitySelector).forEach((box) => {
     if (box.dataset.fullscreenControlsReady) return;
+    const type = activityTypes.find((entry) => box.classList.contains(entry.className));
+    if (!type) return;
+
     box.dataset.fullscreenControlsReady = "true";
+    box.dataset.activityLabel = type.label;
+    box.classList.add("math257-activity");
+    box.style.setProperty("--activity-color", type.color);
+    box.style.setProperty("--activity-rgb", type.rgb);
+
+    // Preserve image classes already used in existing week pages.
+    box.querySelectorAll("img.iclicker-image, img.groupwork-image, img.demonstration-image").forEach((image) => {
+      image.classList.add("activity-image");
+    });
 
     const content = document.createElement("div");
     content.className = "activity-fullscreen-content";
@@ -552,11 +563,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const toolbar = document.createElement("div");
     toolbar.className = "activity-fullscreen-toolbar";
     toolbar.setAttribute("role", "group");
-    toolbar.setAttribute("aria-label", "Fullscreen question controls");
+    toolbar.setAttribute("aria-label", "Fullscreen activity controls");
 
     const label = document.createElement("span");
     label.className = "activity-fullscreen-label";
-    label.textContent = box.classList.contains("iclicker-question") ? "iClicker Question" : "Group Work";
+    label.textContent = box.dataset.activityLabel;
 
     const controls = document.createElement("div");
     controls.className = "activity-fullscreen-controls";
@@ -590,7 +601,7 @@ document.addEventListener("DOMContentLoaded", () => {
     box.append(toolbar, content, hint);
     if (!box.hasAttribute("tabindex")) box.tabIndex = 0;
 
-    // Each question remembers its own size until the page is reloaded.
+    // Each activity remembers its own size until the page is reloaded.
     const state = { box, content, larger, exit, percent: 100 };
     activityStates.set(box, state);
 
