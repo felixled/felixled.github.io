@@ -596,7 +596,7 @@ input.raw_input {
   box-shadow: none;
 }
 
-
+.MathJax_Display,
 .MathJax {
   border: 0 !important;
   font-size: 100% !important;

@@ -127,6 +127,15 @@
     margin-bottom: 0;
   }
 
+  /* This wrapper keeps the question separate from its fullscreen controls. */
+  .activity-fullscreen-content {
+    display: flow-root;
+  }
+
+  .activity-fullscreen-content > :last-child {
+    margin-bottom: 0;
+  }
+
   /* =========================================================
      Optional images inside activity boxes
      ========================================================= */
@@ -161,18 +170,30 @@
   }
 
   /* =========================================================
-     Fullscreen presentation mode
+     Fullscreen presentation mode and text-size controls
      ========================================================= */
+
+  .activity-fullscreen-toolbar {
+    display: none;
+  }
 
   .iclicker-question:fullscreen,
   .groupwork-question:fullscreen {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     width: 100vw;
     max-width: none;
     height: 100vh;
+    height: 100dvh;
+    min-height: 0;
     margin: 0;
     padding: clamp(1rem, 2.5vw, 2.5rem);
-    overflow: auto;
+    padding-top: max(clamp(1rem, 2.5vw, 2.5rem), env(safe-area-inset-top));
+    padding-right: max(clamp(1rem, 2.5vw, 2.5rem), env(safe-area-inset-right));
+    padding-bottom: max(clamp(1rem, 2.5vw, 2.5rem), env(safe-area-inset-bottom));
+    padding-left: max(clamp(1rem, 2.5vw, 2.5rem), env(safe-area-inset-left));
+    overflow: hidden;
     background: var(--global-bg-color, #fff);
     border: 8px solid var(--activity-color);
     border-radius: 0;
@@ -182,26 +203,121 @@
     cursor: default;
   }
 
-  /* Background around the fullscreen element */
   .iclicker-question::backdrop,
   .groupwork-question::backdrop {
     background: var(--global-bg-color, #fff);
   }
 
-  /* Keep the activity label close to its normal size in fullscreen mode */
+  /* The toolbar supplies the label while fullscreen. */
   .iclicker-question:fullscreen::before,
-  .groupwork-question:fullscreen::before {
-    margin-bottom: 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  /* Hide the "click to fullscreen" hint once fullscreen */
+  .groupwork-question:fullscreen::before,
+  .iclicker-question:fullscreen::after,
+  .groupwork-question:fullscreen::after,
   .iclicker-question:fullscreen .activity-fullscreen-hint,
   .groupwork-question:fullscreen .activity-fullscreen-hint {
     display: none;
   }
 
-  /* Keep images from taking over the fullscreen view */
+  .iclicker-question:fullscreen > .activity-fullscreen-toolbar,
+  .groupwork-question:fullscreen > .activity-fullscreen-toolbar {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(var(--activity-rgb), 0.35);
+    color: var(--global-text-color, #222);
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .activity-fullscreen-label {
+    color: var(--activity-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .activity-fullscreen-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    margin-left: auto;
+  }
+
+  .activity-fullscreen-controls button {
+    box-sizing: border-box;
+    min-width: 44px;
+    min-height: 44px;
+    margin: 0;
+    padding: 0.45rem 0.55rem;
+    border: 1px solid var(--activity-color);
+    border-radius: 0.45rem;
+    background: rgba(var(--activity-rgb), 0.10);
+    color: var(--global-text-color, #222);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .activity-fullscreen-controls button:focus-visible,
+  .iclicker-question:focus-visible,
+  .groupwork-question:focus-visible {
+    outline: 3px solid var(--activity-color);
+    outline-offset: 3px;
+  }
+
+  .activity-fullscreen-controls button:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  @media (hover: hover) {
+    .activity-fullscreen-controls button:hover:not(:disabled) {
+      background: rgba(var(--activity-rgb), 0.22);
+    }
+  }
+
+  .activity-font-size {
+    min-width: 3.2rem;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+  }
+
+  /* Only the question scrolls; the controls always stay above it. */
+  .iclicker-question:fullscreen > .activity-fullscreen-content,
+  .groupwork-question:fullscreen > .activity-fullscreen-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    padding: 0.25rem;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    overflow-wrap: break-word;
+  }
+
+  /* Preserve relative sizes, including headings or code styled in rem. */
+  .iclicker-question:fullscreen [data-activity-font-size],
+  .groupwork-question:fullscreen [data-activity-font-size] {
+    font-size: calc(var(--activity-base-font-size) * var(--activity-font-scale, 1)) !important;
+  }
+
+  /* Images keep their existing size limits when the text is enlarged. */
   .iclicker-question:fullscreen img.iclicker-image,
   .groupwork-question:fullscreen img.groupwork-image {
     float: right;
@@ -389,40 +505,155 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
 
-  document
-    .querySelectorAll(".iclicker-question, .groupwork-question")
-    .forEach((box) => {
-      const hint = document.createElement("div");
+  const MIN_TEXT_SIZE = 60;
+  const MAX_TEXT_SIZE = 250;
+  const TEXT_SIZE_STEP = 10;
+  const activityStates = new Map();
+  let activeActivity = null;
 
-      hint.className =
-        "activity-fullscreen-hint";
-
-      hint.textContent =
-        "Click to present fullscreen · Esc to return";
-
-      box.appendChild(hint);
-
-      box.addEventListener(
-        "click",
-        (event) => {
-          if (
-            event.target.closest(
-              "a, button, input, select, textarea"
-            )
-          ) {
-            return;
-          }
-
-          if (
-            !document.fullscreenElement
-          ) {
-            box.requestFullscreen?.();
-          }
-        }
-      );
+  // Measure before fullscreen so 100% matches each element's normal size.
+  // Leave math-renderer internals alone; they scale with their surrounding text.
+  const captureTextSizes = (content) => {
+    const excluded = "mjx-container, .MathJax, .MathJax_Display, .MathJax_SVG, .MathJax_SVG_Display, .MathJax_CHTML, .MathJax_CHTML_Display, .katex, svg, math, script, style";
+    const elements = [content, ...content.querySelectorAll("*")].filter((element) => {
+      return element instanceof HTMLElement && !element.closest(excluded);
     });
+    const sizes = elements.map((element) => getComputedStyle(element).fontSize);
+
+    elements.forEach((element, index) => {
+      element.setAttribute("data-activity-font-size", "");
+      element.style.setProperty("--activity-base-font-size", sizes[index]);
+    });
+  };
+
+  document.querySelectorAll(".iclicker-question, .groupwork-question").forEach((box) => {
+    if (box.dataset.fullscreenControlsReady) return;
+    box.dataset.fullscreenControlsReady = "true";
+
+    const content = document.createElement("div");
+    content.className = "activity-fullscreen-content";
+    while (box.firstChild) content.appendChild(box.firstChild);
+
+    const toolbar = document.createElement("div");
+    toolbar.className = "activity-fullscreen-toolbar";
+    toolbar.setAttribute("role", "group");
+    toolbar.setAttribute("aria-label", "Fullscreen question controls");
+
+    const label = document.createElement("span");
+    label.className = "activity-fullscreen-label";
+    label.textContent = box.classList.contains("iclicker-question") ? "iClicker Question" : "Group Work";
+
+    const controls = document.createElement("div");
+    controls.className = "activity-fullscreen-controls";
+
+    const makeButton = (text, description) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = text;
+      button.title = description;
+      button.setAttribute("aria-label", description);
+      return button;
+    };
+
+    const smaller = makeButton("A−", "Decrease text size");
+    const larger = makeButton("A+", "Increase text size");
+    const reset = makeButton("Reset", "Reset text size to 100%");
+    const exit = makeButton("Exit", "Exit fullscreen");
+    const sizeLabel = document.createElement("output");
+    sizeLabel.className = "activity-font-size";
+    sizeLabel.setAttribute("aria-label", "Text size");
+    sizeLabel.setAttribute("aria-live", "polite");
+    sizeLabel.setAttribute("aria-atomic", "true");
+
+    controls.append(smaller, sizeLabel, larger, reset, exit);
+    toolbar.append(label, controls);
+
+    const hint = document.createElement("div");
+    hint.className = "activity-fullscreen-hint";
+    hint.textContent = "Tap or click to present fullscreen · Exit or Esc to return";
+
+    box.append(toolbar, content, hint);
+    if (!box.hasAttribute("tabindex")) box.tabIndex = 0;
+
+    // Each question remembers its own size until the page is reloaded.
+    const state = { box, content, larger, exit, percent: 100 };
+    activityStates.set(box, state);
+
+    const setTextSize = (percent) => {
+      state.percent = Math.min(MAX_TEXT_SIZE, Math.max(MIN_TEXT_SIZE, percent));
+      box.style.setProperty("--activity-font-scale", String(state.percent / 100));
+      sizeLabel.value = `${state.percent}%`;
+      smaller.disabled = state.percent === MIN_TEXT_SIZE;
+      larger.disabled = state.percent === MAX_TEXT_SIZE;
+      reset.disabled = state.percent === 100;
+    };
+
+    setTextSize(100);
+
+    // Button taps must not reach the box's fullscreen click handler.
+    controls.addEventListener("click", (event) => event.stopPropagation());
+    smaller.addEventListener("click", () => setTextSize(state.percent - TEXT_SIZE_STEP));
+    larger.addEventListener("click", () => setTextSize(state.percent + TEXT_SIZE_STEP));
+    reset.addEventListener("click", () => setTextSize(100));
+
+    exit.addEventListener("click", async () => {
+      if (document.fullscreenElement !== box) return;
+      try {
+        await document.exitFullscreen();
+      } catch (error) {
+        console.warn("Could not exit fullscreen.", error);
+      }
+    });
+
+    const enterFullscreen = async () => {
+      if (document.fullscreenElement) return;
+      if (!box.requestFullscreen) {
+        hint.textContent = "Fullscreen is unavailable in this browser.";
+        return;
+      }
+
+      captureTextSizes(content);
+      try {
+        await box.requestFullscreen();
+      } catch (error) {
+        hint.textContent = "Fullscreen could not open. Tap or click to try again.";
+        console.warn("Could not enter fullscreen.", error);
+      }
+    };
+
+    box.addEventListener("click", (event) => {
+      if (!(event.target instanceof Element)) return;
+      if (event.target.closest("a, button, input, select, textarea, summary, [contenteditable], .activity-fullscreen-toolbar")) return;
+      enterFullscreen();
+    });
+
+    box.addEventListener("keydown", (event) => {
+      if (event.target !== box || document.fullscreenElement) return;
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      enterFullscreen();
+    });
+  });
+
+  // Also handle the browser's own fullscreen exit (Esc, Back, or its controls).
+  document.addEventListener("fullscreenchange", () => {
+    const nextActivity = activityStates.get(document.fullscreenElement) || null;
+
+    if (activeActivity && activeActivity !== nextActivity) {
+      activeActivity.content.scrollTop = 0;
+      activeActivity.content.scrollLeft = 0;
+      if (!nextActivity) activeActivity.box.focus({ preventScroll: true });
+    }
+
+    activeActivity = nextActivity;
+    if (activeActivity) {
+      activeActivity.content.scrollTop = 0;
+      const focusTarget = activeActivity.larger.disabled ? activeActivity.exit : activeActivity.larger;
+      focusTarget.focus({ preventScroll: true });
+    }
+  });
 });
-</script> <div class="math257-page"> <div class="math257-text"> <h2 id="linear-combinations">Linear combinations</h2> </div> <math257-linear-combinations-3d></math257-linear-combinations-3d> <div class="math257-footer"> This website has been designed with the assistance of ChatGPT (GPT-5.6 Sol). The source code can be found at <a href="https://github.com/felixled/felixled.github.io" rel="external nofollow noopener" target="_blank">https://github.com/felixled/felixled.github.io</a>. </div> <nav class="math257-week-nav" aria-label="Math 257 week navigation"> <div class="math257-week-nav__previous"> <a href="/math257/week1/"> <span class="math257-week-nav__label">Previous</span> <span class="math257-week-nav__title"> ← Week 1 </span> </a> </div> <div class="math257-week-nav__home"> <a href="/math257/"> <span class="math257-week-nav__label">Math 257</span> <span class="math257-week-nav__title"> Course home </span> </a> </div> <div class="math257-week-nav__next"> <a href="/math257/week3/"> <span class="math257-week-nav__label">Next</span> <span class="math257-week-nav__title"> Week 3 → </span> </a> </div> </nav> </div> <script type="module" src="/assets/js/math257/math257.js"> </script> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Felix Leditzky. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: November 17, 2026. </div> </footer> <script>
+</script> <div class="math257-page"> <div class="math257-text"> <h2 id="linear-combinations">Linear combinations</h2> </div> <math257-linear-combinations-3d></math257-linear-combinations-3d> <div class="math257-footer"> This website has been designed with the assistance of ChatGPT (GPT-5.6 Sol). The source code can be found at <a href="https://github.com/felixled/felixled.github.io" rel="external nofollow noopener" target="_blank">https://github.com/felixled/felixled.github.io</a>. </div> <nav class="math257-week-nav" aria-label="Math 257 week navigation"> <div class="math257-week-nav__previous"> <a href="/math257/week1/"> <span class="math257-week-nav__label">Previous</span> <span class="math257-week-nav__title"> ← Week 1 </span> </a> </div> <div class="math257-week-nav__home"> <a href="/math257/"> <span class="math257-week-nav__label">Math 257</span> <span class="math257-week-nav__title"> Course home </span> </a> </div> <div class="math257-week-nav__next"> <a href="/math257/week3/"> <span class="math257-week-nav__label">Next</span> <span class="math257-week-nav__title"> Week 3 → </span> </a> </div> </nav> </div> <script type="module" src="/assets/js/math257/math257.js"> </script> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Felix Leditzky. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: November 18, 2026. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
