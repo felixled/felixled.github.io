@@ -18,13 +18,14 @@ A matrix is in **echelon form**, if:
 
 A matrix is in **row-reduced echelon form (RREF)**, if it is in echelon form, and additionally
 
+{: start="3"}
 3. The leading entry in each non-zero row is equal to $$1$$.
 
 4. Each leading entry is the only non-zero entry in its column.
 </div>
 
 <div class="demonstration" markdown="1">
-### Finding the echelon form and RREF of a matrix
+##### Finding the echelon form and RREF of a matrix
 
 $$
 M = \begin{pmatrix} 
@@ -33,6 +34,30 @@ M = \begin{pmatrix}
 -1 & -2 & -1 & \phantom{-}4
 \end{pmatrix}
 $$
+
+</div>
+
+<div class="iclicker-question" markdown="1">
+
+Consider the following three matrices:
+
+<div markdown="0">
+\begin{align*}
+M_1 &= \begin{pmatrix}1&0&3\\0&2&4\\0&0&5\end{pmatrix} &
+M_2 &= \begin{pmatrix}1&0&2\\1&0&0\\0&0&0\end{pmatrix} &
+M_3 &= \begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}
+\end{align*}
+</div>
+
+Select all true statements:
+
+**A.** Both $$M_1$$ and $$M_3$$ are in echelon form.
+
+**B.** $$M_2$$ is in echelon form.
+
+**C.** $$M_1$$ is in row-reduced echelon form.
+
+**D.** $$M_3$$ is in row-reduced echelon form.
 
 </div>
 
