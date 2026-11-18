@@ -685,9 +685,10 @@ document.addEventListener("DOMContentLoaded", () => {
   {{ content }}
 
   <div class="math257-footer">
-    This website has been designed with the assistance of ChatGPT (GPT-5.6 Sol).
+    This website has been designed with the assistance of ChatGPT (GPT-5.6 Sol and GPT-6 Astra Pro).<br/>
     The source code can be found at
-    <a href="https://github.com/felixled/felixled.github.io">https://github.com/felixled/felixled.github.io</a>.
+    <a href="https://github.com/felixled/felixled.github.io">https://github.com/felixled/felixled.github.io</a>.<br/>
+    [Please contact me](mailto:{{ site.data.socials.email | encode_email }}) with feedback or if you find any bugs!
   </div>
 
   {% assign course_home = page.course_home | default: '/math257/' %}
