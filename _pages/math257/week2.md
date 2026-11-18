@@ -31,6 +31,7 @@ M = \begin{pmatrix}
 \phantom{-}1 & -2 & \phantom{-}3 &-4\\
 \phantom{-}2 & \phantom{-}0 & \phantom{-}4 & -8\\
 -1 & -2 & -1 & \phantom{-}4
+\end{pmatrix}
 $$
 
 </div>
