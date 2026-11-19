@@ -114,12 +114,13 @@ x_3 &= 0 + t,
 which finally yields the solution space of \eqref{eq:system} as
 
 <div markdown="0">
-\begin{align*}
+\begin{align}
 \left\lbrace \begin{pmatrix}1\\2\\0\end{pmatrix} + t \begin{pmatrix} -1\\ \phantom{-}1\\\phantom{-}1\end{pmatrix} \right\rbrace.
-\end{align*}
+\label{eq:solution}
+\end{align}
 </div>
 
-This is a 1-dimensional solution space, that is, an _affine line_: starting from the point $$(1,2,0)^T$$, any other point on the line can be reached by adding a $$t$$-multiple of the direction vector $$(-1,1,1)^T$$.
+This _affine line_ is a 1-dimensional solution space: every point on the line \eqref{eq:solution} is a solution of \eqref{eq:system}, and can be reached by adding a $$t$$-multiple of the direction vector $$(-1,1,1)^T$$ to the point $$(1,2,0)^T$$.
 </div>
 
 <div class="groupwork-question" markdown="1">
