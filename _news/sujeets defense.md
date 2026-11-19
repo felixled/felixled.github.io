@@ -6,7 +6,7 @@ inline: false
 related_posts: false
 ---
 
-On October 26, 2026 [Sujeet]({{ '/people/' | relative_url }}#sujeet) successfully defended his PhD! His thesis is titled "Symmetry and privacy in quantum information theory". You can browse some of his thesis work (and other papers not included in his thesis) on the [arXiv](https://arxiv.org/search/?query=Bhalerao%2C+Sujeet&searchtype=author&abstracts=show&order=-announced_date_first&size=50). It's been a pleasure supervising you, Sujeet, and all the best for the future!
+On October 26, 2026 [Sujeet]({{ '/sujeet/' | relative_url }}) successfully defended his PhD! His thesis is titled "Symmetry and privacy in quantum information theory". You can browse some of his thesis work (and other papers not included in his thesis) on the [arXiv](https://arxiv.org/search/?query=Bhalerao%2C+Sujeet&searchtype=author&abstracts=show&order=-announced_date_first&size=50). It's been a pleasure supervising you, Sujeet, and all the best for the future!
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
