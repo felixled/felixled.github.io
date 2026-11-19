@@ -1,13 +1,78 @@
 ---
 layout: page
 ---
+<style>
+  .profiles-list {
+    --profile-entry-spacing: 1.5rem;
+  }
+
+  .profiles-list > hr {
+    margin: 0;
+  }
+
+  .profiles-list > .profile-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem 30px;
+    padding: var(--profile-entry-spacing) 0;
+  }
+
+  .profiles-list .profile-media,
+  .profiles-list .profile-content {
+    min-width: 0;
+  }
+
+  .profiles-list .profile-media figure {
+    margin: 0;
+  }
+
+  .profiles-list .profile-media img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .profiles-list .profile-media img.rounded-circle {
+    border-radius: 50%;
+  }
+
+  .profiles-list .profile-content > :first-child {
+    margin-top: 0;
+  }
+
+  /* Ignore non-rendered elements when finding the final content block. */
+  .profiles-list .profile-content > :nth-last-child(1 of :not(script, style, template, [hidden])) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    .profiles-list > .profile-entry {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .profiles-list > .profile-entry.profile-entry-right {
+      flex-direction: row-reverse;
+    }
+
+    .profiles-list .profile-media {
+      flex: 1 1 0;
+    }
+
+    .profiles-list .profile-content {
+      flex: 2 1 0;
+    }
+  }
+</style>
+
 <div class="post">
-  <article>
+  <article class="profiles-list">
     {% if page.profiles %}
       {% for profile in page.profiles %}
         <hr>
-        <div class="row align-items-center mb-3 {% if profile.align == 'right' %}flex-sm-row-reverse{% endif %}">
-          <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="profile-entry{% if profile.align == 'right' %} profile-entry-right{% endif %}">
+          <div class="profile-media">
             {% if profile.image %}
               {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
               {% if profile.image_circular %}
@@ -15,7 +80,7 @@ layout: page
               {% else %}
                 {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
               {% endif %}
-              {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.33 }}px, (min-width: 576px) 33vw, 95vw{% endcapture %}
+              {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.33 }}px, (min-width: 768px) 33vw, 95vw{% endcapture %}
               {% if profile.url %}<a href="{{ profile.url | relative_url }}" target="_blank" rel="noopener">{% endif %}
               {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
               {% if profile.url %}</a>{% endif %}
@@ -25,7 +90,7 @@ layout: page
             {% endif %}
           </div>
 
-          <div class="col-sm-8">
+          <div class="profile-content">
             {% if profile.content %}
               {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
               {{ profile_content | markdownify }}
